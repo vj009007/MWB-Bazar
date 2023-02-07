@@ -1,0 +1,74 @@
+import { css } from "@emotion/css";
+
+export const useAddbazaarStyles = () => ({
+  root: css`
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 600px;
+
+    .field {
+      padding-top: 50px;
+      padding-top: 50px;
+    }
+
+    .bazaarField {
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+
+    .cityField {
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+
+    .stateField {
+      padding-top: 20px;
+      padding-bottom: 20px;
+      display: flex;
+      gap: 12px;
+    }
+
+    .action-bar {
+      margin-top: 41px;
+      display: flex;
+      gap: 12px;
+    }
+  `,
+
+  content: css`
+    height: 170px;
+    width: 500px;
+    background: #ffffff;
+    border: 2px dashed #e1e1e1;
+    border-radius: 5.30337px;
+    padding: 20px;
+    text-align: center;
+
+    .uploadIcon {
+      display: flex;
+      justify-content: center;
+
+      img {
+        width: 50px;
+      }
+    }
+
+    .title {
+      font-family: "Manrope", serif;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 17px;
+      line-height: 24px;
+      color: #4e2fa9;
+    }
+
+    .subtitle {
+      font-family: "Manrope", serif;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 16px;
+      color: #84818a;
+    }
+  `,
+});
