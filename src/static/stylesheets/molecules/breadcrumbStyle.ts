@@ -24,6 +24,7 @@ export const useBreadcrumbStyles = () => {
         display: flex;
         text-align: center;
         gap: 20px;
+        align-items: center;
 
         img {
           width: 50px;

@@ -45,6 +45,7 @@ export const useAgentStyles = () => {
       .brandData {
         display: flex;
         gap: 20px;
+        align-items: center;
       }
 
       .brandLogo {

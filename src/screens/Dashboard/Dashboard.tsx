@@ -58,12 +58,12 @@ const Dashboard = () => {
               billsNumber="52"
             />
             <BazaarReportCard
-              title="Total Retailers"
+              title="Total Agents"
               count="53"
-              revenue="Total revenue Earned"
+              revenue="Commission Paid"
               prize="Rz. 1,54,00"
-              bills="No of Bills"
-              billsNumber="52"
+              bills="Customers Generated"
+              billsNumber="1200"
             />
           </div>
 

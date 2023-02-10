@@ -21,7 +21,7 @@ export const useBazaarCardStyles = () => {
 
     // BazaarCard
     bazaarCard: css`
-      padding: 20px 50px 0px 20px;
+      padding: 20px 0px 0px 20px;
       .brandLogo {
         width: 40px;
         padding: 15px 0 25px 0;

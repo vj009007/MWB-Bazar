@@ -12,7 +12,9 @@ export const useElectronicsBazaarStyles = () => ({
       padding-top: 20px;
       padding-bottom: 20px;
     }
-
+    .bazaarButtons.add-bazar button{
+      padding:6px !important;
+    }
     .leftContent {
       display: flex;
       gap: 10px;

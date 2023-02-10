@@ -17,12 +17,12 @@ const SummaryCard = () => {
           <p className="headSubtitle">53</p>
         </div>
         <div>
-          <p className="headTitle">Total Revenue Earned</p>
-          <p className="headSubtitle">Rs. 1,54,000</p>
+          <p className="headTitle2">Total Revenue Earned</p>
+          <p className="headSubtitle2">Rs. 1,54,000</p>
         </div>
         <div>
-          <p>No. of Bills</p>
-          <p className="headSubtitle">52</p>
+          <p className="headTitle2">No. of Bills</p>
+          <p className="headSubtitle2">52</p>
         </div>
       </div>
 
@@ -32,12 +32,12 @@ const SummaryCard = () => {
           <p className="headSubtitle">53</p>
         </div>
         <div>
-          <p className="headTitle">Commission Paid</p>
-          <p className="headSubtitle">Rs. 54,000</p>
+          <p className="headTitle2">Commission Paid</p>
+          <p className="headSubtitle2">Rs. 54,000</p>
         </div>
         <div>
-          <p className="headTitle">Customers Generated</p>
-          <p className="headSubtitle">1200</p>
+          <p className="headTitle2">Customers Generated</p>
+          <p className="headSubtitle2">1200</p>
         </div>
       </div>
     </div>

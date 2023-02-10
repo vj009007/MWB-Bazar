@@ -65,7 +65,7 @@ const ElectronicsBazaar = () => {
             </Grid>
 
             <Grid item xs={6}>
-              <div className="bazaarButtons">
+              <div className="bazaarButtons add-bazar">
                 <ActionButton variant={"primary"} title={"Today"} />
                 <ActionButton variant={"default"} title={"This Week"} />
                 <ActionButton variant={"default"} title={"Last Week"} />
