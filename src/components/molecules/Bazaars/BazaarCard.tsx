@@ -1,11 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useBazaarCardStyles } from "@/static/stylesheets/molecules";
 import Logo from "@/static/icons/ic_laptop.png";
 import { useNavigate } from "react-router-dom";
+import { getAllBazarList } from "../../../AllApi/AllApiData";
+
 
 const BazaarCard = () => {
   const classes = useBazaarCardStyles();
   const navigate = useNavigate();
+
+
+  const [getAllBazar, setGetAllBazar] = useState([]);
+    const getAllLists= async () =>{
+        const responseJson = await getAllBazarList();
+        setGetAllBazar(responseJson.data);
+        console.log("ecomprd", responseJson.data);
+       }
+
+    useEffect(() => {
+      getAllLists();
+    }, [getAllBazar]);
+
 
   return (
     <div
