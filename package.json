@@ -41,6 +41,7 @@
     "eject": "react-app-rewired eject",
     "prod": "SET PORT=3010 && react-app-rewired start"
   },
+  "proxy": "http://13.232.244.133",
   "eslintConfig": {
     "extends": [
       "react-app",
