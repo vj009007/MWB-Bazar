@@ -39,12 +39,12 @@ const BazaarCard = (props: any) => {
               </div>
 
               <div className="container">
-                <p className="headTitle">13</p>
-                <p className="headSubtitle">{addr.agents}</p>
+                <p className="headTitle">{addr.agents}</p>
+                <p className="headSubtitle">Agents</p>
               </div>
 
               <div className="container">
-                <p className="headTitle">{props.getAllBazars.states}</p>
+                <p className="headTitle">{addr.bazaar_state}</p>
                 <p className="headSubtitle">States</p>
               </div>
             </div>
