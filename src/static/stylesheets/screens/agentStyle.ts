@@ -35,6 +35,41 @@ export const usAgentStyles = () => ({
       line-height: 20px;
       color: #000000;
     }
+    .agent-dropdown {
+      position: relative;
+      .dropdown {
+        position: absolute;
+        right: 0;
+        top: 100%;
+        background: #ffffff;
+        box-shadow: 0px 6px 20px rgb(0 0 0 / 10%);
+        border-radius: 8px;
+        display: none;
+        flex-direction: column;
+        width: 285px;
+        a {
+          padding: 12px 25px;
+          border-bottom: 1px solid #f0f0f3;
+          display: flex;
+          gap: 15px;
+          align-items: center;
+          span.icon {
+            background: #f6f6f6;
+            border-radius: 8px;
+            display:flex;
+            align-items: center;
+            justify-content: center;
+            height: 36px;
+            width: 36px;
+          }
+        }
+      }
+    }
+    .agent-dropdown:hover img + .dropdown {
+      display: flex !important;
+      right:-20px;
+      z-index: 999;
+    }
   `,
 
   addDialog: css`

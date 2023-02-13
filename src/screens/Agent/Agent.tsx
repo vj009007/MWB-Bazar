@@ -10,6 +10,11 @@ import { Dialog } from "@mui/material";
 import NidFront from "@/static/images/mwb_nid_frnt.png";
 import NidBack from "@/static/images/mwb_nid_back.png";
 import UserIcon from "@/static/svg/ic_contactuser.svg";
+import dots from "@/static/icons/dots-1.svg";
+import complete from "@/static/icons/complete.svg";
+import fill from "@/static/icons/fill.svg";
+import calendar from "@/static/icons/calendar.svg";
+import deleteagent from "@/static/icons/delete-agent.svg";
 import ShareIcon from "@/static/svg/ic_share.svg";
 
 const Agent = () => {
@@ -107,8 +112,22 @@ const Agent = () => {
                         </div>
                       </td>
                       <td className="py-4 px-6 tableData cursor-pointer">
-                        <div>
-                          <GridOptionButton icon={"vertical-options"} />
+                        <div className="agent-dropdown">
+                          <img src={dots} alt="dots" />
+                          <div className="dropdown">
+                            <a href="#">
+                              <span className="icon"><img src={complete} alt="dots" /></span> Complete KYC
+                            </a>
+                            <a href="#">
+                              <span className="icon"><img src={fill} alt="fill" /> </span> Edit Agent
+                            </a>
+                            <a href="#">
+                              <span className="icon"><img src={deleteagent} alt="deleteagent" /> </span> Delete Agent
+                            </a>
+                            <a href="#">
+                              <span className="icon"><img src={calendar} alt="calendar" /> </span> Manage Commission
+                            </a>
+                          </div>
                         </div>
                       </td>
                     </tr>
