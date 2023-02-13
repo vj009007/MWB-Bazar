@@ -12,7 +12,7 @@ const BazaarsGridView = () => {
   const getAllLists = async () => {
     const responseJson = await AppService.getAllBazarList();
     setGetAllBazar(responseJson.data.results);
-    console.log("ecomprd", responseJson.data.results);
+    // console.log("ecomprd", responseJson.data.results);
   };
 
   useEffect(() => {

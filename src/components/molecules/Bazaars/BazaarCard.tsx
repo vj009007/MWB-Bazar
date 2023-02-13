@@ -9,7 +9,7 @@ const BazaarCard = (props: any) => {
   const navigate = useNavigate();
 
     useEffect(() => {
-      console.log("child", props.getAllBazars);
+      // console.log("child", props.getAllBazars);
   
     }, []);
 

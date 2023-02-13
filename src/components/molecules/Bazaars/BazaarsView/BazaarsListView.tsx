@@ -1,13 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useBazaarListStyles } from "@/static/stylesheets/molecules/";
 import LogoEcBazaar from "@/static/icons/ic_bookmark.png";
 import LogoDot from "@/static/icons/ic_dot.png";
+import { AppService } from "../../../../service/AllApiData.service";
 
 const BazaarsListView = () => {
   const classes = useBazaarListStyles();
-  const data = [
-    1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
-  ];
+  const [getAllBazar, setGetAllBazar] = useState([]);
+
+  const getAllLists = async () => {
+    const responseJson = await AppService.getAllBazarList();
+    setGetAllBazar(responseJson.data.results);
+  };
+
+  useEffect(() => {
+    getAllLists();
+  }, []);
+
 
   return (
     <div className={classes.root}>
@@ -22,20 +31,20 @@ const BazaarsListView = () => {
           <th className="billsTitle">NO. OF BILLS</th>
           <th></th>
         </tr>
-        {data.map((item: any) => (
+        {getAllBazar.map((item: any) => (
           <tr>
             <td>
               <div className="brandData">
                 <img className="brandLogo" src={LogoEcBazaar} alt={"Logo"} />
-                Eletcronics Bazaar
+                {item.bazaar_name}
               </div>
             </td>
             <td>Home and kichen appliances</td>
-            <td>24</td>
-            <td>235</td>
-            <td>12</td>
-            <td>Rs. XX,XXX</td>
-            <td>52</td>
+            <td> {item.wholesellers}</td>
+            <td>{item.agents}</td>
+            <td>{item.states}</td>
+            <td>Rs. {item.earnings}</td>
+            <td>{item.bills}</td>
             <td>
               <img src={LogoDot} alt={"Logo"} />
             </td>
