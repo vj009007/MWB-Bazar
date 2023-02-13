@@ -11,8 +11,8 @@ const BazaarsGridView = () => {
 
   const getAllLists = async () => {
     const responseJson = await AppService.getAllBazarList();
-    setGetAllBazar(responseJson.data);
-    // console.log("ecomprd", responseJson.data);
+    setGetAllBazar(responseJson.data.results);
+    console.log("ecomprd", responseJson.data.results);
   };
 
   useEffect(() => {
@@ -24,9 +24,9 @@ const BazaarsGridView = () => {
       <div className={classes.root}>
         <Grid container spacing={2}>
        
-            <Grid item xs={4}>
+            
               <BazaarCard getAllBazars={getAllBazar}/>
-            </Grid>
+            
          
         </Grid>
       </div>

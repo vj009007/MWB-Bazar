@@ -2,18 +2,23 @@ import React, { useEffect, useState } from "react";
 import { useBazaarCardStyles } from "@/static/stylesheets/molecules";
 import Logo from "@/static/icons/ic_laptop.png";
 import { useNavigate } from "react-router-dom";
+import { Grid } from "@mui/material";
 
 const BazaarCard = (props: any) => {
   const classes = useBazaarCardStyles();
   const navigate = useNavigate();
 
     useEffect(() => {
-      // console.log("child", props.getAllBazars);
+      console.log("child", props.getAllBazars);
   
     }, []);
 
 
   return (
+   <>
+ 
+   {props.getAllBazars.map((addr:any) =>(
+      <Grid item xs={4}>
     <div
       className={classes.root}
       onClick={() => navigate("/electronicsbazaar")}
@@ -21,21 +26,21 @@ const BazaarCard = (props: any) => {
       <div className={classes.container}>
         <div className={classes.bazaarContainer}>
           <div className={classes.bazaarCard}>
-            <img className="brandLogo" src={props.getAllBazars.bazaar_image} alt={"Logo"} />
-            <p className="headTitle">{props.getAllBazars.bazaar_name}</p>
-            <p className="headSubtitle">{props.getAllBazars.bazaar_description}</p>
+            <img className="brandLogo" src={addr.bazaar_image} alt={"Logo"} />
+            <p className="headTitle">{addr.bazaar_name}</p>
+            <p className="headSubtitle">{addr.bazaar_description}</p>
           </div>
 
           <div className={classes.wholeSellerContainer}>
             <div className={classes.wholesellerCard}>
               <div className="container">
-                <p className="headTitle">{props.getAllBazars.wholesellers}</p>
+                <p className="headTitle">{addr.wholesellers}</p>
                 <p className="headSubtitle">Wholesellers</p>
               </div>
 
               <div className="container">
                 <p className="headTitle">13</p>
-                <p className="headSubtitle">{props.getAllBazars.agents}</p>
+                <p className="headSubtitle">{addr.agents}</p>
               </div>
 
               <div className="container">
@@ -51,18 +56,22 @@ const BazaarCard = (props: any) => {
             <div className="container">
               <div>
                 <p className="headTitle">Total Revenue Earned</p>
-                <p className="headSubtitle">{props.getAllBazars.earnings}</p>
+                <p className="headSubtitle">{addr.earnings}</p>
               </div>
 
               <div>
                 <p className="headTitle">No. of Bills</p>
-                <p className="headSubtitle">{props.getAllBazars.bills}</p>
+                <p className="headSubtitle">{addr.bills}</p>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+    </Grid>
+   ))}
+ 
+    </>
   );
 };
 export { BazaarCard };
