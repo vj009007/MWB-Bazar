@@ -20,7 +20,7 @@ const BazaarsGridView = () => {
   }, []);
   return (
     <>
-    {console.log("pr", getAllBazar)}
+    {/* {console.log("pr", getAllBazar)} */}
       <div className={classes.root}>
         <Grid container spacing={2}>
        

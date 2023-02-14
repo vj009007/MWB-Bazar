@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { DashboardLayout } from "@/components/layouts";
 import { AddButton, GridOptionButton } from "@/components/atoms/Button";
 import { Switch } from "@/components/atoms/Switch";
@@ -16,11 +16,21 @@ import fill from "@/static/icons/fill.svg";
 import calendar from "@/static/icons/calendar.svg";
 import deleteagent from "@/static/icons/delete-agent.svg";
 import ShareIcon from "@/static/svg/ic_share.svg";
+import { AppService } from "../../service/AllApiData.service";
 
 const Agent = () => {
   const classes = usAgentStyles();
   const navigate = useNavigate();
   const [addModalOpen, setAddModalOpen] = useState(false);
+  const [getAllAgent, setGetAllAgent] = useState([]);
+  const getAllLists = async () => {
+    const responseJson = await AppService.getAllAgentList();
+    setGetAllAgent(responseJson.data.results);
+  };
+
+  useEffect(() => {
+    getAllLists();
+  }, []);
 
   return (
     <>
@@ -75,10 +85,11 @@ const Agent = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {[1, 2, 3, 4, 5].map((item: any) => (
+                  {/*  onClick={() => setAddModalOpen(true)} */}
+                  {getAllAgent.map((item: any) => (
                     <tr
                       className="border-b"
-                      onClick={() => setAddModalOpen(true)}
+                     
                     >
                       <th
                         scope="row"
@@ -91,19 +102,19 @@ const Agent = () => {
                                 <img src={UserIcon} alt={"Logo"} />
                               </div>
                               <div>
-                                <p className="tableData">Sachin Yadav</p>
+                                <p className="tableData">{item.agent_name}</p>
                               </div>
                             </div>
                           </p>
                         </div>
                       </th>
-                      <td className="py-4 px-6 ftableData">+91235948</td>
-                      <td className="py-4 px-6 ftableData">Rajkot</td>
-                      <td className="py-4 px-6 tableData">Electrict Bazaar</td>
-                      <td className="py-4 px-6 tableData">Salesman</td>
+                      <td className="py-4 px-6 ftableData">{item.agent_number}</td>
+                      <td className="py-4 px-6 ftableData">{item.agent_city}</td>
+                      <td className="py-4 px-6 tableData">{item.agent_bazaar.length}</td>
+                      <td className="py-4 px-6 tableData">{item.agent_type}</td>
                       <td className="py-4 px-6 tableData">
                         <div className="bg-[#FFF6ED] flex justify-center rounded-md p-[10px] w-[150px]">
-                          <p>Pending Approval</p>
+                          <p>{item.agent_status}</p>
                         </div>
                       </td>
                       <td className="py-4 px-6 tableData cursor-pointer">
@@ -226,3 +237,5 @@ const Agent = () => {
 };
 
 export default Agent;
+
+

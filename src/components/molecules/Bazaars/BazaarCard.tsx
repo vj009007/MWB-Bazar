@@ -17,7 +17,7 @@ const BazaarCard = (props: any) => {
   return (
    <>
  
-   {props.getAllBazars.map((addr:any) =>(
+   {props.getAllBazars===undefined ? <></>:props.getAllBazars.map((addr:any) =>(
       <Grid item xs={4}>
     <div
       className={classes.root}
