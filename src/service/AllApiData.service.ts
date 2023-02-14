@@ -59,5 +59,10 @@ static getAllBazarList() {
 static getAllAgentList() {
 	return http.get("agent/", { headers: AppService.authHeader() });
 };
+static getAllwholesellerList() {
+	return http.get("wholeseller/", { headers: AppService.authHeader() });
+};
+
+
 
 }

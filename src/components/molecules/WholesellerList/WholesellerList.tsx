@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { usewholesellerListStyles } from "@/static/stylesheets/molecules";
 import { GridOptionButton } from "@/components/atoms/Button";
 import { Dialog } from "@mui/material";
@@ -8,6 +8,7 @@ import NidFront from "@/static/images/mwb_nid_frnt.png";
 import NidBack from "@/static/images/mwb_nid_back.png";
 import { ActionButton } from "@/components/atoms/Button/ActionButton";
 import { useWholesellerListStyles } from "@/static/stylesheets/screens";
+import { AppService } from "../../../service/AllApiData.service";
 
 interface WholesellerProps {
   type?: "WholeSeller" | "Retailer";
@@ -16,9 +17,18 @@ interface WholesellerProps {
 const WholesellerList: React.FC<WholesellerProps> = (props) => {
   const classes = usewholesellerListStyles();
   const wholeSellerListStyles = useWholesellerListStyles();
-  const data = [1, 2, 3, 4, 5, 6];
+  const [getAllWholeseller, setGetAllWholeseller] = useState([]);
   const [addModalOpen, setAddModalOpen] = useState(false);
 
+  const getAllLists = async () => {
+    const responseJson = await AppService.getAllwholesellerList();
+    setGetAllWholeseller(responseJson.data.results);
+    // console.log("ecomprd", responseJson.data.results);
+  };
+
+  useEffect(() => {
+    getAllLists();
+  }, []);
 
   return (
     <div className={classes.root}>
@@ -34,27 +44,27 @@ const WholesellerList: React.FC<WholesellerProps> = (props) => {
           <th>Enable/Disable</th>
           <th></th>
         </tr>
-
-        {data.map((item: any) => (
-          <tr onClick={() => setAddModalOpen(true)}>
-            <td>Firm-ABCS</td>
+{/* onClick={() => setAddModalOpen(true)} */}
+        {getAllWholeseller.map((item: any) => (
+          <tr >
+            <td>{item.wholeseller_name}</td>
             <td>
               <div className="brandData">
                 <img className="brandLogo" src={LogoContract} alt={"Logo"} />
-                Eletcronics Bazaar
+                {item.wholeseller_number}
               </div>
             </td>
-            <td>Rajkot</td>
-            <td>Electronic Baz..</td>
-            <td>Wholeseller</td>
+            <td>{item.wholeseller_city}</td>
+            <td>{item.wholeseller_bazaar}</td>
+            <td>{item.wholeseller_type}</td>
             <td>
               <div className="brandData">
                 <img className="brandLogo" src={LogoContract} alt={"Logo"} />
-                Eletcronics Bazaar
+                {item.wholeseller_agent}
               </div>
             </td>
             <td>
-              <div className="status">Pending Approval</div>
+              <div className="status">{item.wholeseller_status}</div>
             </td>
             <td>
               <div>
