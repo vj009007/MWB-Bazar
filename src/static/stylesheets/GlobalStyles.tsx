@@ -18,6 +18,31 @@ const styles = () => css`
     font-family: "Manrope", serif;
   }
 
+  //Color CSS
+  .orange {
+    color: #ff6652;
+  }
+  .primary-orange {
+    color: #ff6652;
+  }
+  .text-gray {
+    color: #84818a;
+  }
+  .text-dark {
+    color: #222120;
+  }
+  .bg-purple {
+    background: #4e2fa9;
+  }
+  .text-purple {
+    color: #4e2fa9;
+  }
+  .green {
+    color: #20c9ac;
+  }
+  .bg-button {
+    background: #f6f6f6;
+  }
   // select css
   .agent-dropdown {
     position: relative;
@@ -67,24 +92,34 @@ const styles = () => css`
       box-shadow: 0px 6px 20px rgb(0 0 0 / 10%);
       border-radius: 8px;
       width: 195px;
-      z-index:9999;
-      display:none;
+      z-index: 9999;
+      display: none;
       .job-title {
         background: rgba(0, 165, 255, 0.1);
         border-radius: 4px;
         font-weight: 600;
         font-size: 12px;
         line-height: 18px;
-        font-family: 'Manrope';
-        color: #00A5FF;
-        padding:4px 10px;
+        font-family: "Manrope";
+        color: #00a5ff;
+        padding: 4px 10px;
       }
     }
   }
-  td.person-details:hover 
-    .person-model {
-      display:flex;
-    }
+  td.person-details:hover .person-model {
+    display: flex;
+  }
+
+  //Label CSS
+
+  .bazaarField label {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    color: #84818a;
+  }
 `;
 
 export const GlobalStyles = () => {
