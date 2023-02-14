@@ -8,6 +8,13 @@ import NidFront from "@/static/images/mwb_nid_frnt.png";
 import NidBack from "@/static/images/mwb_nid_back.png";
 import { ActionButton } from "@/components/atoms/Button/ActionButton";
 import { useWholesellerListStyles } from "@/static/stylesheets/screens";
+import dots from "@/static/icons/dots-1.svg";
+import complete from "@/static/icons/complete.svg";
+import fill from "@/static/icons/fill.svg";
+import phone from "@/static/icons/phone.svg";
+import contact from "@/static/icons/contact-phone.svg";
+import calendar from "@/static/icons/calendar.svg";
+import deleteagent from "@/static/icons/delete-agent.svg";
 
 interface WholesellerProps {
   type?: "WholeSeller" | "Retailer";
@@ -18,7 +25,6 @@ const WholesellerList: React.FC<WholesellerProps> = (props) => {
   const wholeSellerListStyles = useWholesellerListStyles();
   const data = [1, 2, 3, 4, 5, 6];
   const [addModalOpen, setAddModalOpen] = useState(false);
-
 
   return (
     <div className={classes.root}>
@@ -31,6 +37,7 @@ const WholesellerList: React.FC<WholesellerProps> = (props) => {
           <th>Type</th>
           <th>Agent</th>
           <th>Status</th>
+          <th>Plan Expiry</th>
           <th>Enable/Disable</th>
           <th></th>
         </tr>
@@ -38,23 +45,38 @@ const WholesellerList: React.FC<WholesellerProps> = (props) => {
         {data.map((item: any) => (
           <tr onClick={() => setAddModalOpen(true)}>
             <td>Firm-ABCS</td>
-            <td>
-              <div className="brandData">
-                <img className="brandLogo" src={LogoContract} alt={"Logo"} />
-                Eletcronics Bazaar
+            <td className="person-details">
+              <div className="flex items-center gap-2 text-[#4E2FA9]">
+                <img className="brandLogo" src={contact} alt={"Logo"} />
+                Sachin Yadav
               </div>
+              <div className="flex flex-col items-start gap-2 person-model">
+              <span className="job-title">Firm Manager</span>
+              <span className="text-sm text-[#2E2C34] font-medium">Sachin Yadav</span>
+              <span className="text-[13px] text-[#84818A] font-medium leading-5">Rajkot, Gujarat</span>
+              <span className="flex items-center gap-2 text-sm text-[#2E2C34] font-medium"><img src={phone} alt="phone" /> +91-8477852310</span>
+            </div>
             </td>
             <td>Rajkot</td>
-            <td>Electronic Baz..</td>
+            <td className="overlap">Electronic Baz Wholeseller</td>
             <td>Wholeseller</td>
-            <td>
-              <div className="brandData">
-                <img className="brandLogo" src={LogoContract} alt={"Logo"} />
-                Eletcronics Bazaar
+            <td className="person-details">
+              <div className="flex items-center gap-2 text-[#4E2FA9]">
+                <img className="brandLogo" src={contact} alt={"Logo"} />
+                Sachin Yadav
               </div>
+              <div className="flex flex-col items-start gap-2 person-model">
+              <span className="job-title">Firm Manager</span>
+              <span className="text-sm text-[#2E2C34] font-medium">Sachin Yadav</span>
+              <span className="text-[13px] text-[#84818A] font-medium leading-5">Rajkot, Gujarat</span>
+              <span className="flex items-center gap-2 text-sm text-[#2E2C34] font-medium"><img src={phone} alt="phone" /> +91-8477852310</span>
+            </div>
             </td>
             <td>
               <div className="status">Pending Approval</div>
+            </td>
+            <td>
+              <div className="text-[#FFA043] text-sm font-medium">25 Jul, 2022</div>
             </td>
             <td>
               <div>
@@ -62,7 +84,23 @@ const WholesellerList: React.FC<WholesellerProps> = (props) => {
               </div>
             </td>
             <td>
-              <GridOptionButton icon={"vertical-options"} />
+            <div className="agent-dropdown">
+                          <img src={dots} alt="dots" />
+                          <div className="dropdown">
+                            <a href="#">
+                              <span className="icon"><img src={complete} alt="dots" /></span> Complete KYC
+                            </a>
+                            <a href="#">
+                              <span className="icon"><img src={fill} alt="fill" /> </span> Edit Agent
+                            </a>
+                            <a href="#">
+                              <span className="icon"><img src={deleteagent} alt="deleteagent" /> </span> Delete Agent
+                            </a>
+                            <a href="#">
+                              <span className="icon"><img src={calendar} alt="calendar" /> </span> Manage Commission
+                            </a>
+                          </div>
+                        </div>
             </td>
           </tr>
         ))}
@@ -120,8 +158,7 @@ const WholesellerList: React.FC<WholesellerProps> = (props) => {
           </div>
 
           <div className="attachment">
-            <div className="attachmentHeader">
-            </div>
+            <div className="attachmentHeader"></div>
             <img className="brandLogo" src={NidFront} alt={"Logo"} />
             <img className="brandLogo" src={NidBack} alt={"Logo"} />
           </div>
