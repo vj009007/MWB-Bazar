@@ -4,7 +4,7 @@ export const useMultiSelectStyles = () => {
   return {
     root: css`
       margin: 0 !important;
-      width: 200px !important;
+      width: auto !important;
       padding-top: 10px !important;
       padding-bottom: 10px !important;
 
@@ -15,7 +15,7 @@ export const useMultiSelectStyles = () => {
       .MuiSelect-select {
         color: #000000 !important;
         border: 1px solid #ebeaed !important;
-        padding: 10px !important;
+        padding: 10px 30px 10px 10px !important;
         border-radius: 5px !important;
         border-bottom: none !important;
         color: #84818a !important;

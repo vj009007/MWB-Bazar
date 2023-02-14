@@ -33,15 +33,21 @@ export const usewholesellerListStyles = () => {
         text-align: left;
         padding-top: 20px;
         padding-bottom: 20px;
-        padding-right: 40px;
+        padding-right: 20px;
         border-bottom: 1px solid #e1e1e1;
+        white-space: nowrap;
       }
       th {
         text-align: left;
         padding-top: 10px;
         padding-bottom: 10px;
       }
-
+      td.overlap {
+        max-width: 160px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
       .brandData {
         display: flex;
         gap: 20px;
@@ -58,6 +64,41 @@ export const usewholesellerListStyles = () => {
         border-radius: 5px;
         padding: 10px;
         width: 150px;
+      }
+      .agent-dropdown {
+        position: relative;
+        .dropdown {
+          position: absolute;
+          right: 0;
+          top: 100%;
+          background: #ffffff;
+          box-shadow: 0px 6px 20px rgb(0 0 0 / 10%);
+          border-radius: 8px;
+          display: none;
+          flex-direction: column;
+          width: 285px;
+          a {
+            padding: 12px 25px;
+            border-bottom: 1px solid #f0f0f3;
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            span.icon {
+              background: #f6f6f6;
+              border-radius: 8px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              height: 36px;
+              width: 36px;
+            }
+          }
+        }
+      }
+      .agent-dropdown:hover img + .dropdown {
+        display: flex !important;
+        right: -20px;
+        z-index: 999;
       }
     `,
   };
