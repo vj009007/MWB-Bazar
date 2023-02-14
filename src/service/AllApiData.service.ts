@@ -55,4 +55,9 @@ static getCurrentUser = () => {
 static getAllBazarList() {
 	return http.get("bazaar/data/", { headers: AppService.authHeader() });
 };
+
+static getAllAgentList() {
+	return http.get("agent/", { headers: AppService.authHeader() });
+};
+
 }
