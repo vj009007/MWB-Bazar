@@ -20,7 +20,7 @@ const styles = () => css`
 
   //Color CSS
   .orange {
-    color: #ff6652;
+    color: #ff6652 !important;
   }
   .primary-orange {
     color: #ff6652;

@@ -3,7 +3,8 @@ import { usePlancardStyles } from "@/static/stylesheets/molecules/plancardStyle"
 import LogoGo from "@/static/icons/ic_arrow_go.png";
 import { ActionButton } from "@/components/atoms/Button/ActionButton";
 import { Dialog } from "@mui/material";
-import successCheckIcon from "@/static/icons/ic_check.png";
+import successCheckIcon from "@/static/icons/green-tick.svg";
+import close from '@/static/icons/close-icon.svg';
 
 const PlanCard = () => {
   const classes = usePlancardStyles();
@@ -35,21 +36,12 @@ const PlanCard = () => {
         </div>
       </div>
 
-      <Dialog
-        open={addModalOpen}
-        maxWidth={"lg"}
-        sx={{
-          ".MuiPaper-root": {
-            borderRadius: "20px",
-          },
-        }}
-        onClose={() => setAddModalOpen(false)}
-      >
+      <Dialog open={addModalOpen}  maxWidth={"lg"} sx={{ ".MuiPaper-root": {   borderRadius: "20px", }, }}>
         <div className={classes.addDialog}>
           <div className="modalContainer">
             <div className="modalHead">
               <div>Plan Name</div>
-              <div>X</div>
+              <div  onClick={() => setAddModalOpen(false)}><img src={close} alt="close" /></div>
             </div>
 
             <div className="planHead">

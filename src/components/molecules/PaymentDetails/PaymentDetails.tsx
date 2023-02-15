@@ -6,6 +6,7 @@ import {
   FormControlLabel,
   Radio,
   RadioGroup,
+  TextField,
 } from "@mui/material";
 import { ActionButton } from "@/components/atoms/Button/ActionButton";
 import { UploadArea } from "@/components/organisms/UploadArea";
@@ -104,12 +105,11 @@ export default function PaymentDetails() {
             <div className="paymentButton">
               <ActionButton
                 variant="primary"
-                title="Send Payment Link"
-                onClick={() => setAddModalOpen(true)}
+                title="Send Payment Link"  
               />
               <p>
-                Click here
-                <span>if you have received the payment manually</span>
+                <span onClick={() => setAddModalOpen(true)} className="orange"> Click here</span>
+                <span> if you have received the payment manually</span>
               </p>
             </div>
 
@@ -126,6 +126,19 @@ export default function PaymentDetails() {
               <div className={classes.addDialog}>
                 <p className="title">Add Payment Details</p>
                 <UploadArea label={"Upload Icon"} />
+                <div className="mt-5">
+                  <TextField label="Date" variant="standard" id="fullWidth" className="w-full" />
+                </div>
+                <div className="mt-5">
+                  <TextField label="Mode of payment" variant="standard" id="fullWidth" className="w-full" />
+                </div>
+                <div className="mt-5">
+                  <TextField label="Transaction ID" variant="standard" id="fullWidth" className="w-full" />
+                </div>
+                <div className="mt-5">
+                  <TextField label="Add comment..." variant="standard" id="fullWidth" className="w-full" />
+                </div>
+                
                 <div>
                   <div className={"action-bar"}>
                     <ActionButton
@@ -136,7 +149,7 @@ export default function PaymentDetails() {
 
                     <ActionButton
                       variant={"primary"}
-                      title={"Add"}
+                      title={"Save"}
                       onClick={() => setAddModalOpen(false)}
                     />
                   </div>

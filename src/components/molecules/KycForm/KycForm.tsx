@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { ActionButton } from "@/components/atoms/Button/ActionButton";
 import { useKycFormStyles } from "@/static/stylesheets/molecules";
-import { Avatar, MenuItem, Select, SelectChangeEvent } from "@mui/material";
+import { Avatar, FormControl, Input, InputAdornment, InputLabel, MenuItem, Select, SelectChangeEvent, TextField } from "@mui/material";
 import LogoDelete from "@/static/icons/ic_delete.png";
 import LogoEdit from "@/static/icons/ic_edit.png";
 
@@ -16,12 +16,7 @@ const KycForm = () => {
   return (
     <div className={classes.root}>
       <div className="headContainer">
-        <Avatar
-          sx={{
-            width: 100,
-            height: 100,
-          }}
-        >
+        <Avatar  sx={{ width: 100,  height: 100, }} >
           Logo
         </Avatar>
         <div>
@@ -29,188 +24,77 @@ const KycForm = () => {
         </div>
         Remove picture
       </div>
+      <div className="field">
+         <div className="flex items-center gap-8 mt-6">
+            <TextField label="Firm Name" variant="standard" id="fullWidth" className="w-1/2" />
+            <TextField label="Contact Person" variant="standard" id="fullWidth" className="w-1/2" />
+          </div>
 
-      <div className="formContainer">
-        <Select
-          label="Age"
-          variant={"standard"}
-          fullWidth={true}
-          value={masterType}
-          onChange={handleChangeMasterType}
-        >
-          <MenuItem value={"Regional Wholeseller"}>Grocery</MenuItem>
-          <MenuItem value={"Regional Wholeseller 1"}>Grocery 1</MenuItem>
-        </Select>
+          <div className="flex items-center gap-8 mt-6">
+            <FormControl variant="standard" className="w-1/2">
+              <InputLabel htmlFor="standard-adornment-amount">Phone number</InputLabel>
+              <Input id="standard-adornment-amount" startAdornment={<InputAdornment position="start">+91 </InputAdornment>} type="number" />
+            </FormControl>
+          
+            <FormControl variant="standard" className="w-1/2">
+              <InputLabel htmlFor="standard-adornment-amount">Phone number</InputLabel>
+              <Input id="standard-adornment-amount" startAdornment={<InputAdornment position="start">+91 </InputAdornment>} type="number" />
+            </FormControl>
+          </div>
 
-        <Select
-          label="Age"
-          variant={"standard"}
-          fullWidth={true}
-          value={masterType}
-          onChange={handleChangeMasterType}
-        >
-          <MenuItem value={"Regional Wholeseller"}>Grocery</MenuItem>
-          <MenuItem value={"Regional Wholeseller 1"}>Grocery 1</MenuItem>
-        </Select>
+          <div className="bazaarField flex items-center gap-8 mt-6">
+              <FormControl variant="standard" className="w-1/2">
+                <InputLabel htmlFor="standard-adornment-amount">Email Address</InputLabel>
+                <Input id="standard-adornment-amount" type="email" />
+              </FormControl>
+              <div className="w-1/2">
+                <InputLabel id="Bazaar">Bazaar</InputLabel>
+                <Select label="Bazaar" labelId="Bazaar" variant={"standard"} fullWidth={true} value={masterType} onChange={handleChangeMasterType} className="w-1/2">
+                  <MenuItem value={"Regional Wholeseller"}>Electronic, Computer + 1</MenuItem>
+                  <MenuItem value={"Regional Wholeseller 1"}>Electronic, Computer + 2</MenuItem>
+                </Select>
+              </div>
+          </div>
+          <div className="flex items-center gap-8 mt-6">
+              <FormControl variant="standard" className="w-1/2">
+                <InputLabel htmlFor="standard-adornment-amount">Aadhaar</InputLabel>
+                <Input id="standard-adornment-amount"  type="number" />
+              </FormControl>
+          </div>
+          <div className="bazaarField flex items-center gap-8 mt-6">
+            <div className="w-1/2">
+                <InputLabel id="Bazaar">Bazaar</InputLabel>
+                <Select label="Bazaar" labelId="Bazaar" variant={"standard"} fullWidth={true} value={masterType} onChange={handleChangeMasterType} className="w-1/2">
+                  <MenuItem value={"Regional Wholeseller"}>Electronic, Computer + 1</MenuItem>
+                  <MenuItem value={"Regional Wholeseller 1"}>Electronic, Computer + 2</MenuItem>
+                </Select>
+            </div>
+          </div>
+          <div className="flex items-center gap-8 mt-6">
+             <FormControl variant="standard" className="w-1/2">
+                <InputLabel htmlFor="standard-adornment-amount">GST Number</InputLabel>
+                <Input id="standard-adornment-amount"  type="number" />
+              </FormControl>
+              <TextField label="Firm PAN Number" variant="standard" id="fullWidth" className="w-1/2" />
+          </div>
+          <div className="flex items-center gap-8 mt-6">
+            <TextField label="Address" variant="standard" id="fullWidth" className="w-1/2" />
+            <TextField label="Landmark" variant="standard" id="fullWidth" className="w-1/2" />
+          </div>
+          <div className="flex items-center gap-8 mt-6">
+            <TextField label="State" variant="standard" id="fullWidth" className="w-1/2" />
+            <TextField label="City" variant="standard" id="fullWidth" className="w-1/2" />
+          </div>
+          <div className="flex items-center gap-8 mt-6">
+              <FormControl variant="standard" className="w-1/2">
+                <InputLabel htmlFor="standard-adornment-amount">Pincode</InputLabel>
+                <Input id="standard-adornment-amount"  type="number" />
+              </FormControl>
+          </div>
       </div>
+      
 
-      <div className="formContainer">
-        <Select
-          label="Age"
-          variant={"standard"}
-          fullWidth={true}
-          value={masterType}
-          onChange={handleChangeMasterType}
-        >
-          <MenuItem value={"Regional Wholeseller"}>Grocery</MenuItem>
-          <MenuItem value={"Regional Wholeseller 1"}>Grocery 1</MenuItem>
-        </Select>
-
-        <Select
-          label="Age"
-          variant={"standard"}
-          fullWidth={true}
-          value={masterType}
-          onChange={handleChangeMasterType}
-        >
-          <MenuItem value={"Regional Wholeseller"}>Grocery</MenuItem>
-          <MenuItem value={"Regional Wholeseller 1"}>Grocery 1</MenuItem>
-        </Select>
-      </div>
-
-      <div className="formContainer">
-        <Select
-          label="Age"
-          variant={"standard"}
-          fullWidth={true}
-          value={masterType}
-          onChange={handleChangeMasterType}
-        >
-          <MenuItem value={"Regional Wholeseller"}>Grocery</MenuItem>
-          <MenuItem value={"Regional Wholeseller 1"}>Grocery 1</MenuItem>
-        </Select>
-
-        <Select
-          label="Age"
-          variant={"standard"}
-          fullWidth={true}
-          value={masterType}
-          onChange={handleChangeMasterType}
-        >
-          <MenuItem value={"Regional Wholeseller"}>Grocery</MenuItem>
-          <MenuItem value={"Regional Wholeseller 1"}>Grocery 1</MenuItem>
-        </Select>
-      </div>
-      <div className="singleForm">
-        <Select
-          label="Age"
-          variant={"standard"}
-          fullWidth={true}
-          value={masterType}
-          onChange={handleChangeMasterType}
-        >
-          <MenuItem value={"Regional Wholeseller"}>Grocery</MenuItem>
-          <MenuItem value={"Regional Wholeseller 1"}>Grocery 1</MenuItem>
-        </Select>
-      </div>
-
-      <div className="singleForm">
-        <Select
-          label="Age"
-          variant={"standard"}
-          fullWidth={true}
-          value={masterType}
-          onChange={handleChangeMasterType}
-        >
-          <MenuItem value={"Regional Wholeseller"}>Grocery</MenuItem>
-          <MenuItem value={"Regional Wholeseller 1"}>Grocery 1</MenuItem>
-        </Select>
-      </div>
-
-      <div className="formContainer">
-        <Select
-          label="Age"
-          variant={"standard"}
-          fullWidth={true}
-          value={masterType}
-          onChange={handleChangeMasterType}
-        >
-          <MenuItem value={"Regional Wholeseller"}>Grocery</MenuItem>
-          <MenuItem value={"Regional Wholeseller 1"}>Grocery 1</MenuItem>
-        </Select>
-
-        <Select
-          label="Age"
-          variant={"standard"}
-          fullWidth={true}
-          value={masterType}
-          onChange={handleChangeMasterType}
-        >
-          <MenuItem value={"Regional Wholeseller"}>Grocery</MenuItem>
-          <MenuItem value={"Regional Wholeseller 1"}>Grocery 1</MenuItem>
-        </Select>
-      </div>
-      <div className="formContainer">
-        <Select
-          label="Age"
-          variant={"standard"}
-          fullWidth={true}
-          value={masterType}
-          onChange={handleChangeMasterType}
-        >
-          <MenuItem value={"Regional Wholeseller"}>Grocery</MenuItem>
-          <MenuItem value={"Regional Wholeseller 1"}>Grocery 1</MenuItem>
-        </Select>
-
-        <Select
-          label="Age"
-          variant={"standard"}
-          fullWidth={true}
-          value={masterType}
-          onChange={handleChangeMasterType}
-        >
-          <MenuItem value={"Regional Wholeseller"}>Grocery</MenuItem>
-          <MenuItem value={"Regional Wholeseller 1"}>Grocery 1</MenuItem>
-        </Select>
-      </div>
-      <div className="formContainer">
-        <Select
-          label="Age"
-          variant={"standard"}
-          fullWidth={true}
-          value={masterType}
-          onChange={handleChangeMasterType}
-        >
-          <MenuItem value={"Regional Wholeseller"}>Grocery</MenuItem>
-          <MenuItem value={"Regional Wholeseller 1"}>Grocery 1</MenuItem>
-        </Select>
-
-        <Select
-          label="Age"
-          variant={"standard"}
-          fullWidth={true}
-          value={masterType}
-          onChange={handleChangeMasterType}
-        >
-          <MenuItem value={"Regional Wholeseller"}>Grocery</MenuItem>
-          <MenuItem value={"Regional Wholeseller 1"}>Grocery 1</MenuItem>
-        </Select>
-      </div>
-
-      <div className="singleForm">
-        <Select
-          label="Age"
-          variant={"standard"}
-          fullWidth={true}
-          value={masterType}
-          onChange={handleChangeMasterType}
-        >
-          <MenuItem value={"Regional Wholeseller"}>Grocery</MenuItem>
-          <MenuItem value={"Regional Wholeseller 1"}>Grocery 1</MenuItem>
-        </Select>
-      </div>
-
-      <div className="mapButton">
+      <div className="mapButton mt-8">
         <p>Set Location via Google Maps</p>
         <ActionButton variant="primary" title="Set Location" />
       </div>

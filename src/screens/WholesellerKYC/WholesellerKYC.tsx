@@ -100,7 +100,6 @@ export default function WholesellerKYC() {
                 </Typography>
                 <Box sx={{ pt: 2 }}>
                   <Box sx={{ flex: "1 1 auto" }} />
-
                   <Button className="nextButton" onClick={handleReset}>
                     Reset
                   </Button>

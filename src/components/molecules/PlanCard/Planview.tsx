@@ -9,7 +9,7 @@ const Planview = () => {
     <div>
       <Grid container rowSpacing={1} columnSpacing={5}>
         {data.map((item: any) => (
-          <Grid item xs={3}>
+          <Grid item xs={4}>
             <PlanCard />
           </Grid>
         ))}

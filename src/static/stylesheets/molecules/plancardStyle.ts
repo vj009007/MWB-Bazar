@@ -14,8 +14,6 @@ export const usePlancardStyles = () => ({
 
     .plancard {
       width: 100%;
-      left: 308px;
-      top: 225px;
       background: #ffffff;
       border: 1px solid #e1e1e1;
       border-radius: 12px;
@@ -176,16 +174,19 @@ export const usePlancardStyles = () => ({
 
       .circlePlan {
         border-radius: 50%;
-        /* background: #F9F5F2; */
-        width: 120px;
-        height: 120px;
+        background: #f9f5f2;
+        width: 100px;
+        height: 100px;
         justify-content: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
 
         .circleTitle {
           font-family: "Manrope", serif;
           font-style: normal;
           font-weight: 700;
-          font-size: 35px;
+          font-size: 30px;
           line-height: 140%;
           text-align: center;
           color: #ff6652;
@@ -195,8 +196,8 @@ export const usePlancardStyles = () => ({
           font-family: "Manrope", serif;
           font-style: normal;
           font-weight: 600;
-          font-size: 19px;
-          line-height: 33px;
+          font-size: 14px;
+          line-height: 20px;
           letter-spacing: 0.2px;
           text-align: center;
           color: #7a7a86;
