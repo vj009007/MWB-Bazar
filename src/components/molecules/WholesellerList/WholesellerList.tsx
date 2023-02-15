@@ -99,16 +99,16 @@ const WholesellerList: React.FC<WholesellerProps> = (props) => {
             <div className="agent-dropdown">
                           <img src={dots} alt="dots" />
                           <div className="dropdown">
-                            <a href="#">
+                            <a href="/wholesellerkyc">
                               <span className="icon"><img src={complete} alt="dots" /></span> Complete KYC
                             </a>
-                            <a href="#">
+                            <a href="/wholesellerkyc">
                               <span className="icon"><img src={fill} alt="fill" /> </span> Edit Agent
                             </a>
                             <a href="#">
                               <span className="icon"><img src={deleteagent} alt="deleteagent" /> </span> Delete Agent
                             </a>
-                            <a href="#">
+                            <a href="/renewplan">
                               <span className="icon"><img src={calendar} alt="calendar" /> </span> Manage Commission
                             </a>
                           </div>
