@@ -13,16 +13,55 @@ const KycForm = () => {
     setMasterType(event.target.value as string);
   };
 
+  const [selectedImage, setSelectedImage] = useState();
+
+  const imageChange = (e:any) => {
+    if (e.target.files && e.target.files.length > 0) {
+      console.log(e.target.files[0]);
+      setSelectedImage(e.target.files[0]);
+    }
+  };
+
+  const [selectedImageT, setSelectedImageT] = useState();
+
+  const imageChangeTwo = (e:any) => {
+    if (e.target.files && e.target.files.length > 0) {
+      console.log(e.target.files[0]);
+      setSelectedImageT(e.target.files[0]);
+    }
+  };
+
+
+  const [selectedImageTH, setSelectedImageTH] = useState();
+
+  const imageChangeTH = (e:any) => {
+    if (e.target.files && e.target.files.length > 0) {
+      console.log(e.target.files[0]);
+      setSelectedImageTH(e.target.files[0]);
+    }
+  };
+
+
+  const removeSelectedImage = (e:any) => {
+    // setSelectedImage();
+  };
+
+
   return (
     <div className={classes.root}>
       <div className="headContainer">
+     
         <Avatar  sx={{ width: 100,  height: 100, }} >
-          Logo
+        {selectedImage ===undefined ? 'logo' :selectedImage && (
+            <img src={URL.createObjectURL(selectedImage)}/>
+            ) } 
         </Avatar>
-        <div>
-          <ActionButton variant="default" title="Upload new picture" />
+         
+        <div className={"buttonKycForms"}>
+        <ActionButton variant="default" title="Upload new picture" />
+        <input accept="image/*" onChange={imageChange} className={"kycForms"} type="file"/>
         </div>
-        Remove picture
+       <span onClick={removeSelectedImage}>Remove picture</span>
       </div>
       <div className="field">
          <div className="flex items-center gap-8 mt-6">
@@ -102,7 +141,7 @@ const KycForm = () => {
       <div className="docContainer">
         <p>Documents</p>
         <div className="Attachment-file">
-          <div>
+          <div className={"buttonKycForms"}>
             Aadhaar Card
             <Avatar
               sx={{
@@ -111,17 +150,21 @@ const KycForm = () => {
               }}
               variant="square"
             >
-              Card
+               {selectedImageT ===undefined ? 'Card' :selectedImageT && (
+            <img src={URL.createObjectURL(selectedImageT)}/>
+            ) } 
             </Avatar>
+            <input accept="image/*"  onChange={imageChangeTwo}  className={"kycFormsTwo"} type="file"/>
             <div className="documentButton">
               <div className="ActionLogo">
                 <img src={LogoDelete} alt={"Logo"} />
+               
                 <div className="dividor"></div>
                 <img src={LogoEdit} alt={"Logo"} />
               </div>
             </div>
           </div>
-          <div>
+          <div className={"buttonKycForms"}>
             Pan Card
             <Avatar
               sx={{
@@ -130,8 +173,11 @@ const KycForm = () => {
               }}
               variant="square"
             >
-              Card
+              {selectedImageTH ===undefined ? 'Card' :selectedImageTH && (
+            <img src={URL.createObjectURL(selectedImageTH)}/>
+            ) } 
             </Avatar>
+            <input accept="image/*"  onChange={imageChangeTH}  className={"kycFormsTwo"} type="file"/>
           </div>
         </div>
       </div>
