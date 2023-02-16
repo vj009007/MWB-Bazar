@@ -13,6 +13,7 @@ export const routePaths = {
   createoffer: `/createoffer`,
   agents: `/agents`,
   addagent: `/addagent`,
+  agentkyc: `/agentkyc`,
   retailers: `/retailers`,
   addretailers: `/addretailers`,
   wholesellerlist: `/wholesellerlist`,

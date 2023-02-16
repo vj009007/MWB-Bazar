@@ -3,9 +3,31 @@ import { css } from "@emotion/css";
 export const useaddAgentStyle = () => {
   return {
     root: css`
-    width: 100%;
-      padding-top: 20px;
+      width: 100%;
+      /* padding-top: 20px; */
       padding-bottom: 20px;
+
+      .headContainer {
+        display: flex;
+        gap: 20px;
+        text-align: center;
+
+        .icon {
+          img {
+            width: 10px;
+            cursor: pointer;
+          }
+        }
+      }
+
+      .headTitle {
+        font-family: "Manrope", serif;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 20px;
+        color: #2e2c34;
+      }
 
       .textContainer {
         padding-top: 40px;
@@ -33,6 +55,7 @@ export const useaddAgentStyle = () => {
       }
 
       .formContainer {
+        width: 700px;
         padding-top: 20px;
         padding-bottom: 20px;
         display: flex;
@@ -125,8 +148,8 @@ export const useaddAgentStyle = () => {
         .radio-button {
           border: 2px solid #e6e9ed;
           padding: 10px;
-          width: 335px;
-          height: 60px;
+          width: 200px;
+          height: 70px;
           border-radius: 10px;
           background: #f9fafb;
         }

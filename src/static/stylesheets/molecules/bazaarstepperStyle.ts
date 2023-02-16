@@ -12,6 +12,7 @@ export const useBazaarStepperdStyles = () => {
       }
       .sucessMesage {
         display: flex;
+        display: flex;
         gap: 15px;
         padding-top: 90px;
         padding-bottom: 40px;

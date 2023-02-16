@@ -11,17 +11,6 @@ export const useKycFormStyles = () => {
         padding-top: 30px;
         padding-bottom: 20px;
         align-items: center;
-.buttonKycForms{
-  position:relative;
-}
-        .kycForms {position: absolute;
-    left: 0;
-    opacity: 0;
-    cursor: pointer;
-    width:170px;
-    z-index:2;
-        }
-       
       }
 
       .singleForm {
@@ -93,18 +82,6 @@ export const useKycFormStyles = () => {
           padding-top: 20px;
           padding-bottom: 20px;
         }
-        .buttonKycForms{
-          position:relative;
-        }
-        .kycFormsTwo {
-          position: absolute;
-          top: 20px;
-          opacity: 0;
-          width: 100px;
-          height: 100px;
-          cursor:pointer;
-                  }
-
       }
     `,
   };
