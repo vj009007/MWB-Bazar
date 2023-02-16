@@ -87,7 +87,6 @@ const Mwb = () => {
               onClick={() => navigate("/wholesellermart")}
             />
 
-
             <ActionButton
               title="Renew Plan"
               variant="primary"
@@ -122,6 +121,11 @@ const Mwb = () => {
               title="Agents"
               variant="primary"
               onClick={() => navigate("/agents")}
+            />
+            <ActionButton
+              title="Agents KYC"
+              variant="primary"
+              onClick={() => navigate("/agentkyc")}
             />
             <ActionButton
               title="Add Agents"
@@ -288,6 +292,11 @@ const Mwb = () => {
                   title="Add Agents"
                   variant="primary"
                   onClick={() => navigate("/addagent")}
+                />
+                <ActionButton
+                  title="Agents KYC"
+                  variant="primary"
+                  onClick={() => navigate("/agentkyc")}
                 />
               </div>
             </div>

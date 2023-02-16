@@ -11,8 +11,8 @@ import { DashboardLayout } from "@/components/layouts";
 import { SectionHeader } from "@/components/molecules/Bazaars";
 import PaymentDetails from "@/components/molecules/PaymentDetails/PaymentDetails";
 import PlanTab from "@/components/molecules/PlanTab/PlanTab";
-import { KycForm } from "@/components/molecules/KycForm";
 import CheckIcon from "@/static/icons/ic_check.png";
+import { WholsellerKycForm } from "@/components/molecules/WholsellerKycForm";
 
 const steps = ["Wholeseller Details", "Choose Plan", "Payment Details"];
 
@@ -39,15 +39,6 @@ export default function WholesellerKYC() {
   const handleBack = () => {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
   };
-
-  // const handleSkip = () => {
-  //   setActiveStep((prevActiveStep) => prevActiveStep + 1);
-  //   setSkipped((prevSkipped) => {
-  //     const newSkipped = new Set(prevSkipped.values());
-  //     newSkipped.add(activeStep);
-  //     return newSkipped;
-  //   });
-  // };
 
   const handleReset = () => {
     setActiveStep(0);
@@ -107,7 +98,7 @@ export default function WholesellerKYC() {
               </React.Fragment>
             ) : (
               <React.Fragment>
-                {activeStep === 0 && <KycForm />}
+                {activeStep === 0 && <WholsellerKycForm/>}
 
                 {activeStep === 1 && <PlanTab />}
 

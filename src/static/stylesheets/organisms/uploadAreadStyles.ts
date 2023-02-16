@@ -19,15 +19,6 @@ export const useUploadAreaStyles = () => ({
         img {
           width: 30.51px;
         }
-
-        .imageFils{
-          opacity: 0;
-          z-index: 9999;
-          width: 100%;
-          position: absolute;
-          cursor: pointer;
-          left:0;
-       }
       }
 
       .content {
@@ -52,7 +43,6 @@ export const useUploadAreaStyles = () => ({
           line-height: 14px;
           color: #84818a;
         }
-       
       }
     }
   `,

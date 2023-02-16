@@ -14,7 +14,6 @@ const UploadArea: React.FC<UploadAreaProps> = (props) => {
       <div className={"uploader"}>
         <div className={"icon"}>
           <img src={UploaderFrame} alt={"Uploader"} />
-          <input className={"imageFils"} type="file"/>
         </div>
         <div className={"content"}>
           <div className={"title"}>{props?.label}</div>
