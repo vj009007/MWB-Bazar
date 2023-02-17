@@ -35,6 +35,7 @@ import WholesellerDashboard from "@/screens/WholesellerDashboard";
 import WholesellerKYC from "@/screens/WholesellerKYC";
 import WholesellerLis from "@/screens/WholesellerList";
 import WholesellerMart from "@/screens/WholesellerMart";
+import RolePermission from "@/screens/RolePermission";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { routePaths } from "./routePaths";
 
@@ -104,6 +105,8 @@ const AppRoutes = () => {
           <Route path={routePaths.itemwiseplan} element={<ItemWisePlan />} />
           <Route path={routePaths.admin.bazaars} element={<Bazaars />} />
           <Route path={routePaths.admin.masterList} element={<MasterList />} />
+          <Route path={routePaths.rolesPermission} element={<RolePermission />} />
+          
         </Routes>
       </Router>
     </>

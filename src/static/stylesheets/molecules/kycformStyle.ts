@@ -81,9 +81,30 @@ export const useKycFormStyles = () => {
           padding-top: 20px;
           padding-bottom: 20px;
         }
+.buttonKycForms{
+  position:relative;
+}
+.kycFormsTwo{
+  position: absolute;
+  top: 22px;
+  width: 100px;
+  height: 100px;
+  opacity: 0;
+  cursor: pointer;
+}
+        
+      }
+      .buttonKycForms{
+        position:relative;
       }
       .kycForms{
-        display:none;
+        position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 160px;
+    height: 36px;
+    opacity: 0;
+    cursor: pointer;
       }
     `,
   };

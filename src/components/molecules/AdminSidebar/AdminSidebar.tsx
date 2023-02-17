@@ -37,7 +37,7 @@ const AdminSidebar = () => {
         <MenuItem href={"/advertisement"} icon={<ListIcon />} label={"Ads"} />
         <MenuItem href={"/mwb"} icon={<SettingsIcon />} label={"Routes"} />
         <MenuItem
-          href={"/"}
+          href={"/rolepermission"}
           icon={<SettingsIcon />}
           label={"Roles & Permissions"}
         />
