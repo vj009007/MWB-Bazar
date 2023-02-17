@@ -4,7 +4,6 @@ export const useKycFormStyles = () => {
   return {
     root: css`
       width: 600px;
-
       .headContainer {
         display: flex;
         gap: 24px;
@@ -36,7 +35,7 @@ export const useKycFormStyles = () => {
         .dividor {
           border-left: 2px solid #ebeaed;
         }
-
+        
         img {
           width: 20px;
           height: 20px;
@@ -82,6 +81,9 @@ export const useKycFormStyles = () => {
           padding-top: 20px;
           padding-bottom: 20px;
         }
+      }
+      .kycForms{
+        display:none;
       }
     `,
   };
