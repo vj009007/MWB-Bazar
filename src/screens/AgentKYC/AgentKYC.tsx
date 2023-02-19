@@ -19,7 +19,7 @@ import { SalesManKYCForm } from "@/components/molecules/AgentsKycForm/SalesManKY
 
 const AgentKYC = () => {
   const classes = useaddAgentStyle();
-  const [ChangeType, setChangeType] = React.useState("individual");
+  const [ChangeType, setChangeType] = React.useState("cash");
 
   return (
     <>
@@ -40,12 +40,12 @@ const AgentKYC = () => {
                     aria-labelledby="radio-buttons"
                     name="controlled-radio-buttons"
                     value={ChangeType}
-                    onChange={() => setChangeType("individual")}
+                    onChange={() => setChangeType("indivisual")}
                   >
                     <FormControlLabel
-                      value="individual "
+                      value="indivisual "
                       control={<Radio />}
-                      checked={ChangeType === "individual"}
+                      checked={ChangeType === "indivisual"}
                       label={
                         <div className="flex gap-4 items-center">
                           <img src={indivitualIcon} alt={"Logo"} />
@@ -69,9 +69,11 @@ const AgentKYC = () => {
                       value="agency"
                       control={<Radio />}
                       checked={ChangeType === "Agency"}
-                      label={<div className="flex gap-4 items-center">
-                        <img src={AgancyIcon} alt={"Logo"} /> Agency
-                      </div>}
+                      label={
+                        <div className="flex gap-4 items-center">
+                          <img src={AgancyIcon} alt={"Logo"} /> Agency
+                        </div>
+                      }
                     />
                   </RadioGroup>
                 </FormControl>
@@ -89,16 +91,18 @@ const AgentKYC = () => {
                       value="Sales"
                       control={<Radio />}
                       checked={ChangeType === "Sales"}
-                      label={<div className="flex gap-4 items-center">
-                        <img src={SalesManIcon} alt={"Logo"} /> Salesman
-                      </div>}
+                      label={
+                        <div className="flex gap-4 items-center">
+                          <img src={SalesManIcon} alt={"Logo"} /> Salesman
+                        </div>
+                      }
                     />
                   </RadioGroup>
                 </FormControl>
               </div>
             </div>
 
-            {ChangeType === "individual" && (
+            {ChangeType === "indivisual" && (
               <>
                 <div>
                   <IndivitualKYCForm />

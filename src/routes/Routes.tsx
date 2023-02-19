@@ -2,6 +2,7 @@ import AddAdvertisement from "@/screens/AddAdvertisement";
 import AddAgents from "@/screens/AddAgents";
 import AddBazaar from "@/screens/AddBazaar";
 import AddBranch from "@/screens/AddBranch";
+import AddNewPlan from "@/screens/AddNewPlan";
 import AddProduct from "@/screens/AddProduct";
 import AddRetailers from "@/screens/AddRetailers";
 import AddWholeseller from "@/screens/AddWholeseller";
@@ -25,9 +26,11 @@ import Mwb from "@/screens/Mwb/Mwb";
 import Offers from "@/screens/Offers";
 import Order from "@/screens/Order";
 import PhotoOrder from "@/screens/PhotoOrder";
+import Plans from "@/screens/Plans";
 import Products from "@/screens/Products";
 import Retailers from "@/screens/Retailers";
 import RevenewPlan from "@/screens/RevenewPlan";
+import ReviewPlan from "@/screens/ReviewPlan";
 import SubCategories from "@/screens/SubCategories";
 import TrackOrder from "@/screens/TrackOrder";
 import Wholeseller from "@/screens/Wholeseller";
@@ -66,6 +69,9 @@ const AppRoutes = () => {
           <Route path={routePaths.addagent} element={<AddAgents />} />
 
           <Route path={routePaths.agentkyc} element={<AgentKYC />} />
+          <Route path={routePaths.plans} element={<Plans  />} />
+          <Route path={routePaths.addnewplan} element={<AddNewPlan  />} />
+          <Route path={routePaths.reviewplan} element={<ReviewPlan  />} />
 
           <Route path={routePaths.retailers} element={<Retailers />} />
           <Route path={routePaths.addretailers} element={<AddRetailers />} />

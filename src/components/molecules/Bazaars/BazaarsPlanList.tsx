@@ -36,7 +36,6 @@ const BazaarsPlanList = () => {
             <td className="state">UP, Delhi</td>
             <td className="has-details">
               GB Nagar, Ghaziabad, + 1
-              <span className="details">more info here</span>
             </td>
             <td>Ghaziabad, Noida, Delhi</td>
             <td className="duration">7 days</td>
