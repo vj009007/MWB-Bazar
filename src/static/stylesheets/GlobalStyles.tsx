@@ -14,8 +14,8 @@ const styles = () => css`
     -moz-osx-font-smoothing: grayscale;
   }
 
-  code {
-    font-family: "Manrope", serif;
+  .manrope {
+    font-family: "Manrope", serif !important;
   }
 
   //Color CSS
@@ -120,6 +120,78 @@ const styles = () => css`
     line-height: 18px;
     color: #84818a;
   }
+  //Tabs CSS
+  .MuiTabs-indicator {
+    background: #5542f6 !important;
+  }
+  .rulesPage .tabs button..Mui-selected {
+    color: #2e2c34 !important;
+  }
+  .pdf-link {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.2px;
+    color: #cc4b4c;
+    border: 1px solid #e1e1e1;
+    border-radius: 4px;
+    display: flex;
+    gap: 12px;
+    padding: 9px 15px;
+    align-items: center;
+    height: 100%;
+  }
+  .excel-link {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.2px;
+    color: #2e7d32;
+    border: 1px solid #e1e1e1;
+    border-radius: 4px;
+    display: flex;
+    gap: 12px;
+    padding: 9px 15px;
+    align-items: center;
+    height: 100%;
+  }
+  .add-rules {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    color: #ffffff;
+    background: #ff6652;
+    border-radius: 4px;
+    display: flex;
+    gap: 12px;
+    padding: 12px 26px;
+    align-items: center;
+  }
+  div:has(.global-table) {
+    box-shadow: none !important;
+  }
+  .global-table thead th {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    color: #84818a;
+  }
+  .global-table td {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px !important;
+    line-height: 20px;
+    color: #2e2c34;
+  } 
 `;
 
 export const GlobalStyles = () => {
