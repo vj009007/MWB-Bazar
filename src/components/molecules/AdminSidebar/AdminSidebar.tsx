@@ -29,7 +29,7 @@ const AdminSidebar = () => {
           label={"Wholesellers"}
         />
         <MenuItem
-          href={"/renewplan"}
+          href={"/plans"}
           icon={<CardMembershipIcon />}
           label={"Plans"}
         />
