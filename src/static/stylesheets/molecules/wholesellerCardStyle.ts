@@ -5,9 +5,10 @@ export const useWholesellerCardStyle = () => {
         root: css`
             padding-top: 20px;
             padding-bottom: 20px;
+            width:100%;
 
             .cardContainer {
-                width: 300px;
+                max-width: 300px;
                 height: 120px;
                 padding: 30px;
                 border: 2px solid #ebeaed;

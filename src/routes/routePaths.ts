@@ -38,6 +38,7 @@ export const routePaths = {
   order: `/order`,
   photoorder: `/photoorder`,
   trackorder: `/trackorder`,
+  rolesPermission: `/rolepermission`,
 
   admin: {
     bazaars: `/bazaars`,

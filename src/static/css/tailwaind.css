@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.global-table .mail {
+  font-family: "Manrope", serif !important;
+  @apply text-[12px] leading-5 font-medium text-[#84818A] !important;
+}
+
+.global-table .name {
+  font-family: "Manrope", serif !important;
+  @apply text-sm leading-5 font-semibold text-[#2E2C34] !important;
+}
+.global-table .contact {
+  background: rgba(0, 165, 255, 0.1);
+  border-radius: 4px;
+  @apply text-[#00A5FF] text-[12px] font-semibold px-2 py-1 inline-block;
+}
