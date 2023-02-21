@@ -30,7 +30,7 @@ const Retailers = () => {
             </div>
           </div>
 
-          <div className="flex gap-5 py-6 justify-between items-center">
+          <div className="flex gap-5 pt-6 flex-col">
             <div className="flex gap-4">
               <TwMultiSelect />
               <TwMultiSelect />
@@ -39,47 +39,47 @@ const Retailers = () => {
               <TwMultiSelect />
               <TwMultiSelect />
             </div>
-            <div className="text-[#FF0000]">
+            <div className="text-[#FF0000] self-end font-semibold">
               Subscriber total, active, expired, deactivated
             </div>
           </div>
 
           <div>
-            <div className="overflow-x-auto relative pt-[40px] pb-[40px]">
+            <div className="overflow-x-auto relative pt-[20px] pb-[40px]">
               <table className="w-full text-sm text-left text-gray-500 ">
                 <thead className="text-[12px] text-[#2E2C34] bg-gray-50 font-[600]">
                   <tr className=" [#2E2C34]">
-                    <th scope="col" className="py-3 px-6">
+                    <th scope="col" className="py-3 px-4">
                       Plan Title
                     </th>
-                    <th scope="col" className="py-3 px-6">
+                    <th scope="col" className="py-3 px-4">
                       Start Time
                     </th>
-                    <th scope="col" className="py-3 px-6">
+                    <th scope="col" className="py-3 px-4">
                       End Time
                     </th>
-                    <th scope="col" className="py-3 px-6">
+                    <th scope="col" className="py-3 px-4">
                       Branches
                     </th>
-                    <th scope="col" className="py-3 px-6">
+                    <th scope="col" className="py-3 px-4">
                       Bazaar
                     </th>
-                    <th scope="col" className="py-3 px-6">
+                    <th scope="col" className="py-3 px-4">
                       State
                     </th>
-                    <th scope="col" className="py-3 px-6">
+                    <th scope="col" className="py-3 px-4">
                       District
                     </th>
-                    <th scope="col" className="py-3 px-6">
+                    <th scope="col" className="py-3 px-4">
                       City
                     </th>
-                    <th scope="col" className="py-3 px-6">
+                    <th scope="col" className="py-3 px-4">
                       Price
                     </th>
-                    <th scope="col" className="py-3 px-6">
+                    <th scope="col" className="py-3 px-4">
                       Enable/Disable
                     </th>
-                    <th scope="col" className="py-3 px-6"></th>
+                    <th scope="col" className="py-3 px-4"></th>
                   </tr>
                 </thead>
                 <tbody>

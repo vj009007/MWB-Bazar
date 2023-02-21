@@ -34,7 +34,7 @@ const HeaderSection = () => {
    <Box className="flex items-center justify-between">
         <Box className="flex items-center gap-6">
             <a className="text-sm font-semibold text-[#2E2C34] pb-3 px-3 border-b-[2px] border-[#5542F6] inline-block" onClick={() => navigate("/rolepermission")}>Users</a>
-            <a className="text-sm font-normal text-[#84818A] pb-3 px-3 inline-block" onClick={() => navigate("/rolespermissions")}>Roles and Permissions</a>
+            <a className="text-sm font-normal text-[#84818A] pb-3 px-3 inline-block border-b-[2px] border-transparent" onClick={() => navigate("/rolespermissions")}>Roles and Permissions</a>
         </Box>
         <Box className="flex items-center gap-[10px]">
             <a className="pdf-link"> <img src={pdf} alt="PDF" /> Export to PDF</a>
@@ -75,7 +75,7 @@ const HeaderSection = () => {
                   </Box>
                   <Box className="flex justify-between items-center mt-10">
                     <Typography className="text-[#4E2FA9] text-base font-semibold">Role and Regions</Typography>
-                    <Typography className="text-[#FF6652] text-base font-semibold" onClick={() => navigate("/addroles")}>Add New Role</Typography>
+                    <Typography className="text-[#FF6652] text-base font-semibold">Add New Role</Typography>
                   </Box>
                   <Box className="flex items-end gap-4 mt-6 w-full">
                     <TextField className="w-full max-w-[207px]" id="standard-select-currency"  select label="Role" defaultValue="Area Sales Manager"  variant="standard" >

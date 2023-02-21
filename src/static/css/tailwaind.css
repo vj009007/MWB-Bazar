@@ -21,9 +21,35 @@
   box-shadow: 0px -1px 10px rgb(0 0 0 / 10%);
   @apply p-2 bg-white flex items-end mt-5;
 }
-.form-name{
+.form-name {
   @apply text-[#4E2FA9] text-base font-semibold;
 }
 .rolePOPUP .MuiDialog-paper {
-@apply w-[720px] p-4 rounded-xl;
+  @apply w-[720px] p-4 rounded-xl;
+}
+.addRole .title {
+  @apply text-[#2E2C34] font-semibold text-base;
+}
+.addRole .para {
+  @apply text-[#84818A] text-sm font-medium;
+}
+.addRole .pera-text {
+  @apply text-[#84818A] text-sm font-medium pl-8;
+}
+.addRole .checkbox-addrole {
+  @apply pt-6;
+}
+.addRole .checkbox-addrole span {
+  @apply pt-0 pb-0;
+}
+.addRole .divider {
+  background: #ebeaed;
+  transform: matrix(1, 0, 0, -1, 0, 0);
+  @apply h-[1px] w-full my-4;
+}
+.breadCrumb{
+  @apply flex items-center gap-6 py-10;
+}
+.breadCrumb span{
+  @apply text-2xl leading-5 text-[#2E2C34] font-semibold;
 }
