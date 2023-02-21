@@ -12,7 +12,7 @@ const RoleSection = () => {
    <Box className="flex items-center justify-between">
         <Box className="flex items-center gap-6">
             <a className="text-sm font-semibold text-[#2E2C34] pb-3 px-3  inline-block" onClick={() => navigate("/rolepermission")}>Users</a>
-            <a className="text-sm font-normal text-[#84818A] pb-3 px-3 border-b-[2px] border-[#5542F6] inline-block" onClick={() => navigate("/rolespermissions")}>Add New Role</a>
+            <a className="text-sm font-normal text-[#84818A] pb-3 px-3 border-b-[2px] border-[#5542F6] inline-block" onClick={() => navigate("/addroles")}>Add New Role</a>
         </Box>
         <Box className="flex items-center gap-[10px]">
             <a className="pdf-link"> <img src={pdf} alt="PDF" /> Export to PDF</a>

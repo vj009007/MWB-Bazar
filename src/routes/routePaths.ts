@@ -40,6 +40,7 @@ export const routePaths = {
   trackorder: `/trackorder`,
   rolesPermission: `/rolepermission`,
   rolePermissions: `/rolespermissions`,
+  AddRols: `/addroles`,
 
   admin: {
     bazaars: `/bazaars`,

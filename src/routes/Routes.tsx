@@ -40,6 +40,7 @@ import WholesellerLis from "@/screens/WholesellerList";
 import WholesellerMart from "@/screens/WholesellerMart";
 import RolePermission from "@/screens/RolePermission";
 import RolesPermission from "@/screens/RolePermission";
+import AddRols from "@/screens/RolePermission/addRols"; 
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { routePaths } from "./routePaths";
 
@@ -114,6 +115,8 @@ const AppRoutes = () => {
           <Route path={routePaths.admin.masterList} element={<MasterList />} />
           <Route path={routePaths.rolesPermission} element={<RolePermission />} />
           <Route path={routePaths.rolePermissions} element={<RolesPermission />} />
+          <Route path={routePaths.AddRols} element={<AddRols />} />
+          
           
         </Routes>
       </Router>
