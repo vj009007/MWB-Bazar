@@ -63,6 +63,9 @@ static getAllwholesellerList() {
 	return http.get("wholeseller/", { headers: AppService.authHeader() });
 };
 
+static getAllSummerys(){
+	return http.get("dashboard/summary/", { headers: AppService.authHeader() });
+}
 
 
 }
