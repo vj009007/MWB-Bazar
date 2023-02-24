@@ -1,20 +1,25 @@
 import React from "react";
-import { Grid } from "@mui/material";
+import { Dialog, Grid, Pagination } from "@mui/material";
 import { DashboardLayout } from "@/components/layouts";
 import { SummaryCard } from "@/components/molecules/Dashboard/SummaryCard";
 import { useDashboardStyles } from "@/static/stylesheets/screens";
 import { BazaarReportCard } from "@/components/molecules/Bazaars/BazaarReportCard";
-import {
-  BazaarCard,
-  BazaarCounter,
-  BazaarsPlanList,
-} from "@/components/molecules/Bazaars";
+import { BazaarCard,BazaarCounter,BazaarsPlanList,} from "@/components/molecules/Bazaars";
 import { ActionButton } from "@/components/atoms/Button/ActionButton";
 import TwMultiSelect from "@/components/atoms/TwMultiSelect/TwMultiSelect";
 
 const Dashboard = () => {
   const classes = useDashboardStyles();
   const data = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+
+  const [open, setOpen] = React.useState(false);
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   return (
     <>
@@ -69,7 +74,7 @@ const Dashboard = () => {
 
           <div className={classes.commonTitle}>
             <p>Plan Sold</p>
-            <p className="moreButton">See all</p>
+            <p className="moreButton" onClick={handleClickOpen}>See all</p>
           </div>
 
           <div className="bazaarButtons">
@@ -111,6 +116,42 @@ const Dashboard = () => {
             </Grid>
           </div>
         </div>
+          {/* All Plans Details */}
+          <Dialog open={open} className="planPopUP" onClose={handleClose} aria-labelledby="alert-dialog-title" aria-describedby="alert-dialog-description">
+          <div className="flex items-center justify-between">
+            <p className="text-[ #2E2C34] text-[18px] font-semibold pb-3">All Plans Sold</p>
+            <p className="closeBtn" onClick={handleClose}> </p>
+          </div>
+          <div className="bazaarButtons">
+            <ActionButton variant={"primary"} title={"Today"} />
+            <ActionButton variant={"default"} title={"This Week"} />
+            <ActionButton variant={"default"} title={"Last Week"} />
+            <ActionButton variant={"default"} title={"This Month"} />
+            <ActionButton variant={"default"} title={"Last Month"} />
+            <ActionButton variant={"default"} title={"Add"} />
+          </div>
+
+          <div className="bazaarFilters pt-[20px]">
+            <TwMultiSelect />
+            <TwMultiSelect />
+            <TwMultiSelect />
+            <TwMultiSelect />
+          </div>
+
+          <div className="counterCard pt-5">
+            <BazaarCounter />
+          </div>
+
+          <div className="planList">
+            <BazaarsPlanList />
+          </div>
+          <div className="flex items-center justify-between pagination">
+            <div className="text-[#84818A] text-sm font-medium">Show 8 from 120 products</div>
+           <Pagination count={10} variant="outlined" shape="rounded" />
+          </div>
+          </Dialog>
+          {/* All Plans Details */}
+
       </DashboardLayout>
     </>
   );

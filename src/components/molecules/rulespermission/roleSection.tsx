@@ -7,17 +7,17 @@ import plus from '@/static/icons/plus.svg';
 
 const RoleSection = () => {
   const navigate = useNavigate();
-
+ 
   return (
    <Box className="flex items-center justify-between">
         <Box className="flex items-center gap-6">
-            <a className="text-sm font-semibold text-[#2E2C34] pb-3 px-3  inline-block" onClick={() => navigate("/rolepermission")}>Users</a>
-            <a className="text-sm font-normal text-[#84818A] pb-3 px-3 border-b-[2px] border-[#5542F6] inline-block" onClick={() => navigate("/addroles")}>Add New Role</a>
+            <a className="text-sm font-normal text-[#84818A] pb-3 px-3 border-b-[2px] border-transparent inline-block" onClick={() => navigate("/rolepermission")}>Users</a>
+            <a className="text-sm font-semibold text-[#2E2C34] pb-3 px-3 border-b-[2px] border-[#5542F6] inline-block" onClick={() => navigate("/addroles")}>Roles and Permissions</a>
         </Box>
         <Box className="flex items-center gap-[10px]">
-            <a className="pdf-link"> <img src={pdf} alt="PDF" /> Export to PDF</a>
-            <a className="excel-link"> <img src={excel} alt="pdf" /> Export to Excel</a>
-            <a className="add-rules"><img src={plus} alt="Plus" /> Add New User</a>
+            <a className="pdf-link cursor-pointer"> <img src={pdf} alt="PDF" /> Export to PDF</a>
+            <a className="excel-link cursor-pointer"> <img src={excel} alt="pdf" /> Export to Excel</a>
+            <a className="add-rules cursor-pointer" onClick={() => navigate("/addroles")}><img src={plus} alt="Plus" /> Add New Role</a>
         </Box>
    </Box>
   );

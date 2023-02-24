@@ -71,7 +71,7 @@ const WholesellerList: React.FC<WholesellerProps> = (props) => {
             </td>
             <td>{item.wholeseller_city}</td>
             <td className="overlap">{item.wholeseller_type}</td>
-            <td>{item.wholeseller_agent}</td>
+            <td className="person-type">{item.wholeseller_agent}</td>
             <td className="person-details">
               <div className="flex items-center gap-2 text-[#4E2FA9]">
                 <img className="brandLogo" src={contact} alt={"Logo"} />
