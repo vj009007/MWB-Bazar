@@ -1,6 +1,6 @@
 
 import React, { useEffect, useState } from "react";
-import {  Dialog, Grid, Pagination, TextField, TextFieldProps } from "@mui/material";
+import {  Dialog, Grid, TextField, TextFieldProps } from "@mui/material";
 import { DashboardLayout } from "@/components/layouts";
 import Box from '@mui/material/Box';
 import { SummaryCard } from "@/components/molecules/Dashboard/SummaryCard";
@@ -22,6 +22,7 @@ import { DateRangePicker, DesktopDateRangePicker, MobileDateRangePicker } from "
 import { Navigate, useNavigate } from "react-router-dom";
 
 const Dashboard = () => {
+  const [getAllBazar, setGetAllBazar] = useState([]);
   const [getTotalBazaar, setTotalBazaar] = useState("");
   const [getWholesellers, setWholesellers] = useState("");
   const [getRevenue, setRevenue] = useState("");
@@ -68,9 +69,15 @@ const Dashboard = () => {
   const handleChange = (newValue: Dayjs | null) => {
     setValue(newValue);
   };
+  const getAllListsMain = async () => {
+    const responseJson = await AppService.getAllBazarList();
+    setGetAllBazar(responseJson.data.results.slice(0, 4));
+    // console.log("ecomprd", responseJson.data.results);
+  };
 
   useEffect(() => {
     getAllLists();
+    getAllListsMain();
   }, []);
 
   const classes = useDashboardStyles();
@@ -207,17 +214,13 @@ const Dashboard = () => {
 
           <div className={classes.commonTitle}>
             <p>All Bazars</p>
-            <p className="moreButton" onClick={()=>{handleClick}}>See all</p>
+            <p className="moreButton" onClick={handleClick}>See all</p>
           </div>
 
           <div className="bazaarCard">
             <Grid container spacing={2}>
-              {data.map((item: any) => (
-                <Grid item xs={4}>
-                  <BazaarCard />
+                  <BazaarCard getAllBazars={getAllBazar}/>
                 </Grid>
-              ))}
-            </Grid>
           </div>
         </div>
           {/* All Plans Details */}
@@ -249,10 +252,7 @@ const Dashboard = () => {
           <div className="planList">
             <BazaarsPlanList />
           </div>
-          <div className="flex items-center justify-between pagination">
-            <div className="text-[#84818A] text-sm font-medium">Show 8 from 120 products</div>
-           <Pagination count={10} variant="outlined" shape="rounded" />
-          </div>
+         
           </Dialog>
           {/* All Plans Details */}
 

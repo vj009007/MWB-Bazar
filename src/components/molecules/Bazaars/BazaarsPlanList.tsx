@@ -1,24 +1,21 @@
 import React, { useEffect, useState } from "react";
 import { useBazaarplanListStyles } from "@/static/stylesheets/molecules";
 import { AppService } from "@/service/AllApiData.service";
+import { Pagination } from "@mui/lab";
 
-const BazaarsPlanList = () => {
+const BazaarsPlanList = (props:any) => {
   const classes = useBazaarplanListStyles();
   const data = [1, 2, 3, 4, 5, 6, 7];
   const [getPlans, setTotalPlans] = useState([]);
-  const [page, setPage] = useState(1);
-  const itemsPerPage = 5;
-    const handlePrevClick = () => {
-     setPage(page - 1);
-     
-   }
- 
-   const handleNextClick = async () => {
-     setPage(page + 1);
-   }
+  const [currentPage, setCurrentPage] = useState(1);
+  const ITEMS_PER_PAGE = 3;
+  const handlePageChange = (event:any, value:any) => {
+    setCurrentPage(value);
+  };
 
-   const startIndex = (page - 1) * itemsPerPage;
-   const displayedItems = getPlans.slice(startIndex, startIndex + itemsPerPage);
+  const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+  const endIndex = startIndex + ITEMS_PER_PAGE;
+  const currentItems = getPlans.slice(startIndex, endIndex);
 
 
   const getAllLists = async () => {
@@ -74,7 +71,7 @@ const BazaarsPlanList = () => {
           <th>Revenue Generated</th>
         </tr>
 
-        {getPlans.map((item: any) => (
+        {currentItems.map((item: any) => (
           <tr>
             <td className="plan-name">{item.plan_name}</td>
             <td>{item.bazaar}</td>
@@ -111,7 +108,13 @@ const BazaarsPlanList = () => {
           </tr>
         ))}
       </table>
+      <div className="flex items-center justify-between pagination">
+            <div className="text-[#84818A] text-sm font-medium">Show 8 from 120 products</div>
+        
+           <Pagination count={Math.ceil(getPlans.length / ITEMS_PER_PAGE)} page={currentPage} onChange={handlePageChange} />
+          </div>
     </div>
+    
   );
 };
 

@@ -64,3 +64,10 @@
   height: 20px;
   background: url(../icons/close-icon.svg) no-repeat center center;
 }
+
+.pagination{
+display: none;
+}
+.planPopUP .css-1t1j96h-MuiPaper-root-MuiDialog-paper .pagination{
+  display: flex;
+}
