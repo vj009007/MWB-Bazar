@@ -50,13 +50,13 @@ const SummaryCard = () => {
     <div className={classes.root}>
       <div className={classes.bazaarCard}>
         <p className="headTitle">Total Bazar</p>
-        <p className="headSubtitle">Rs. {getTotalBazaar}</p>
+        <p className="headSubtitle">{getTotalBazaar}</p>
       </div>
 
       <div className={classes.wholesellerCard}>
         <div className="wholesellerItem">
           <p className="headTitle">Total Wholesellers</p>
-          <p className="headSubtitle">Rs. {getWholesellers}</p>
+          <p className="headSubtitle">{getWholesellers}</p>
         </div>
         <div>
           <p className="headTitle2">Total Revenue Earned</p>

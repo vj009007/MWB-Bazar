@@ -67,5 +67,16 @@ static getAllSummerys(){
 	return http.get("dashboard/summary/", { headers: AppService.authHeader() });
 }
 
+static getAllDashBazaarLists(){
+	return http.get("dashboard/report/", { headers: AppService.authHeader() });
+}
+static getAllPlans(){
+	return http.get("dashboard/plan/", { headers: AppService.authHeader() });
+	
+}
+static getAllPlansData(){
+	return http.get("dashboard/plan-list/", { headers: AppService.authHeader() });
+	
+}
 
 }
