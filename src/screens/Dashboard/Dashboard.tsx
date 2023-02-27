@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from "react";
 import {  Dialog, Grid, Pagination, TextField, TextFieldProps } from "@mui/material";
 import { DashboardLayout } from "@/components/layouts";
@@ -18,6 +19,7 @@ import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
 import { YearPicker } from '@mui/x-date-pickers';
 import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
 import { DateRangePicker, DesktopDateRangePicker, MobileDateRangePicker } from "@mui/lab";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const Dashboard = () => {
   const [getTotalBazaar, setTotalBazaar] = useState("");
@@ -71,7 +73,6 @@ const Dashboard = () => {
     getAllLists();
   }, []);
 
-
   const classes = useDashboardStyles();
   const data = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
@@ -83,6 +84,9 @@ const Dashboard = () => {
   const handleClose = () => {
     setOpen(false);
   };
+
+  const navigate = useNavigate();
+  const handleClick = () => navigate('/bazaars');
 
   return (
     <>
@@ -203,7 +207,7 @@ const Dashboard = () => {
 
           <div className={classes.commonTitle}>
             <p>All Bazars</p>
-            <p className="moreButton">See all</p>
+            <p className="moreButton" onClick={()=>{handleClick}}>See all</p>
           </div>
 
           <div className="bazaarCard">
@@ -219,7 +223,7 @@ const Dashboard = () => {
           {/* All Plans Details */}
           <Dialog open={open} className="planPopUP" onClose={handleClose} aria-labelledby="alert-dialog-title" aria-describedby="alert-dialog-description">
           <div className="flex items-center justify-between">
-            <p className="text-[ #2E2C34] text-[18px] font-semibold pb-3">All Plans Sold</p>
+            <p className="text-[ #2E2C34] text-[18px] font-semibold pb-3">All Plan3 Sold</p>
             <p className="closeBtn" onClick={handleClose}> </p>
           </div>
           <div className="bazaarButtons">
