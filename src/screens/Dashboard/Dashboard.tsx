@@ -63,7 +63,7 @@ const Dashboard = () => {
   // }
 
   const [value, setValue] = React.useState<Dayjs | null>(
-    dayjs('2014-08-18T21:11:54'),
+    dayjs('2021-08-18T21:11:54'),
   );
 
   const handleChange = (newValue: Dayjs | null) => {
@@ -71,7 +71,7 @@ const Dashboard = () => {
   };
   const getAllListsMain = async () => {
     const responseJson = await AppService.getAllBazarList();
-    setGetAllBazar(responseJson.data.results.slice(0, 4));
+    setGetAllBazar(responseJson.data.results.slice(0, 9));
     // console.log("ecomprd", responseJson.data.results);
   };
 
@@ -81,7 +81,6 @@ const Dashboard = () => {
   }, []);
 
   const classes = useDashboardStyles();
-  const data = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 
   const [open, setOpen] = React.useState(false);
@@ -106,7 +105,7 @@ const Dashboard = () => {
         <DesktopDatePicker
         views={["year"]}
           label="Year"
-          inputFormat="1800"
+          inputFormat="2021"
           value={value}
           onChange={handleChange}
           renderInput={(params) => <TextField {...params} />}
@@ -219,8 +218,8 @@ const Dashboard = () => {
 
           <div className="bazaarCard">
             <Grid container spacing={2}>
-                  <BazaarCard getAllBazars={getAllBazar}/>
-                </Grid>
+              <BazaarCard getAllBazars={getAllBazar}/>
+            </Grid>
           </div>
         </div>
           {/* All Plans Details */}

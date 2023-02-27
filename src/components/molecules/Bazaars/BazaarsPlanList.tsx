@@ -8,7 +8,7 @@ const BazaarsPlanList = (props:any) => {
   const data = [1, 2, 3, 4, 5, 6, 7];
   const [getPlans, setTotalPlans] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const ITEMS_PER_PAGE = 3;
+  const ITEMS_PER_PAGE = 4;
   const handlePageChange = (event:any, value:any) => {
     setCurrentPage(value);
   };
@@ -104,12 +104,12 @@ const BazaarsPlanList = (props:any) => {
                 </div>
                 <div>16.30%</div>
               </div>
-            </td>
+            </td> 
           </tr>
         ))}
       </table>
       <div className="flex items-center justify-between pagination">
-            <div className="text-[#84818A] text-sm font-medium">Show 8 from 120 products</div>
+            <div className="text-[#84818A] text-sm font-medium">Show <span>{ITEMS_PER_PAGE}</span> from {getPlans.length} products</div>
         
            <Pagination count={Math.ceil(getPlans.length / ITEMS_PER_PAGE)} page={currentPage} onChange={handlePageChange} />
           </div>
