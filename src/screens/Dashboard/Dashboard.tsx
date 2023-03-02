@@ -20,6 +20,7 @@ import { YearPicker } from '@mui/x-date-pickers';
 import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
 import { DateRangePicker, DesktopDateRangePicker, MobileDateRangePicker } from "@mui/lab";
 import { Navigate, useNavigate } from "react-router-dom";
+import { number } from "prop-types";
 
 const Dashboard = () => {
   const [getAllBazar, setGetAllBazar] = useState([]);
@@ -30,6 +31,7 @@ const Dashboard = () => {
   const [getAgent, setAgent] = useState("");
   const [getCommission, setCommission] = useState("");
    const [getCustomer, setCustomer] = useState("");
+   const [activeTab, setActiveTab] = useState("")
    const [active, setActive] = useState(null)
   const getAllLists = async () => {
     const responseJson = await AppService.getAllDashBazaarLists();
@@ -94,6 +96,11 @@ const Dashboard = () => {
   const navigate = useNavigate();
   const handleClick = () => navigate('/bazaars');
 
+
+    const handleToggle = (e:any) => {
+      setActiveTab(e)
+    };
+
   return (
     <>
       <DashboardLayout>
@@ -126,12 +133,24 @@ const Dashboard = () => {
           </div>
 
           <div className="bazaarButtons">
-            <div><ActionButton  variant={"primary"} title={"Today"} /> </div>
-            <div><ActionButton   variant={"default"} title={"This Week"} /></div>
-            <div><ActionButton variant={"default"} title={"Last Week"} /></div>
-            <ActionButton variant={"default"} title={"This Month"} />
-            <ActionButton variant={"default"} title={"Last Month"} />
-            <ActionButton variant={"default"} title={"Add"} />
+            <div onClick={() => {
+          handleToggle('one');
+        }} ><ActionButton variant={activeTab === 'one' ? "primary" : "default"}   title={"Today"} /> </div>
+            <div  onClick={() => {
+          handleToggle('two');
+        }} ><ActionButton variant={activeTab === 'two' ? "primary" : "default"}    title={"This Week"} /></div>
+            <div onClick={() => {
+          handleToggle('three');
+        }}><ActionButton variant={activeTab === 'three' ? "primary" : "default"} title={"Last Week"} /></div>
+            <div onClick={() => {
+          handleToggle('four');
+        }}><ActionButton variant={activeTab === 'four' ? "primary" : "default"} title={"This Month"} /></div>
+            <div onClick={() => {
+          handleToggle('five');
+        }}><ActionButton variant={activeTab === 'five' ? "primary" : "default"} title={"Last Month"} /></div>
+            <div onClick={() => {
+          handleToggle('six');
+        }}><ActionButton variant={activeTab === 'six' ? "primary" : "default"} title={"Add"} /></div>
 
             <LocalizationProvider dateAdapter={AdapterDayjs}>
       <Stack spacing={3}>
@@ -188,12 +207,44 @@ const Dashboard = () => {
           </div>
 
           <div className="bazaarButtons">
-            <ActionButton variant={"primary"} title={"Today"} />
-            <ActionButton variant={"default"} title={"This Week"} />
-            <ActionButton variant={"default"} title={"Last Week"} />
-            <ActionButton variant={"default"} title={"This Month"} />
-            <ActionButton variant={"default"} title={"Last Month"} />
-            <ActionButton variant={"default"} title={"Add"} />
+            <div onClick={() => {
+          handleToggle('seven');
+        }} ><ActionButton variant={activeTab === 'seven' ? "primary" : "default"}   title={"Today"} /> </div>
+            <div  onClick={() => {
+          handleToggle('eight');
+        }} ><ActionButton variant={activeTab === 'eight' ? "primary" : "default"}    title={"This Week"} /></div>
+            <div onClick={() => {
+          handleToggle('nine');
+        }}><ActionButton variant={activeTab === 'nine' ? "primary" : "default"} title={"Last Week"} /></div>
+            <div onClick={() => {
+          handleToggle('ten');
+        }}><ActionButton variant={activeTab === 'ten' ? "primary" : "default"} title={"This Month"} /></div>
+            <div onClick={() => {
+          handleToggle('five');
+        }}><ActionButton variant={activeTab === 'five' ? "primary" : "default"} title={"Last Month"} /></div>
+            <div onClick={() => {
+          handleToggle('eleven');
+        }}><ActionButton variant={activeTab === 'eleven' ? "primary" : "default"} title={"Add"} /></div>
+
+            <LocalizationProvider dateAdapter={AdapterDayjs}>
+      <Stack spacing={3}>
+        <DateRangePicker
+          label="Year"
+          value={value}
+          onChange={handleChange}
+          renderInput={(startProps:any, endProps:any) => (
+            <React.Fragment>
+              <TextField {...startProps} />
+              <Box sx={{ mx: 2 }}> to </Box>
+              <TextField {...endProps} />
+            </React.Fragment>
+          )}
+        />
+       
+       
+        
+      </Stack>
+    </LocalizationProvider>
           </div>
 
           <div className="bazaarFilters pt-[20px]">
