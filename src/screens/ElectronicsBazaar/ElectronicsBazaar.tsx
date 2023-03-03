@@ -21,13 +21,41 @@ const ElectronicsBazaar = (props:any) => {
   const classes = useElectronicsBazaarStyles();
   const navigate = useNavigate();
   const [getAllBazarWholes, setGetAllBazarWholes] = useState([]);
+  const [iDS, setIDS] = useState(localStorage.getItem("IDS"));
+  const [getAllWholesellers, setGetAllWholesellers] = useState([]);
+  const [getAllAgentList, setGetAllAgentList] = useState([]);
+  const [getAllPrdList, setGetAllPrdList] = useState([]);
+  const [count1, setCount1] = useState("");
+  const [count2, setCount2] = useState("");
+  const [count3, setCount3] = useState("");
   // const data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
+  const getAllListss = async (iDS:any) => {
+    const responseJson = await AppService.getAllBazarListwholeseller(iDS);
+    setGetAllWholesellers(responseJson.data.results);
+    // console.log("ecomprd", responseJson.data.results.length);
+    setCount1(responseJson.data.results.length);
+  };
+  const getAllListss2 = async (iDS:any) => {
+    const responseJson = await AppService.getAllBazarListwholeseller(iDS);
+    setGetAllAgentList(responseJson.data.results);
+    setCount2(responseJson.data.results.length);
+    // console.log("ecomprd", responseJson.data.results);
+  };
+  const getAllListss3 = async (iDS:any) => {
+    const responseJson = await AppService.getAllBazarProductList(iDS);
+    setGetAllPrdList(responseJson.data.results);
+    setCount3(responseJson.data.results.length);
+    // console.log("ecomprd", responseJson.data.results);
+  };
 
 
  
   useEffect(() => {
-
-
+    getAllListss(iDS);
+    getAllListss2(iDS);
+    getAllListss3(iDS);
+    
+    // console.log(count);
   }, []);
   return (
     <>
@@ -103,15 +131,15 @@ const ElectronicsBazaar = (props:any) => {
               <FeaturesTab
                 items={[
                   {
-                    label: "Wholeseller (11)",
+                    label: "Wholeseller ("+count1+")",
                     content: <WholesellerList  />,
                   },
                   {
-                    label: "Agents (13)",
+                    label: "Agents ("+count2+")",
                     content: <AgentList />,
                   },
                   {
-                    label: "Products (230)",
+                    label: "Products ("+count3+")",
                     content: <ProductsList />,
                   },
                 ]}
