@@ -44,15 +44,34 @@ const WholesellerList = (props:any) => {
     setGetAllWholesellers(responseJson.data.results);
     // console.log("ecomprd", responseJson.data.results);
   };
+  const getAllListssSearch = async () => {
+    if(props.keys === ""){
+    
+    }else{
+      const responseJson = await AppService.getAllBazarListwholesellerSearch(iDS, props.keys);
+    // setGetAllWholesellers(responseJson.data.results);
+    console.log("ecomprdserd", responseJson.data);
+    if(location.pathname==='/wholesellerlist'){
+      setGetAllWholeseller(responseJson.data.results);
+    }else{
+      setGetAllWholesellers(responseJson.data.results);
+    }
+    }
+  };
+
+
+
+  
 
  
  
   
   useEffect(() => {
-  //  console.log(props);
+   console.log("ddd", props.keys);
+   getAllListssSearch();
     getAllLists();
     getAllListss(iDS);
-  }, []);
+  }, [props.keys]);
 
   if(location.pathname==='/wholesellerlist'){
   return (

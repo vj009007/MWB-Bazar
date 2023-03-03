@@ -24,10 +24,23 @@ const ProductsList = (props:any) => {
   };
 
 
+  const getAllListssSearch = async () => {
+    if(props.keys === ""){
+    
+    }else{
+      const responseJson = await AppService.getAllBazarProductListSearch(iDS, props.keys);
+    // setGetAllWholesellers(responseJson.data.results);
+    console.log("ecomprdserd", responseJson.data);
+    setGetAllPrdList(responseJson.data.results);
+    
+    }
+  };
+
   useEffect(() => {
-    //  console.log(props);
+    console.log("ddd", props.keys);
       getAllListss(iDS);
-    }, []);
+      getAllListssSearch();
+    }, [props.keys]);
   // const { type } = props;
 
   return (

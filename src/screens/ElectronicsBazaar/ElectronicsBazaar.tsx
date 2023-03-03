@@ -28,6 +28,7 @@ const ElectronicsBazaar = (props:any) => {
   const [count1, setCount1] = useState("");
   const [count2, setCount2] = useState("");
   const [count3, setCount3] = useState("");
+  const [searchK, setSearchK] = useState("");
   // const data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
   const getAllListss = async (iDS:any) => {
     const responseJson = await AppService.getAllBazarListwholeseller(iDS);
@@ -48,7 +49,10 @@ const ElectronicsBazaar = (props:any) => {
     // console.log("ecomprd", responseJson.data.results);
   };
 
-
+  const handleCallback = (e:any) =>{
+    console.log(e);
+    setSearchK(e);
+}
  
   useEffect(() => {
     getAllListss(iDS);
@@ -117,7 +121,7 @@ const ElectronicsBazaar = (props:any) => {
               <div className="leftContent">
                 <form className="max-w-sm px-4">
                   <div className="relative">
-                    <SearchField/>
+                    <SearchField parentCallback = {handleCallback}/>
                   </div>
                 </form>
 
@@ -132,15 +136,15 @@ const ElectronicsBazaar = (props:any) => {
                 items={[
                   {
                     label: "Wholeseller ("+count1+")",
-                    content: <WholesellerList  />,
+                    content: <WholesellerList keys={searchK}  />,
                   },
                   {
                     label: "Agents ("+count2+")",
-                    content: <AgentList />,
+                    content: <AgentList keys={searchK}/>,
                   },
                   {
                     label: "Products ("+count3+")",
-                    content: <ProductsList />,
+                    content: <ProductsList keys={searchK}/>,
                   },
                 ]}
               />

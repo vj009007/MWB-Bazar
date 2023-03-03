@@ -61,8 +61,20 @@ static getAllBazarListSearch(datas:any) {
 static getAllBazarListwholeseller(ID:any) {
 	return http.get("bazaar/data/"+`${ID}`+"/wholesellers-list/", { headers: AppService.authHeader() });
 };
+
+static getAllBazarListwholesellerSearch(ID:any,items:any) {
+	return http.get("bazaar/data/"+`${ID}`+"/wholesellers-list/?search="+`${items}`+"", { headers: AppService.authHeader() });
+};
 static getAllBazarAgentList(ID:any) {
 	return http.get("bazaar/data/"+`${ID}`+"/agents-list/", { headers: AppService.authHeader() });
+};
+
+static getAllBazarAgentListSearch(ID:any,items:any) {
+	return http.get("bazaar/data/"+`${ID}`+"/agents-list/?search="+`${items}`+"", { headers: AppService.authHeader() });
+};
+
+static getAllBazarProductListSearch(ID:any,items:any) {
+	return http.get("bazaar/data/"+`${ID}`+"/products-list/?search="+`${items}`+"", { headers: AppService.authHeader() });
 };
 static getAllBazarProductList(ID:any) {
 	return http.get("bazaar/data/"+`${ID}`+"/products-list/", { headers: AppService.authHeader() });

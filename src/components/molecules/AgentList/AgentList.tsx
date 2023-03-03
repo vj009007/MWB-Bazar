@@ -23,11 +23,25 @@ const AgentList = (props:any) => {
     // console.log("ecomprd", responseJson.data.results);
   };
 
+  const getAllListssSearch = async () => {
+    if(props.keys === ""){
+    
+    }else{
+      const responseJson = await AppService.getAllBazarAgentListSearch(iDS, props.keys);
+    // setGetAllWholesellers(responseJson.data.results);
+    console.log("ecomprdserd", responseJson.data);
+    setGetAllAgentList(responseJson.data.results);
+    
+    }
+  };
+
 
   useEffect(() => {
-    //  console.log(props);
+     console.log(props.keys);
+     getAllListssSearch();
       getAllListss(iDS);
-    }, []);
+  
+    }, [props.keys]);
   
   return (
     <div className={classes.root}>
