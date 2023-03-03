@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { DashboardLayout } from "@/components/layouts";
 import { SectionHeader } from "@/components/molecules/Bazaars";
 import { useElectronicsBazaarStyles } from "@/static/stylesheets/screens";
@@ -14,11 +14,21 @@ import { WholesellerList } from "@/components/molecules/WholesellerList";
 import { ProductsList } from "@/components/molecules/ProductsList";
 import { AgentList } from "@/components/molecules/AgentList";
 import { SearchField } from "@/components/atoms/SearchField";
+import { AppService } from "@/service/AllApiData.service";
 
-const ElectronicsBazaar = () => {
+
+const ElectronicsBazaar = (props:any) => {
   const classes = useElectronicsBazaarStyles();
   const navigate = useNavigate();
+  const [getAllBazarWholes, setGetAllBazarWholes] = useState([]);
+  // const data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
 
+
+ 
+  useEffect(() => {
+
+
+  }, []);
   return (
     <>
       <DashboardLayout>
@@ -94,7 +104,7 @@ const ElectronicsBazaar = () => {
                 items={[
                   {
                     label: "Wholeseller (11)",
-                    content: <WholesellerList />,
+                    content: <WholesellerList  />,
                   },
                   {
                     label: "Agents (13)",

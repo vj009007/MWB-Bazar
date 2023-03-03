@@ -72,7 +72,7 @@ const Dashboard = () => {
     setValue(newValue);
   };
   const getAllListsMain = async () => {
-    const responseJson = await AppService.getAllBazarList();
+    const responseJson = await AppService.getAllBazarList(1);
     setGetAllBazar(responseJson.data.results.slice(0, 9));
     // console.log("ecomprd", responseJson.data.results);
   };

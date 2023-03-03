@@ -1,16 +1,33 @@
-import React  from "react";
+import React, { useEffect, useState } from "react";
 import { GridOptionButton } from "@/components/atoms/Button";
 import { Switch } from "@/components/atoms/Switch";
 import { useAgentStyles } from "@/static/stylesheets/molecules";
 import LogoContract from "@/static/icons/uploader-frame.png";
+import { AppService } from "../../../service/AllApiData.service";
+import { useLocation } from "react-router-dom";
 
-interface MasterListGridProps {
-  type?: "WholeSeller" | "Retailer";
-}
+// interface MasterListGridProps {
+//   type?: "WholeSeller" | "Retailer";
+// }
 
-const AgentList: React.FC<MasterListGridProps> = (props) => {
+const AgentList = (props:any) => {
   const classes = useAgentStyles();
-  const data = [1, 2, 3, 4, 5, 6];
+  // const data = [1, 2, 3, 4, 5, 6];
+  const [getAllAgentList, setGetAllAgentList] = useState([]);
+  const [iDS, setIDS] = useState(localStorage.getItem("IDS"));
+
+
+  const getAllListss = async (iDS:any) => {
+    const responseJson = await AppService.getAllBazarListwholeseller(iDS);
+    setGetAllAgentList(responseJson.data.results);
+    // console.log("ecomprd", responseJson.data.results);
+  };
+
+
+  useEffect(() => {
+    //  console.log(props);
+      getAllListss(iDS);
+    }, []);
   
   return (
     <div className={classes.root}>
@@ -26,24 +43,19 @@ const AgentList: React.FC<MasterListGridProps> = (props) => {
           <th></th>
           <th></th>
         </tr>
-        {data.map((item: any) => (
+        {getAllAgentList.map((item: any) => (
           <tr>
-            <td>Firm-ABC</td>
+            <td>{item.name}</td>
+            <td>{"+91-8477852310"}</td>
+            <td>{item.city}</td>
+            <td>{item.bazaar}</td>
+            <td>{item.type}</td>
             <td>
-              <div className="brandData">
-                <img className="brandLogo" src={LogoContract} alt={"Logo"} />
-                +91-8477852310
-              </div>
-            </td>
-            <td>Rajkot</td>
-            <td>Electronic Baz..</td>
-            <td>Salesman</td>
-            <td>
-              <div className="status">Pending Approval</div>
+              <div className="status">{item.status}</div>
             </td>
             <td>
               <div>
-                <Switch />
+                <Switch SwitchProps={item.enable} />
               </div>
             </td>
             <td>
