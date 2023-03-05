@@ -1,15 +1,11 @@
 import React from "react";
 
+interface SearchFieldProps {}
 
-const SearchField = (props:any) => {
-
-  const onTrigger = (event:any) => {
-    props.parentCallback(event.target.value);
-}
-
+const SearchField: React.FC<SearchFieldProps> = (props) => {
   return (
     <>
-
+      <form className="max-w-sm">
         <div className="relative">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -27,11 +23,11 @@ const SearchField = (props:any) => {
           </svg>
           <input
             type="text"
-            placeholder="Search ..."  onKeyUp={onTrigger}
+            placeholder="Search ..."
             className="w-full py-2 pl-12 pr-4 text-gray-500 border rounded-md outline-none bg-gray-50 focus:bg-white"
           />
         </div>
- 
+      </form>
     </>
   );
 };

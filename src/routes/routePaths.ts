@@ -7,6 +7,7 @@ export const routePaths = {
   wholeseller: `/wholeseller`,
   wholesellerdashboard: `/wholesellerdashboard`,
   wholesellermart: `/wholesellermart`,
+  wholesellerdetails: `/wholesellerdetails`,
   wholesellerproducts: `/wholesellerproducts`,
   itemwiseplan: `/itemwiseplan`,
   offers: `/offers`,
@@ -38,9 +39,7 @@ export const routePaths = {
   order: `/order`,
   photoorder: `/photoorder`,
   trackorder: `/trackorder`,
-  rolePermission: `/rolepermission`,
-  rolesPermissions: `/rolespermissions`,
-  AddRols: `/addroles`,
+  rolesPermission: `/rolepermission`,
 
   admin: {
     bazaars: `/bazaars`,

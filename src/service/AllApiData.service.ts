@@ -52,32 +52,8 @@ static getCurrentUser = () => {
 
 
 
-static getAllBazarList(datas:any) {
-	return http.get("bazaar/data/?page="+datas, { headers: AppService.authHeader() });
-};
-static getAllBazarListSearch(datas:any) {
-	return http.get("bazaar/data/?search="+datas, { headers: AppService.authHeader() });
-};
-static getAllBazarListwholeseller(ID:any) {
-	return http.get("bazaar/data/"+`${ID}`+"/wholesellers-list/", { headers: AppService.authHeader() });
-};
-
-static getAllBazarListwholesellerSearch(ID:any,items:any) {
-	return http.get("bazaar/data/"+`${ID}`+"/wholesellers-list/?search="+`${items}`+"", { headers: AppService.authHeader() });
-};
-static getAllBazarAgentList(ID:any) {
-	return http.get("bazaar/data/"+`${ID}`+"/agents-list/", { headers: AppService.authHeader() });
-};
-
-static getAllBazarAgentListSearch(ID:any,items:any) {
-	return http.get("bazaar/data/"+`${ID}`+"/agents-list/?search="+`${items}`+"", { headers: AppService.authHeader() });
-};
-
-static getAllBazarProductListSearch(ID:any,items:any) {
-	return http.get("bazaar/data/"+`${ID}`+"/products-list/?search="+`${items}`+"", { headers: AppService.authHeader() });
-};
-static getAllBazarProductList(ID:any) {
-	return http.get("bazaar/data/"+`${ID}`+"/products-list/", { headers: AppService.authHeader() });
+static getAllBazarList() {
+	return http.get("bazaar/data/", { headers: AppService.authHeader() });
 };
 
 static getAllAgentList() {
@@ -87,20 +63,6 @@ static getAllwholesellerList() {
 	return http.get("wholeseller/", { headers: AppService.authHeader() });
 };
 
-static getAllSummerys(){
-	return http.get("dashboard/summary/", { headers: AppService.authHeader() });
-}
 
-static getAllDashBazaarLists(){
-	return http.get("dashboard/report/", { headers: AppService.authHeader() });
-}
-static getAllPlans(){
-	return http.get("dashboard/plan/", { headers: AppService.authHeader() });
-	
-}
-static getAllPlansData(){
-	return http.get("dashboard/plan-list/", { headers: AppService.authHeader() });
-	
-}
 
 }

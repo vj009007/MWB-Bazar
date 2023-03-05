@@ -1,46 +1,16 @@
-import React, { useEffect, useState }  from "react";
+import React  from "react";
 import { GridOptionButton } from "@/components/atoms/Button";
 import { Switch } from "@/components/atoms/Switch";
 import { useProductListStyles } from "@/static/stylesheets/molecules";
 import LogoContract from "@/static/icons/uploader-frame.png";
-import { AppService } from "@/service/AllApiData.service";
 
-// interface ProductListProps {
-//   type?: "WholeSeller" | "Retailer";
-// }
+interface ProductListProps {
+  type?: "WholeSeller" | "Retailer";
+}
 
-const ProductsList = (props:any) => {
+const ProductsList: React.FC<ProductListProps> = (props) => {
   const classes = useProductListStyles();
   const data = [1, 2, 3, 4, 5, 6];
-  // const data = [1, 2, 3, 4, 5, 6];
-  const [getAllPrdList, setGetAllPrdList] = useState([]);
-  const [iDS, setIDS] = useState(localStorage.getItem("IDS"));
-
-
-  const getAllListss = async (iDS:any) => {
-    const responseJson = await AppService.getAllBazarProductList(iDS);
-    setGetAllPrdList(responseJson.data.results);
-    // console.log("ecomprd", responseJson.data.results);
-  };
-
-
-  const getAllListssSearch = async () => {
-    if(props.keys === ""){
-    
-    }else{
-      const responseJson = await AppService.getAllBazarProductListSearch(iDS, props.keys);
-    // setGetAllWholesellers(responseJson.data.results);
-    console.log("ecomprdserd", responseJson.data);
-    setGetAllPrdList(responseJson.data.results);
-    
-    }
-  };
-
-  useEffect(() => {
-    console.log("ddd", props.keys);
-      getAllListss(iDS);
-      getAllListssSearch();
-    }, [props.keys]);
   // const { type } = props;
 
   return (
@@ -57,29 +27,29 @@ const ProductsList = (props:any) => {
           <th>Active/Inactive</th>
           <th></th>
         </tr>
-        {getAllPrdList.map((item: any) => (
+        {data.map((item: any) => (
           <tr>
             <td>
               <div className="brandData">
                 <img className="brandLogo" src={LogoContract} alt={"Logo"} />
-                {item.product_name}
+                Amazon Echo Plus (3nd Gen) - Premium…
               </div>
             </td>
-            <td>{item.brand}</td>
+            <td>Aamazon</td>
             <td>
-              <div className="status">{item.group_category}</div>
+              <div className="status">electronics</div>
             </td>
             <td>
-              <div className="status">{item.category}</div>
+              <div className="status">electronics</div>
             </td>
             <td>
-              <div className="status">{item.sub_category}</div>
+              <div className="status">electronics</div>
             </td>
-            <td>{item.weight}</td>
-            <td>{item.mrp}</td>
+            <td>XX Kg</td>
+            <td>₹15,302.00</td>
             <td>
               <div>
-                <Switch SwitchProps={item.active} />
+                <Switch />
               </div>
             </td>
             <td>
