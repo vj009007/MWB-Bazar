@@ -6,6 +6,9 @@ import { ActionButton } from "@/components/atoms/Button/ActionButton";
 import { WholesellerReportCard } from "../WholesellerReportCard";
 import MapImage from "@/static/icons/Maps.png";
 import MwbImage from "@/static/images/basket_image.png";
+import { GrPowerReset } from 'react-icons/gr';
+import { BsThreeDotsVertical } from 'react-icons/bs';
+
 
 interface ReportsListGridProps {
   type?: "WholeSeller" | "Retailer";
@@ -128,7 +131,10 @@ const ReportsListGrid: React.FC<ReportsListGridProps> = (props) => {
             <div className="...">
               <div className="flex justify-between">
                 <p className="heaadtext py-2">New Retailers</p>
-                <p className="heaadtext py-2">City Name</p>
+                <div className="heaadtext py-2 flex gap-5">
+                  <GrPowerReset/>
+                  <BsThreeDotsVertical/>
+                </div>
               </div>
 
               {data.map((item: any) => (
@@ -151,7 +157,10 @@ const ReportsListGrid: React.FC<ReportsListGridProps> = (props) => {
             <div className="...">
               <div className="flex justify-between">
                 <p className="heaadtext py-2">New Retailers</p>
-                <p className="heaadtext py-2">City Name</p>
+                <div className="heaadtext py-2 flex gap-5">
+                  <GrPowerReset/>
+                  <BsThreeDotsVertical/>
+                </div>
               </div>
 
               {data.map((item: any) => (
