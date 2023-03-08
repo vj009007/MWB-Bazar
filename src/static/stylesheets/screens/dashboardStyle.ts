@@ -50,6 +50,12 @@ export const useDashboardStyles = () => ({
       letter-spacing: 0.2px;
       color: #000000;
     }
+    .css-nxo287-MuiInputBase-input-MuiOutlinedInput-input{
+      padding:5.5px 12px;
+    }
+    .css-1u3bzj6-MuiFormControl-root-MuiTextField-root{
+      width:110px;
+    }
   `,
 
   commonTitle: css`

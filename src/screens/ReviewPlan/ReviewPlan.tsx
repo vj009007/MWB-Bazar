@@ -27,21 +27,18 @@ export default function ReviewPlan() {
                     <p className="text-[#4E2FA9] text-[16px] font-bold mt-[30px]">
                       Individual
                     </p>
-                  </div>
-
-                  <div className="bg-[#F9F5F2] rounded-full p-[10px] w-[140px] h-[135px] text-center items-center">
-                    <p className="text-[#FF6652] text-[44px] font-bold">12</p>
-                    <p className="font-[#84818A]">Branches</p>
-                  </div>
-                </div>
-
-                <div className="py-[20px]">
-                  <p className="text-[#121127] text-[24px] font-bold">
+                    <p className="text-[#121127] text-[24px] font-semibold pt-2">
                     ₹24 <span className="text-[#7A7A86]">/month</span>
                   </p>
+                  </div>
+
+                  <div className="bg-[#F9F5F2] rounded-full flex flex-col w-[100px] h-[100px] text-center items-center justify-center">
+                    <p className="text-[#FF6652] text-[36px] font-bold leading-none">12</p>
+                    <p className="text-[#84818A] text-sm font-semibold">Branches</p>
+                  </div>
                 </div>
                 <div>
-                  <p className="text-[#121127] text-[14px] font-semibold">
+                  <p className="text-[#121127] text-[14px] font-semibold pt-4">
                     Available for UP, Delhi, Punjab
                   </p>
                 </div>
@@ -131,21 +128,20 @@ export default function ReviewPlan() {
                     <p className="text-[#4E2FA9] text-[16px] font-bold mt-[30px]">
                       Individual
                     </p>
-                  </div>
-
-                  <div className="bg-[#F9F5F2] rounded-full p-[10px] w-[140px] h-[135px] text-center items-center">
-                    <p className="text-[#FF6652] text-[44px] font-bold">12</p>
-                    <p className="font-[#84818A]">Branches</p>
-                  </div>
-                </div>
-
-                <div className="py-[20px]">
-                  <p className="text-[#121127] text-[24px] font-bold">
+                    <p className="text-[#121127] text-[24px] font-semibold pt-2">
                     ₹24 <span className="text-[#7A7A86]">/month</span>
                   </p>
+                  </div>
+
+                  <div className="bg-[#F9F5F2] rounded-full flex flex-col w-[100px] h-[100px] text-center items-center justify-center">
+                    <p className="text-[#FF6652] text-[36px] font-bold leading-none">12</p>
+                    <p className="text-[#84818A] text-sm font-semibold">Branches</p>
+                  </div>
                 </div>
+
+
                 <div>
-                  <p className="text-[#121127] text-[14px] font-semibold">
+                  <p className="text-[#121127] text-[14px] font-semibold pt-4">
                     Available for UP, Delhi, Punjab
                   </p>
                 </div>
@@ -236,21 +232,18 @@ export default function ReviewPlan() {
                     <p className="text-[#4E2FA9] text-[16px] font-bold mt-[30px]">
                       Individual
                     </p>
-                  </div>
-
-                  <div className="bg-[#F9F5F2] rounded-full p-[10px] w-[140px] h-[135px] text-center items-center">
-                    <p className="text-[#FF6652] text-[44px] font-bold">12</p>
-                    <p className="font-[#84818A]">Branches</p>
-                  </div>
-                </div>
-
-                <div className="py-[20px]">
-                  <p className="text-[#121127] text-[24px] font-bold">
+                    <p className="text-[#121127] text-[24px] font-semibold pt-2">
                     ₹24 <span className="text-[#7A7A86]">/month</span>
                   </p>
+                  </div>
+
+                  <div className="bg-[#F9F5F2] rounded-full flex flex-col w-[100px] h-[100px] text-center items-center justify-center">
+                    <p className="text-[#FF6652] text-[36px] font-bold leading-none">12</p>
+                    <p className="text-[#84818A] text-sm font-semibold">Branches</p>
+                  </div>
                 </div>
                 <div>
-                  <p className="text-[#121127] text-[14px] font-semibold">
+                  <p className="text-[#121127] text-[14px] font-semibold pt-4">
                     Available for UP, Delhi, Punjab
                   </p>
                 </div>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { DashboardLayout } from "@/components/layouts";
 import { SectionHeader } from "@/components/molecules/Bazaars";
 import { useElectronicsBazaarStyles } from "@/static/stylesheets/screens";
@@ -14,11 +14,53 @@ import { WholesellerList } from "@/components/molecules/WholesellerList";
 import { ProductsList } from "@/components/molecules/ProductsList";
 import { AgentList } from "@/components/molecules/AgentList";
 import { SearchField } from "@/components/atoms/SearchField";
+import { AppService } from "@/service/AllApiData.service";
 
-const ElectronicsBazaar = () => {
+
+const ElectronicsBazaar = (props:any) => {
   const classes = useElectronicsBazaarStyles();
   const navigate = useNavigate();
+  const [getAllBazarWholes, setGetAllBazarWholes] = useState([]);
+  const [iDS, setIDS] = useState(localStorage.getItem("IDS"));
+  const [getAllWholesellers, setGetAllWholesellers] = useState([]);
+  const [getAllAgentList, setGetAllAgentList] = useState([]);
+  const [getAllPrdList, setGetAllPrdList] = useState([]);
+  const [count1, setCount1] = useState("");
+  const [count2, setCount2] = useState("");
+  const [count3, setCount3] = useState("");
+  const [searchK, setSearchK] = useState("");
+  // const data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
+  const getAllListss = async (iDS:any) => {
+    const responseJson = await AppService.getAllBazarListwholeseller(iDS);
+    setGetAllWholesellers(responseJson.data.results);
+    // console.log("ecomprd", responseJson.data.results.length);
+    setCount1(responseJson.data.results.length);
+  };
+  const getAllListss2 = async (iDS:any) => {
+    const responseJson = await AppService.getAllBazarListwholeseller(iDS);
+    setGetAllAgentList(responseJson.data.results);
+    setCount2(responseJson.data.results.length);
+    // console.log("ecomprd", responseJson.data.results);
+  };
+  const getAllListss3 = async (iDS:any) => {
+    const responseJson = await AppService.getAllBazarProductList(iDS);
+    setGetAllPrdList(responseJson.data.results);
+    setCount3(responseJson.data.results.length);
+    // console.log("ecomprd", responseJson.data.results);
+  };
 
+  const handleCallback = (e:any) =>{
+    console.log(e);
+    setSearchK(e);
+}
+ 
+  useEffect(() => {
+    getAllListss(iDS);
+    getAllListss2(iDS);
+    getAllListss3(iDS);
+    
+    // console.log(count);
+  }, []);
   return (
     <>
       <DashboardLayout>
@@ -79,7 +121,7 @@ const ElectronicsBazaar = () => {
               <div className="leftContent">
                 <form className="max-w-sm px-4">
                   <div className="relative">
-                    <SearchField/>
+                    <SearchField parentCallback = {handleCallback}/>
                   </div>
                 </form>
 
@@ -93,16 +135,16 @@ const ElectronicsBazaar = () => {
               <FeaturesTab
                 items={[
                   {
-                    label: "Wholeseller (11)",
-                    content: <WholesellerList />,
+                    label: "Wholeseller ("+count1+")",
+                    content: <WholesellerList keys={searchK}  />,
                   },
                   {
-                    label: "Agents (13)",
-                    content: <AgentList />,
+                    label: "Agents ("+count2+")",
+                    content: <AgentList keys={searchK}/>,
                   },
                   {
-                    label: "Products (230)",
-                    content: <ProductsList />,
+                    label: "Products ("+count3+")",
+                    content: <ProductsList keys={searchK}/>,
                   },
                 ]}
               />

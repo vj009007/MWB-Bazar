@@ -34,9 +34,13 @@ const AdminSidebar = () => {
           label={"Plans"}
         />
         <MenuItem href={"/agents"} icon={<BadgeIcon />} label={"Agents"} />
-        <MenuItem href={"/Ads"} icon={<ListIcon />} label={"Ads"} />
+        <MenuItem href={"/advertisement"} icon={<ListIcon />} label={"Ads"} />
         <MenuItem href={"/mwb"} icon={<SettingsIcon />} label={"Routes"} />
-        <MenuItem href={"/rolepermission"} icon={<SettingsIcon />} label={"Roles & Permissions"}  />
+        <MenuItem
+          href={"/rolepermission"}
+          icon={<SettingsIcon />}
+          label={"Roles & Permissions"}
+        />
         <MenuItem
           href={"/trackorder"}
           icon={<SettingsIcon />}

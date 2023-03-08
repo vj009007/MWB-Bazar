@@ -3,33 +3,6 @@ import { css } from "@emotion/css";
 export const useMasterListStyles = () => ({
   root: css`
     flex: 1;
-
-    .heaadtext {
-      font-family: "Manrope";
-      font-style: normal;
-      font-weight: 600;
-      font-size: 16px;
-      line-height: 22px;
-      color: #2e2c34;
-    }
-
-    .RetailerText {
-      font-family: "Manrope";
-      font-style: normal;
-      font-weight: 600;
-      font-size: 14px;
-      line-height: 20px;
-      color: #2e2c34;
-    }
-
-    .RetailerSubText {
-      font-family: "Manrope";
-      font-style: normal;
-      font-weight: 500;
-      font-size: 12px;
-      line-height: 18px;
-      color: #84818a;
-    }
   `,
   pageTitle: css`
     font-family: "Manrope", serif;

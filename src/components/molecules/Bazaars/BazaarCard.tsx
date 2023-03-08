@@ -7,6 +7,13 @@ import { Grid } from "@mui/material";
 const BazaarCard = (props: any) => {
   const classes = useBazaarCardStyles();
   const navigate = useNavigate();
+  const getViaID = async (ID:any) =>{
+    // console.log(ID.id);
+    localStorage.setItem("IDS", ID.id);
+    navigate("/electronicsbazaar");
+    
+  }
+ 
 
     useEffect(() => {
       // console.log("child", props.getAllBazars);
@@ -21,7 +28,7 @@ const BazaarCard = (props: any) => {
       <Grid item xs={4}>
     <div
       className={classes.root}
-      onClick={() => navigate("/electronicsbazaar")}
+      onClick={() => getViaID(addr)}
     >
       <div className={classes.container}>
         <div className={classes.bazaarContainer}>

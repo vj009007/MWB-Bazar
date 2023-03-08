@@ -41,7 +41,6 @@ export const routePaths = {
   rolePermission: `/rolepermission`,
   rolesPermissions: `/rolespermissions`,
   AddRols: `/addroles`,
-  ADS: `/Ads`,
 
   admin: {
     bazaars: `/bazaars`,

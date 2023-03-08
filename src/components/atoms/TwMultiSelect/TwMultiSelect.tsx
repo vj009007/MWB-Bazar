@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
-import { Radio } from "@mui/material";
+import { Checkbox, Radio } from "@mui/material";
 
 function classNames(...classes: any) {
   return classes.filter(Boolean).join(" ");
@@ -37,7 +37,7 @@ export default function TwMultiSelect() {
                     "block px-4 py-2 text-sm"
                   )}
                 >
-                  <Radio id="radio" name="radio" />
+                  <Checkbox id="radio" name="radio" aria-multiline/>
                   Item One
                 </a>
               )}
@@ -51,7 +51,7 @@ export default function TwMultiSelect() {
                     "block px-4 py-2 text-sm"
                   )}
                 >
-                  <Radio id="radio" name="radio" />
+                  <Checkbox id="radio" name="radio" aria-multiline/>
                   Item Two
                 </a>
               )}
@@ -65,7 +65,7 @@ export default function TwMultiSelect() {
                     "block px-4 py-2 text-sm"
                   )}
                 >
-                  <Radio id="radio" name="radio" />
+                  <Checkbox id="radio" name="radio" aria-multiline/>
                   Item Three
                 </a>
               )}
@@ -80,7 +80,7 @@ export default function TwMultiSelect() {
                       "block w-full px-4 py-2 text-left text-sm"
                     )}
                   >
-                    <Radio id="radio" name="radio" />
+                    <Checkbox id="radio" name="radio" aria-multiline/>
                     Item Four
                   </button>
                 )}
