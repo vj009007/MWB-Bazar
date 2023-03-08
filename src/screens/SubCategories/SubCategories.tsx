@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { useSubCategoriesStyles } from "@/static/stylesheets/screens/subcategoriesStyles";
 import MuiTreeView from "@/components/atoms/MuiTreeView/MuiTreeView";
-import LogoAdd from "@/static/icons/ic_add.png";
-import { Grid } from "@mui/material";
+import BulkIcon from "@/static/svg/ic_bulkuploads.svg";
+import { Grid, TextField } from "@mui/material";
 import UploaderFrame from "@/static/icons/uploader-frame.png";
 import { MenuItem, Select, SelectChangeEvent } from "@mui/material";
+import LogoAdd from "@/static/icons/ic_add.png";
 
 const SubCategories = () => {
   const classes = useSubCategoriesStyles();
@@ -23,184 +24,162 @@ const SubCategories = () => {
           </Grid>
           <Grid item xs={9}>
             <div className="rightContainer">
-              <div className="addButton">
-                <img src={LogoAdd} alt={"Logo"} />
-                <p>Add New Group Category</p>
+              <div className="addButton flex justify-items-center items-center">
+                <img src={BulkIcon} alt={"Logo"} />
+                <p>Bulk Upload</p>
               </div>
             </div>
 
-            <div className="uploadContainer">
-              <div className="uploadCard">
-                <div className="uploadIcon">
-                  <img src={UploaderFrame} alt={"Uploader"} />
+            <div className="border-2 p-5 mt-3 rounded-md ">
+              <div className="flex gap-5">
+                <div className="uploadCard">
+                  <div className="uploadIcon px-3">
+                    <img src={UploaderFrame} alt={"Uploader"} />
+                  </div>
+
+                  <div className="content">
+                    <div className={"title"}>Upload front Image</div>
+                    <div className={"subtitle"}>
+                      Image can be size of 512 PX by 512 PX Only
+                    </div>
+                  </div>
                 </div>
 
-                <div className="content">
-                  <div className={"title"}>Upload front Image</div>
-                  <div className={"subtitle"}>
-                    Image can be size of 512 PX by 512 PX Only
+                <div className="uploadCard">
+                  <div className="uploadIcon px-3">
+                    <img src={UploaderFrame} alt={"Uploader"} />
+                  </div>
+
+                  <div className="content">
+                    <div className={"title"}>Upload front Image</div>
+                    <div className={"subtitle"}>
+                      Image can be size of 512 PX by 512 PX Only
+                    </div>
                   </div>
                 </div>
               </div>
 
-              <div className="uploadCard">
-                <div className="uploadIcon">
-                  <img src={UploaderFrame} alt={"Uploader"} />
-                </div>
+              <div className="flex gap-5 py-5">
+                <div className="uploadCard">
+                  <div className="uploadIcon px-3">
+                    <img src={UploaderFrame} alt={"Uploader"} />
+                  </div>
 
-                <div className="content">
-                  <div className={"title"}>Upload front Image</div>
-                  <div className={"subtitle"}>
-                    Image can be size of 512 PX by 512 PX Only
+                  <div className="content">
+                    <div className={"title"}>Upload front Image</div>
+                    <div className={"subtitle"}>
+                      Image can be size of 512 PX by 512 PX Only
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
 
-            <div className="uploadCard">
-              <div className="uploadIcon">
-                <img src={UploaderFrame} alt={"Uploader"} />
-              </div>
+              <div className="field">
+                <div className="bazaarField">
+                  <div>
+                    <p className="commonSelectText">Product Name</p>
+                    <TextField variant="standard" fullWidth={true} />
+                  </div>
 
-              <div className="content">
-                <div className={"title"}>Upload front Image</div>
-                <div className={"subtitle"}>
-                  Image can be size of 512 PX by 512 PX Only
+                  <div>
+                    <p className="commonSelectText">Brand Name</p>
+                    <TextField variant="standard" fullWidth={true} />
+                  </div>
+                </div>
+
+                <div className="stateField">
+                  <div>
+                    <p className="commonSelectText">Total Weight</p>
+                    <div className="flex gap-4">
+                      <div>
+                        <TextField variant="standard" fullWidth={true} />
+                      </div>
+                      <div>
+                        <Select
+                          label="Age"
+                          variant={"standard"}
+                          fullWidth={true}
+                          value={masterType}
+                          onChange={handleChangeMasterType}
+                        >
+                          <MenuItem value={"Regional Wholeseller"}>Kg</MenuItem>
+                          <MenuItem value={"Regional Wholeseller 1"}>
+                            Kg
+                          </MenuItem>
+                        </Select>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <p className="commonSelectText">No. of Units</p>
+                    <div className="flex gap-4">
+                      <div>
+                        <TextField variant="standard" fullWidth={true} />
+                      </div>
+                      <div>
+                        <Select
+                          label="Age"
+                          variant={"standard"}
+                          fullWidth={true}
+                          value={masterType}
+                          onChange={handleChangeMasterType}
+                        >
+                          <MenuItem value={"Regional Wholeseller"}>
+                            Unit
+                          </MenuItem>
+                          <MenuItem value={"Regional Wholeseller 1"}>
+                            Unit
+                          </MenuItem>
+                        </Select>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <p className="commonSelectText">Total MRP</p>
+                    <TextField variant="standard" fullWidth={true} />
+                  </div>
+                  <div>
+                    <p className="commonSelectText">Per Unit Weight</p>
+                    <div className="flex gap-4">
+                      <div>
+                        <TextField variant="standard" fullWidth={true} />
+                      </div>
+                      <div>
+                        <Select
+                          label="Age"
+                          variant={"standard"}
+                          fullWidth={true}
+                          value={masterType}
+                          onChange={handleChangeMasterType}
+                        >
+                          <MenuItem value={"Regional Wholeseller"}>Kg</MenuItem>
+                          <MenuItem value={"Regional Wholeseller 1"}>
+                            Kg
+                          </MenuItem>
+                        </Select>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <p className="commonSelectText">MRP</p>
+                    <TextField variant="standard" fullWidth={true} />
+                  </div>
+                </div>
+
+                <div className="cityField">
+                  <div>
+                    <p className="commonSelectText">GST</p>
+                    <TextField variant="standard" fullWidth={true} />
+                  </div>
+                  <div>
+                    <p className="commonSelectText">HSN Code</p>
+                    <TextField variant="standard" fullWidth={true} />
+                  </div>
                 </div>
               </div>
-            </div>
-
-            <div className="field">
-              <div className="bazaarField">
-                <Select
-                  label="Age"
-                  variant={"standard"}
-                  fullWidth={true}
-                  value={masterType}
-                  onChange={handleChangeMasterType}
-                >
-                  <MenuItem value={"Regional Wholeseller"}>Grocery</MenuItem>
-                  <MenuItem value={"Regional Wholeseller 1"}>
-                    Grocery 1
-                  </MenuItem>
-                </Select>
-
-                <Select
-                  label="Age"
-                  variant={"standard"}
-                  fullWidth={true}
-                  value={masterType}
-                  onChange={handleChangeMasterType}
-                >
-                  <MenuItem value={"Regional Wholeseller"}>Grocery</MenuItem>
-                  <MenuItem value={"Regional Wholeseller 1"}>
-                    Grocery 1
-                  </MenuItem>
-                </Select>
-              </div>
-
-              <div className="stateField">
-                <div>
-                  <Select
-                    label="Age"
-                    variant={"standard"}
-                    fullWidth={true}
-                    value={masterType}
-                    onChange={handleChangeMasterType}
-                  >
-                    <MenuItem value={"Regional Wholeseller"}>
-                      Uttar Pradesh, Delhi + 2more
-                    </MenuItem>
-                    <MenuItem value={"Regional Wholeseller 1"}>
-                      Uttar Pradesh, Delhi + 2more 1
-                    </MenuItem>
-                  </Select>
-                </div>
-                <div>
-                  <Select
-                    label="Age"
-                    variant={"standard"}
-                    fullWidth={true}
-                    value={masterType}
-                    onChange={handleChangeMasterType}
-                  >
-                    <MenuItem value={"Regional Wholeseller"}>
-                      All Cities
-                    </MenuItem>
-                    <MenuItem value={"Regional Wholeseller 1"}>
-                      All Cities 1
-                    </MenuItem>
-                  </Select>
-                </div>
-                <div>
-                  <Select
-                    label="Age"
-                    variant={"standard"}
-                    fullWidth={true}
-                    value={masterType}
-                    onChange={handleChangeMasterType}
-                  >
-                    <MenuItem value={"Regional Wholeseller"}>
-                      Uttar Pradesh, Delhi + 2more
-                    </MenuItem>
-                    <MenuItem value={"Regional Wholeseller 1"}>
-                      Uttar Pradesh, Delhi + 2more 1
-                    </MenuItem>
-                  </Select>
-                </div>
-                <div>
-                  <Select
-                    label="Age"
-                    variant={"standard"}
-                    fullWidth={true}
-                    value={masterType}
-                    onChange={handleChangeMasterType}
-                  >
-                    <MenuItem value={"Regional Wholeseller"}>
-                      Uttar Pradesh, Delhi + 2more
-                    </MenuItem>
-                    <MenuItem value={"Regional Wholeseller 1"}>
-                      Uttar Pradesh, Delhi + 2more 1
-                    </MenuItem>
-                  </Select>
-                </div>
-              </div>
-
-              <div className="cityField">
-                <Select
-                  label="Age"
-                  variant={"standard"}
-                  fullWidth={true}
-                  value={masterType}
-                  onChange={handleChangeMasterType}
-                >
-                  <MenuItem value={"Regional Wholeseller"}>
-                    Regional Wholeseller
-                  </MenuItem>
-                  <MenuItem value={"Regional Wholeseller 1"}>
-                    Regional Wholeseller 1
-                  </MenuItem>
-                  <MenuItem value={"Regional Wholeseller 2"}>
-                    Regional Wholeseller 2
-                  </MenuItem>
-                </Select>
-                <Select
-                  label="Age"
-                  variant={"standard"}
-                  fullWidth={true}
-                  value={masterType}
-                  onChange={handleChangeMasterType}
-                >
-                  <MenuItem value={"Regional Wholeseller"}>
-                    Regional Wholeseller
-                  </MenuItem>
-                  <MenuItem value={"Regional Wholeseller 1"}>
-                    Regional Wholeseller 1
-                  </MenuItem>
-                  <MenuItem value={"Regional Wholeseller 2"}>
-                    Regional Wholeseller 2
-                  </MenuItem>
-                </Select>
+              <div className="flex gap-4 items-center border-dashed border-2 border-[#4E2FA9] p-3 rounded-md w-[300px] justify-center cursor-pointer">
+                <img className="w-[20px]" src={LogoAdd} alt={"Logo"} />
+                <p className="text-[#4E2FA9]">Add New Product</p>
               </div>
             </div>
           </Grid>

@@ -4,7 +4,7 @@ export const useAddbazaarStyles = () => ({
   root: css`
     padding-top: 20px;
     padding-bottom: 20px;
-    width: 600px;
+    width: 500px;
 
     .field {
       padding-top: 50px;
