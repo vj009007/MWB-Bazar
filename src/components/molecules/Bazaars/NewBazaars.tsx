@@ -23,12 +23,53 @@ const steps = [
 export default function NewBazaars() {
   const [activeStep, setActiveStep] = React.useState(0);
   const [skipped, setSkipped] = React.useState(new Set<number>());
+  const [formData, setFormData] = React.useState({
+  wholesellers: "20",
+    agents: "13",
+    states: "2",
+    earnings: "154000",
+    bills: "52",
+    bazaar_description: "test",
+    bazaar_name: "",
+    bazaar_image: "",
+    bazaar_added_date: "2023-03-06T19:56:00+05:30",
+    bazaar_updated_date: "2023-03-07T20:57:00+05:30",
+    bazaar_updated_by: 1,
+    "bazaar_state": [
+       
+    ],
+    "bazaar_city": [
+        1,
+        2
+    ],
+    "bazaar_district": [
+        1,
+        2
+    ],
+    "bazaar_gorup_category": [
+        1,
+        2
+    ],
+    "bazaar_category": [
+        1
+    ],
+    "bazaar_subcategory": [
+        1,
+        2
+    ],
+    "bazaar_product": [
+        1,
+        2
+    ]
+  });
 
   const isStepSkipped = (step: number) => {
     return skipped.has(step);
   };
 
-  const handleNext = () => {
+  const handleNext = (e:any) => {
+    console.log(e.target.value);
+    console.log(formData);
     let newSkipped = skipped;
     if (isStepSkipped(activeStep)) {
       newSkipped = new Set(newSkipped.values());
@@ -47,6 +88,11 @@ export default function NewBazaars() {
   const handleReset = () => {
     setActiveStep(0);
   };
+  React.useEffect(() => {
+    console.log(formData);
+    
+      
+      }, []);
 
   const classes = useBazaarStepperdStyles();
 
@@ -90,7 +136,7 @@ export default function NewBazaars() {
             </React.Fragment>
           ) : (
             <React.Fragment>
-              {activeStep === 0 && <BazaarDetails />}
+              {activeStep === 0 && <BazaarDetails formData={formData} setFormData={setFormData} />}
 
               {activeStep === 1 && <GroupCategories />}
 

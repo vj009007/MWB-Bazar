@@ -47,10 +47,19 @@ export const useAddbazaarStyles = () => ({
     .uploadIcon {
       display: flex;
       justify-content: center;
+      position:relative;
 
       img {
         width: 50px;
       }
+.kycForms{
+      position: absolute;
+    top: 0;
+    height: 150px;
+    width: 100%;
+    opacity:0;
+    cursor:pointer;
+}
     }
 
     .title {
