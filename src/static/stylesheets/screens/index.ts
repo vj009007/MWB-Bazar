@@ -25,3 +25,4 @@ export * from "./photosorderStyle";
 export * from "./trackorderStyle";
 export * from "./addnewProductStyle";
 export * from "./bulkuploadStyle";
+export * from "./AdsStyle";

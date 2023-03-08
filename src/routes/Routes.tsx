@@ -41,6 +41,7 @@ import WholesellerMart from "@/screens/WholesellerMart";
 import RolePermission from "@/screens/RolePermission";
 import RolesPermission from "@/screens/RolePermission/RolesPermission";
 import AddRols from "@/screens/RolePermission/addRols"; 
+import Ads from "@/screens/Ads";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { routePaths } from "./routePaths";
 
@@ -116,6 +117,7 @@ const AppRoutes = () => {
           <Route path={routePaths.rolePermission} element={<RolePermission />} />
           <Route path={routePaths.rolesPermissions} element={<RolesPermission />} />
           <Route path={routePaths.AddRols} element={<AddRols />} />
+          <Route path={routePaths.ADS} element={<Ads />} />
           
           
         </Routes>
