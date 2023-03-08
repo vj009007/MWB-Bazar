@@ -177,11 +177,11 @@ const SubCategories = () => {
                   </div>
                 </div>
               </div>
-              <div className="flex gap-4 items-center border-dashed border-2 border-[#4E2FA9] p-3 rounded-md w-[300px] justify-center cursor-pointer">
+            </div>
+            <div className="flex gap-4 items-center border-dashed border-2 border-[#4E2FA9] p-3 rounded-md w-[300px] justify-center cursor-pointer mt-10">
                 <img className="w-[20px]" src={LogoAdd} alt={"Logo"} />
                 <p className="text-[#4E2FA9]">Add New Product</p>
               </div>
-            </div>
           </Grid>
         </Grid>
       </div>
