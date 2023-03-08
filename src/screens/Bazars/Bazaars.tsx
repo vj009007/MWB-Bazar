@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { DashboardLayout } from "@/components/layouts";
 import { SectionHeader } from "@/components/molecules/Bazaars";
 import { Grid } from "@mui/material";
@@ -8,8 +8,13 @@ import {
   BazaarsListView,
 } from "@/components/molecules/Bazaars/BazaarsView";
 
-const Bazaars = () => {
+const Bazaars = (props:any) => {
+  
   const [itemView, setItemView] = useState("Grid");
+  useEffect(() => {
+    // console.log("bazara", props.keys);
+    // console.log(count);
+  }, []);
   return (
     <>
       <DashboardLayout>

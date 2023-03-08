@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Grid } from "@mui/material";
 import { useBreadcrumbStyles } from "@/static/stylesheets/molecules/";
@@ -7,14 +7,20 @@ import LogoViewGrid from "@/static/icons/ic_grid.png";
 import LogoViewTable from "@/static/icons/ic_column.png";
 import { SearchField } from "@/components/atoms/SearchField";
 
-interface BreadcrumbsProps {
-  setItemView(item: any): void;
-  itemType: string;
-}
 
-const Breadcrumbs: React.FC<BreadcrumbsProps> = (props) => {
+// interface BreadcrumbsProps {
+//   setItemView(item: any): void;
+//   itemType: string;
+// }
+
+const Breadcrumbs= (props:any) => {
   const classes = useBreadcrumbStyles();
   const navigate = useNavigate();
+  const [searchK, setSearchK] = useState("");
+  const handleCallback = (e:any) =>{
+    console.log(e);
+    setSearchK(e);
+}
 
   return (
     <div className={classes.root}>
@@ -42,7 +48,7 @@ const Breadcrumbs: React.FC<BreadcrumbsProps> = (props) => {
               )}
             </div>
             <div className="flex items-center px-[10px]">
-              <SearchField />
+              <SearchField parentCallback = {handleCallback} />
             </div>
             <div>
               <AddButton
