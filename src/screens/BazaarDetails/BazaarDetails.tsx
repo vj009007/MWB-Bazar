@@ -3,7 +3,10 @@ import { useAddbazaarStyles } from "@/static/stylesheets/molecules";
 import UploaderFrame from "@/static/icons/uploader-frame.png";
 import { MenuItem, Select, SelectChangeEvent } from "@mui/material";
 
-const  BazaarDetails = (props:{ formData:{bazaar_name:any}, setFormData: (arg0: any) => void, })=>{
+const BazaarDetails = (props: {
+  formData: { bazaar_name: any };
+  setFormData: (arg0: any) => void;
+}) => {
   const classes = useAddbazaarStyles();
 
   const [masterType, setMasterType] = useState("");
@@ -11,63 +14,80 @@ const  BazaarDetails = (props:{ formData:{bazaar_name:any}, setFormData: (arg0: 
   const handleChangeMasterType = (event: SelectChangeEvent) => {
     setMasterType(event.target.value as string);
     // console.log(event.target.value as string);
-    props.setFormData({ ...props.formData, bazaar_state: event.target.value as string })
-
-    
+    props.setFormData({
+      ...props.formData,
+      bazaar_state: event.target.value as string,
+    });
   };
 
   const handleChangeMasterType2 = (event: SelectChangeEvent) => {
     //setMasterType(event.target.value as string);
-
-    
   };
   const handleChangeMasterType3 = (event: SelectChangeEvent) => {
     //setMasterType(event.target.value as string);
-
-    
   };
   const handleChangeMasterType4 = (event: SelectChangeEvent) => {
-   // setMasterType(event.target.value as string);
-    
+    // setMasterType(event.target.value as string);
   };
 
   const [selectedImage, setSelectedImage] = useState();
-  const imageChange = (e:any) => {
+  const imageChange = (e: any) => {
     if (e.target.files && e.target.files.length > 0) {
       console.log(e.target.files[0]);
       setSelectedImage(e.target.files[0]);
-      props.setFormData({ ...props.formData, bazaar_image: e.target.files[0].name })
+      props.setFormData({
+        ...props.formData,
+        bazaar_image: e.target.files[0].name,
+      });
     }
   };
   useEffect(() => {
-// console.log(props);
-
-  
+    // console.log(props);
   }, []);
-
-
 
   return (
     <div className={classes.root}>
-      <div className={classes.content}>
-        <div className="uploadIcon">
-          <img src={UploaderFrame} alt={"Uploader"} />
-          <input accept="image/*" onChange={imageChange} className={"kycForms"} type="file" />
-        </div>
-        <div className={"title"}>Upload Media here</div>-
-        <div className={"subtitle"}>
-          Image can be size of 512 PX by 512 PX Only
+      <div className="pt-[50px]">
+        <div className={classes.content}>
+          <div className="py-5">
+            <div className="uploadIcon">
+              <img src={UploaderFrame} alt={"Uploader"} />
+              <input
+                accept="image/*"
+                onChange={imageChange}
+                className={"kycForms"}
+                type="file"
+              />
+            </div>
+            <div className={"title"}>Upload Media here</div>-
+            <div className={"subtitle"}>
+              Image can be size of 512 PX by 512 PX Only
+            </div>
+          </div>
         </div>
       </div>
 
       <div className="field">
         <div className="bazaarField">
+          <p className="fieldTitle">Bazaar Name</p>
           <Select
             label="Age"
             variant={"standard"}
             fullWidth={true}
             value={masterType}
             onChange={handleChangeMasterType}
+            sx={{
+              color: "#2E2C34 !important;",
+              ".MuiOutlinedInput-notchedOutline": {
+                borderColor: "#2E2C34; !important",
+              },
+              "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+                borderColor: "#2E2C34; !important",
+              },
+              "&:hover .MuiOutlinedInput-notchedOutline": {
+                borderColor: "#2E2C34; !important",
+              },
+            }}
           >
             <MenuItem value={"Regional Wholeseller"}>Grocery</MenuItem>
             <MenuItem value={"Regional Wholeseller 1"}>Grocery 1</MenuItem>
@@ -76,6 +96,7 @@ const  BazaarDetails = (props:{ formData:{bazaar_name:any}, setFormData: (arg0: 
 
         <div className="stateField">
           <div>
+            <p className="fieldTitle">Select State</p>
             <Select
               label="Age"
               variant={"standard"}
@@ -91,6 +112,7 @@ const  BazaarDetails = (props:{ formData:{bazaar_name:any}, setFormData: (arg0: 
             </Select>
           </div>
           <div>
+            <p className="fieldTitle">District</p>
             <Select
               label="Age"
               variant={"standard"}
@@ -104,6 +126,7 @@ const  BazaarDetails = (props:{ formData:{bazaar_name:any}, setFormData: (arg0: 
         </div>
 
         <div className="cityField">
+          <p className="fieldTitle">City</p>
           <Select
             label="Age"
             variant={"standard"}
@@ -127,6 +150,6 @@ const  BazaarDetails = (props:{ formData:{bazaar_name:any}, setFormData: (arg0: 
       <div></div>
     </div>
   );
-}
+};
 
 export default BazaarDetails;

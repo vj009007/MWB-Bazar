@@ -11,6 +11,15 @@ export const useAddbazaarStyles = () => ({
       padding-top: 50px;
     }
 
+    .fieldTitle {
+      font-family: "Manrope";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 18px;
+      color: #84818a;
+    }
+
     .bazaarField {
       padding-top: 20px;
       padding-bottom: 20px;
@@ -41,25 +50,24 @@ export const useAddbazaarStyles = () => ({
     background: #ffffff;
     border: 2px dashed #e1e1e1;
     border-radius: 5.30337px;
-    padding: 20px;
     text-align: center;
 
     .uploadIcon {
       display: flex;
       justify-content: center;
-      position:relative;
+      position: relative;
 
       img {
         width: 50px;
       }
-.kycForms{
-      position: absolute;
-    top: 0;
-    height: 150px;
-    width: 100%;
-    opacity:0;
-    cursor:pointer;
-}
+      .kycForms {
+        position: absolute;
+        top: 0;
+        height: 150px;
+        width: 100%;
+        opacity: 0;
+        cursor: pointer;
+      }
     }
 
     .title {
