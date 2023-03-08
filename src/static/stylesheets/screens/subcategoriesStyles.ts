@@ -18,6 +18,15 @@ export const useSubCategoriesStyles = () => ({
       padding-bottom: 20px;
     }
 
+    .commonSelectText {
+      font-family: "Manrope";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 18px;
+      color: #84818a;
+    }
+
     .cityField {
       display: flex;
       gap: 12px;
@@ -71,7 +80,7 @@ export const useSubCategoriesStyles = () => ({
 
     .uploadCard {
       cursor: pointer;
-      margin-top: 30px;
+      padding: 10px;
       width: 500px;
       background: #ffffff;
       border: 2px dashed #e1e1e1;

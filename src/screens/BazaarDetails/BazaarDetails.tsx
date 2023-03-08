@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useAddbazaarStyles } from "@/static/stylesheets/molecules";
 import UploaderFrame from "@/static/icons/uploader-frame.png";
-import { MenuItem, Select, SelectChangeEvent } from "@mui/material";
+import { MenuItem, Select, SelectChangeEvent, TextField } from "@mui/material";
 
 const BazaarDetails = (props: {
   formData: { bazaar_name: any };
@@ -67,50 +67,30 @@ const BazaarDetails = (props: {
         </div>
       </div>
 
-      <div className="field">
-        <div className="bazaarField">
+      <div className="py-[30px]">
+        <div>
           <p className="fieldTitle">Bazaar Name</p>
-          <Select
-            label="Age"
-            variant={"standard"}
-            fullWidth={true}
-            value={masterType}
-            onChange={handleChangeMasterType}
-            sx={{
-              color: "#2E2C34 !important;",
-              ".MuiOutlinedInput-notchedOutline": {
-                borderColor: "#2E2C34; !important",
-              },
-              "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-                borderColor: "#2E2C34; !important",
-              },
-              "&:hover .MuiOutlinedInput-notchedOutline": {
-                borderColor: "#2E2C34; !important",
-              },
-            }}
-          >
-            <MenuItem value={"Regional Wholeseller"}>Grocery</MenuItem>
-            <MenuItem value={"Regional Wholeseller 1"}>Grocery 1</MenuItem>
-          </Select>
+          <TextField variant="standard" fullWidth={true} />
         </div>
 
-        <div className="stateField">
+        <div className="flex gap-4 py-[20px]">
           <div>
             <p className="fieldTitle">Select State</p>
             <Select
               label="Age"
               variant={"standard"}
               fullWidth={true}
-              onChange={handleChangeMasterType2}
+              onChange={handleChangeMasterType3}
             >
               <MenuItem value={"Regional Wholeseller"}>
                 Uttar Pradesh, Delhi + 2more
               </MenuItem>
               <MenuItem value={"Regional Wholeseller 1"}>
-                Uttar Pradesh, Delhi + 2more 1
+                Uttar Pradesh, Delhi + 2more
               </MenuItem>
             </Select>
           </div>
+
           <div>
             <p className="fieldTitle">District</p>
             <Select
@@ -119,35 +99,27 @@ const BazaarDetails = (props: {
               fullWidth={true}
               onChange={handleChangeMasterType3}
             >
-              <MenuItem value={"Regional Wholeseller"}>All Cities</MenuItem>
-              <MenuItem value={"Regional Wholeseller 1"}>All Cities 1</MenuItem>
+              <MenuItem value={"Regional Wholeseller"}>All Districts</MenuItem>
+              <MenuItem value={"Regional Wholeseller 1"}>
+                All Districts
+              </MenuItem>
             </Select>
           </div>
         </div>
 
-        <div className="cityField">
+        <div>
           <p className="fieldTitle">City</p>
           <Select
             label="Age"
             variant={"standard"}
             fullWidth={true}
-            value={masterType}
-            onChange={handleChangeMasterType4}
+            onChange={handleChangeMasterType3}
           >
-            <MenuItem value={"Regional Wholeseller"}>
-              Regional Wholeseller
-            </MenuItem>
-            <MenuItem value={"Regional Wholeseller 1"}>
-              Regional Wholeseller 1
-            </MenuItem>
-            <MenuItem value={"Regional Wholeseller 2"}>
-              Regional Wholeseller 2
-            </MenuItem>
+            <MenuItem value={"Regional Wholeseller"}>All Cities</MenuItem>
+            <MenuItem value={"Regional Wholeseller 1"}>All Cities</MenuItem>
           </Select>
         </div>
       </div>
-
-      <div></div>
     </div>
   );
 };
