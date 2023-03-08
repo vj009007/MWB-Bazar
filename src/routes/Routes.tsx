@@ -39,11 +39,9 @@ import WholesellerKYC from "@/screens/WholesellerKYC";
 import WholesellerLis from "@/screens/WholesellerList";
 import WholesellerMart from "@/screens/WholesellerMart";
 import RolePermission from "@/screens/RolePermission";
-import RolesPermission from "@/screens/RolePermission/RolesPermission";
-import AddRols from "@/screens/RolePermission/addRols"; 
-import Ads from "@/screens/Ads";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { routePaths } from "./routePaths";
+import WholesellerDetails from "@/screens/WholesellerDetails";
 
 const AppRoutes = () => {
   return (
@@ -56,6 +54,7 @@ const AppRoutes = () => {
           <Route path={routePaths.dashboard} element={<Dashboard />} />
           <Route path={routePaths.newbazaars} element={<AddBazaar />} />
           <Route path={routePaths.wholeseller} element={<Wholeseller />} />
+          <Route path={routePaths.wholesellerdetails} element={<WholesellerDetails />} />
           <Route
             path={routePaths.wholesellerlist}
             element={<WholesellerLis />}
@@ -114,11 +113,7 @@ const AppRoutes = () => {
           <Route path={routePaths.itemwiseplan} element={<ItemWisePlan />} />
           <Route path={routePaths.admin.bazaars} element={<Bazaars />} />
           <Route path={routePaths.admin.masterList} element={<MasterList />} />
-          <Route path={routePaths.rolePermission} element={<RolePermission />} />
-          <Route path={routePaths.rolesPermissions} element={<RolesPermission />} />
-          <Route path={routePaths.AddRols} element={<AddRols />} />
-          <Route path={routePaths.ADS} element={<Ads />} />
-          
+          <Route path={routePaths.rolesPermission} element={<RolePermission />} />
           
         </Routes>
       </Router>
