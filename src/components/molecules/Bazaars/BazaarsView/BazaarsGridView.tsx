@@ -10,12 +10,10 @@ const BazaarsGridView = () => {
   // const data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
 
   const getAllLists = async () => {
-    const responseJson = await AppService.getAllBazarList(1);
+    const responseJson = await AppService.getAllBazarList();
     setGetAllBazar(responseJson.data.results);
     // console.log("ecomprd", responseJson.data.results);
   };
-
-  
 
   useEffect(() => {
     getAllLists();

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { DashboardLayout } from "@/components/layouts";
 import { HeaderSection } from "@/components/molecules/rulespermission/section";
 import { useNavigate } from "react-router-dom";
-import { Box, Grid, Pagination, Paper, Stack, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from "@mui/material";
+import { Box, Grid, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from "@mui/material";
 import UserProfile from '@/static/images/User-profile.png';
 
 const RolePermission = () => {
@@ -47,9 +47,6 @@ const RolePermission = () => {
             </TableBody>
           </Table>
         </TableContainer>
-        <Stack spacing={2} className="pagination">
-          <Pagination count={10} variant="outlined" shape="rounded" />
-        </Stack>
       </Box>
     </DashboardLayout>
   );

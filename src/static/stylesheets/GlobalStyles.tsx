@@ -82,11 +82,7 @@ const styles = () => css`
   // select css
 
   //person odel css
-  .person-type{
-    max-width:260px;
-    overflow:hidden;
-    text-overflow: ellipsis;
-  }
+
   td.person-details {
     position: relative;
     .person-model {

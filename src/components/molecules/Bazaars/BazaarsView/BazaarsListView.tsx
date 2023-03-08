@@ -3,28 +3,18 @@ import { useBazaarListStyles } from "@/static/stylesheets/molecules/";
 import LogoEcBazaar from "@/static/icons/ic_bookmark.png";
 import LogoDot from "@/static/icons/ic_dot.png";
 import { AppService } from "../../../../service/AllApiData.service";
-import { Pagination } from "@mui/lab";
 
 const BazaarsListView = () => {
   const classes = useBazaarListStyles();
   const [getAllBazar, setGetAllBazar] = useState([]);
-  const [currentPage, setCurrentPage] = useState(1);
-  const ITEMS_PER_PAGE = 10;
-  const handlePageChange = (event:any, value:any) => {
-    setCurrentPage(value);
-    console.log(value);
-  };
-  const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
-  const endIndex = startIndex + ITEMS_PER_PAGE;
-  const currentItems = getAllBazar.slice(startIndex, endIndex);
 
-  const getAllLists = async (currentPage:any) => {
-    const responseJson = await AppService.getAllBazarList(currentPage);
+  const getAllLists = async () => {
+    const responseJson = await AppService.getAllBazarList();
     setGetAllBazar(responseJson.data.results);
   };
 
   useEffect(() => {
-    getAllLists(currentPage);
+    getAllLists();
   }, []);
 
 
@@ -41,7 +31,7 @@ const BazaarsListView = () => {
           <th className="billsTitle">NO. OF BILLS</th>
           <th></th>
         </tr>
-        {currentItems.map((item: any) => (
+        {getAllBazar.map((item: any) => (
           <tr>
             <td>
               <div className="brandData">
@@ -61,11 +51,6 @@ const BazaarsListView = () => {
           </tr>
         ))}
       </table>
-      <div className="flex items-center justify-between pagination" style={{display:"flex"}}>
-            <div className="text-[#84818A] text-sm font-medium">Show <span>{ITEMS_PER_PAGE}</span> from {getAllBazar.length} products</div>
-        
-           <Pagination count={Math.ceil(getAllBazar.length / ITEMS_PER_PAGE)} page={currentPage} onChange={handlePageChange} />
-          </div>
     </div>
   );
 };

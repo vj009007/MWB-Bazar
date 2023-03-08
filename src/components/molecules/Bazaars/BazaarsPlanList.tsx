@@ -1,51 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useBazaarplanListStyles } from "@/static/stylesheets/molecules";
-import { AppService } from "@/service/AllApiData.service";
-import { Pagination } from "@mui/lab";
 
-const BazaarsPlanList = (props:any) => {
+const BazaarsPlanList = () => {
   const classes = useBazaarplanListStyles();
   const data = [1, 2, 3, 4, 5, 6, 7];
-  const [getPlans, setTotalPlans] = useState([]);
-  const [currentPage, setCurrentPage] = useState(1);
-  const ITEMS_PER_PAGE = 4;
-  const handlePageChange = (event:any, value:any) => {
-    setCurrentPage(value);
-  };
-
-  const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
-  const endIndex = startIndex + ITEMS_PER_PAGE;
-  const currentItems = getPlans.slice(startIndex, endIndex);
-
-
-  const getAllLists = async () => {
-    const responseJson = await AppService.getAllPlansData();
-    // console.log(responseJson.data.bazaar);
-    setTotalPlans(responseJson.data.results);
-    
-    // totalWholesellers(responseJson);
-   
-  };
- 
-  // const totalBazaar = (responseJson:any) =>{
-  //   let sum = responseJson.data = (datas:any)=> {
-  //     return datas.bazaars
-  //   };
-  //   console.log(sum);
-  //   setTotalBazaar(sum);
-  // }
-
-  // const totalWholesellers = (responseJson:any) =>{
-  //   let sum = responseJson.data.results.reduce(function(prev: number, current:any) {
-  //     return prev + +current.wholesellers
-  //   }, 0);
-  //   console.log(sum);
-  //   setWholesellers(sum);
-  // }
-
-  useEffect(() => {
-    getAllLists();
-  }, []);
 
   return (
     <div className={classes.root}>
@@ -71,30 +29,30 @@ const BazaarsPlanList = (props:any) => {
           <th>Revenue Generated</th>
         </tr>
 
-        {currentItems.map((item: any) => (
+        {data.map((item: any) => (
           <tr>
-            <td className="plan-name">{item.plan_name}</td>
-            <td>{item.bazaar}</td>
-            <td className="state">{item.state}</td>
+            <td className="plan-name">Plan Name</td>
+            <td>Electronics Bazaar, Computer Bazaar</td>
+            <td className="state">UP, Delhi</td>
             <td className="has-details">
-            {item.district}
+              GB Nagar, Ghaziabad, + 1
             </td>
-            <td> {item.city}</td>
-            <td className="duration">{item.duration}</td>
-            <td className="price">Rs. {item.plan_price}</td>
+            <td>Ghaziabad, Noida, Delhi</td>
+            <td className="duration">7 days</td>
+            <td className="price">Rs. 10,000</td>
             <td>
               <table className="inside-table">
                 <tr>
-                  <td className="activeTitle">{item.subscribers_active}</td>
-                  <td className="expiredTitle">{item.subscribers_expired}</td>
-                  <td className="revenueTitle">{item.subscribers_deactivated}</td>
+                  <td className="activeTitle">141</td>
+                  <td className="expiredTitle">14</td>
+                  <td className="revenueTitle">7</td>
                 </tr>
               </table>
             </td>
             <td className="pr-0">
               <div className="flex items-center gap-3 whitespace-nowrap">
                 <div>
-                  <div> Rs. {item.revenue_generated}</div>
+                  <div> Rs. 12000</div>
                   <div className="w-full bg-[#EBEAED] rounded-sm h-1 mt-1">
                     <div
                       className="bg-[#5542F6] h-1 rounded-  "
@@ -104,17 +62,11 @@ const BazaarsPlanList = (props:any) => {
                 </div>
                 <div>16.30%</div>
               </div>
-            </td> 
+            </td>
           </tr>
         ))}
       </table>
-      <div className="flex items-center justify-between pagination">
-            <div className="text-[#84818A] text-sm font-medium">Show <span>{ITEMS_PER_PAGE}</span> from {getPlans.length} products</div>
-        
-           <Pagination count={Math.ceil(getPlans.length / ITEMS_PER_PAGE)} page={currentPage} onChange={handlePageChange} />
-          </div>
     </div>
-    
   );
 };
 

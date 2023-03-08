@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export default axios.create({
-  baseURL: "https://knackfee.com/api",
+  baseURL: "http://13.232.244.133/api",
   headers: {
     "Content-type": "application/json"
   }
