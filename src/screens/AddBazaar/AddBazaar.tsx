@@ -4,7 +4,6 @@ import { DashboardLayout } from "@/components/layouts";
 import { SectionHeader } from "@/components/molecules/Bazaars";
 
 const AddBazaar = () => {
-
   return (
     <>
       <DashboardLayout>
