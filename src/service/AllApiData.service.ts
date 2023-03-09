@@ -1,3 +1,4 @@
+import { AxiosRequestConfig } from "axios";
 import http from "./http-common";
 export class AppService {
 
@@ -106,6 +107,22 @@ static getAllPlans(){
 static getAllPlansData(){
 	return http.get("dashboard/plan-list/", { headers: AppService.authHeader() });
 	
+}
+
+static getAllStates(){
+	return http.get("location/state/", { headers: AppService.authHeader() });
+	
+}
+static getAllDistric(){
+	return http.get("location/district/", { headers: AppService.authHeader() });
+	
+}
+
+static getAllCity(){
+	return http.get("location/city/", { headers: AppService.authHeader() });
+}
+static addBazars(data: any){
+	return http.post("bazaar/data/", data, { headers: AppService.authHeader() });
 }
 
 }

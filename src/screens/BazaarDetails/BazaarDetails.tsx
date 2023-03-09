@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useAddbazaarStyles } from "@/static/stylesheets/molecules";
 import UploaderFrame from "@/static/icons/uploader-frame.png";
 import { MenuItem, Select, SelectChangeEvent, TextField } from "@mui/material";
+import { AppService } from "@/service/AllApiData.service";
 
 const BazaarDetails = (props: {
   formData: { bazaar_name: any };
@@ -10,25 +11,35 @@ const BazaarDetails = (props: {
   const classes = useAddbazaarStyles();
 
   const [masterType, setMasterType] = useState("");
+  const [AllState, setAllState] = React.useState([]);
+  const [AllDis, setAllDis] = React.useState([]);
+  const [AllCity, setAllCity] = React.useState([]);
 
   const handleChangeMasterType = (event: SelectChangeEvent) => {
     setMasterType(event.target.value as string);
-    // console.log(event.target.value as string);
     props.setFormData({
       ...props.formData,
-      bazaar_state: event.target.value as string,
+      bazaar_state: [event.target.value],
     });
+    
   };
 
   const handleChangeMasterType2 = (event: SelectChangeEvent) => {
-    //setMasterType(event.target.value as string);
+    // setMasterType(event.target.value as string);
+    props.setFormData({
+      ...props.formData,
+      bazaar_district: [event.target.value],
+    });
+  
   };
   const handleChangeMasterType3 = (event: SelectChangeEvent) => {
-    //setMasterType(event.target.value as string);
+    props.setFormData({
+      ...props.formData,
+      bazaar_city: [event.target.value],
+    });
+   
   };
-  const handleChangeMasterType4 = (event: SelectChangeEvent) => {
-    // setMasterType(event.target.value as string);
-  };
+
 
   const [selectedImage, setSelectedImage] = useState();
   const imageChange = (e: any) => {
@@ -41,8 +52,39 @@ const BazaarDetails = (props: {
       });
     }
   };
+
+
+
+  const getAllLists = async () => {
+    const responseJson = await AppService.getAllStates();
+    // console.log(responseJson.data.bazaar);
+    setAllState(responseJson.data.results);
+   
+  };
+
+  const getAllDis = async () => {
+    const responseJson = await AppService.getAllDistric();
+    // console.log(responseJson.data.bazaar);
+    setAllDis(responseJson.data.results);
+   
+  };
+
+  const getAllCity= async () => {
+    const responseJson = await AppService.getAllCity();
+    // console.log(responseJson.data.bazaar);
+    setAllCity(responseJson.data.results);
+   
+  };
+ 
+
+
+
+
   useEffect(() => {
     // console.log(props);
+    getAllLists();
+    getAllDis();
+    getAllCity();
   }, []);
 
   return (
@@ -70,7 +112,8 @@ const BazaarDetails = (props: {
       <div className="py-[30px]">
         <div>
           <p className="fieldTitle">Bazaar Name</p>
-          <TextField variant="standard" fullWidth={true} />
+          <TextField variant="standard" onChange={e => props.setFormData({
+      ...props.formData, bazaar_name: e.target.value})} fullWidth={true} />
         </div>
 
         <div className="flex gap-4 py-[20px]">
@@ -80,14 +123,14 @@ const BazaarDetails = (props: {
               label="Age"
               variant={"standard"}
               fullWidth={true}
-              onChange={handleChangeMasterType3}
+              onChange={handleChangeMasterType}
             >
-              <MenuItem value={"Regional Wholeseller"}>
-                Uttar Pradesh, Delhi + 2more
+              {AllState.map((items:any)=>(
+              <MenuItem value={items.id}>
+              {items.state}
               </MenuItem>
-              <MenuItem value={"Regional Wholeseller 1"}>
-                Uttar Pradesh, Delhi + 2more
-              </MenuItem>
+              
+              ))}
             </Select>
           </div>
 
@@ -97,12 +140,13 @@ const BazaarDetails = (props: {
               label="Age"
               variant={"standard"}
               fullWidth={true}
-              onChange={handleChangeMasterType3}
+              onChange={handleChangeMasterType2}
             >
-              <MenuItem value={"Regional Wholeseller"}>All Districts</MenuItem>
-              <MenuItem value={"Regional Wholeseller 1"}>
-                All Districts
+             {AllDis.map((items:any)=>(
+              <MenuItem value={items.id}>
+              {items.district}
               </MenuItem>
+                ))}
             </Select>
           </div>
         </div>
@@ -115,8 +159,11 @@ const BazaarDetails = (props: {
             fullWidth={true}
             onChange={handleChangeMasterType3}
           >
-            <MenuItem value={"Regional Wholeseller"}>All Cities</MenuItem>
-            <MenuItem value={"Regional Wholeseller 1"}>All Cities</MenuItem>
+            {AllCity.map((items:any)=>(
+              <MenuItem value={items.id}>
+              {items.city}
+              </MenuItem>
+                ))}
           </Select>
         </div>
       </div>

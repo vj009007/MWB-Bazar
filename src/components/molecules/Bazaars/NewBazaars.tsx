@@ -11,6 +11,7 @@ import Categories from "@/screens/Categories";
 import SubCategories from "@/screens/SubCategories";
 import { useBazaarStepperdStyles } from "@/static/stylesheets/molecules";
 import LogoPrev from "@/static/icons/ic_previous.png";
+import { AppService } from "@/service/AllApiData.service";
 
 const steps = [
   "Bazaar Details",
@@ -23,56 +24,56 @@ const steps = [
 export default function NewBazaars() {
   const [activeStep, setActiveStep] = React.useState(0);
   const [skipped, setSkipped] = React.useState(new Set<number>());
+  const [AllState, setAllState] = React.useState([]);
+  const getAllLists = async () => {
+    const responseJson = await AppService.getAllStates();
+    // console.log(responseJson.data.bazaar);
+    setAllState(responseJson.data.results);
+   
+  };
+ 
+
+
+  React.useEffect(() => {
+    getAllLists();
+  }, []);
+
   const [formData, setFormData] = React.useState({
-  wholesellers: "20",
-    agents: "13",
-    states: "2",
-    earnings: "154000",
-    bills: "52",
-    bazaar_description: "test",
+  wholesellers: "",
+    agents: "",
+    states: "",
+    earnings: "",
+    bills: "",
+    bazaar_description: "",
     bazaar_name: "",
     bazaar_image: "",
-    bazaar_added_date: "2023-03-06T19:56:00+05:30",
-    bazaar_updated_date: "2023-03-07T20:57:00+05:30",
+    bazaar_added_date: "",
+    bazaar_updated_date: "",
     bazaar_updated_by: 1,
-    "bazaar_state": [
-       
-    ],
-    "bazaar_city": [
-        1,
-        2
-    ],
-    "bazaar_district": [
-        1,
-        2
-    ],
-    "bazaar_gorup_category": [
-        1,
-        2
-    ],
-    "bazaar_category": [
-        1
-    ],
-    "bazaar_subcategory": [
-        1,
-        2
-    ],
-    "bazaar_product": [
-        1,
-        2
-    ]
+    bazaar_state: [],
+    bazaar_city: [],
+    bazaar_district: [],
+    bazaar_gorup_category: [],
+    bazaar_category: [],
+    bazaar_subcategory: [],
+    bazaar_product: []
   });
 
   const isStepSkipped = (step: number) => {
     return skipped.has(step);
   };
 
-  const handleNext = (e:any) => {
-    console.log(e.target.value);
+  const handleNext = async (e:any) => {
+    console.log(activeStep);
     console.log(formData);
+    if(activeStep===4){
+      const responseJson = await AppService.addBazars(formData);
+      console.log(responseJson);
+    }
     let newSkipped = skipped;
     if (isStepSkipped(activeStep)) {
       newSkipped = new Set(newSkipped.values());
+      console.log(activeStep);
       newSkipped.delete(activeStep);
     }
 
@@ -136,9 +137,9 @@ export default function NewBazaars() {
             </React.Fragment>
           ) : (
             <React.Fragment>
-              {activeStep === 0 && <BazaarDetails formData={formData} setFormData={setFormData} />}
+              {activeStep === 0 && <BazaarDetails  formData={formData} setFormData={setFormData} />}
 
-              {activeStep === 1 && <GroupCategories />}
+              {activeStep === 1 && <GroupCategories formData={formData} setFormData={setFormData} />}
 
               {activeStep === 2 && <Categories />}
               {activeStep === 3 && <Categories />}
