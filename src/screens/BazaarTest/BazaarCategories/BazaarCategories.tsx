@@ -1,6 +1,6 @@
 import React from "react";
 import { useCategoriesStyles } from "@/static/stylesheets/screens/categoriesStyles";
-import GroupCategories from "../BazaarGroupCategories";
+import GroupCategories from "@/screens/GroupCategories";
 
 const BazaarCategories = () => {
   const classes = useCategoriesStyles();
