@@ -71,3 +71,6 @@ display: none;
 .planPopUP .css-1t1j96h-MuiPaper-root-MuiDialog-paper .pagination{
   display: flex;
 }
+.w-\[50px\] {
+  width: 50px !important;
+}
