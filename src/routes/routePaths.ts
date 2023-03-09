@@ -26,6 +26,7 @@ export const routePaths = {
   reviewplan: `/reviewplan`,
   addnewplan: `/addnewplan`,
   bulkupload: `/bulkupload`,
+  bulkuploadlist: `/bulkuploadlist`,
   subcategories: `/subcategories`,
   bazaarreport: `/bazaarreport`,
   addnewadvertisement: `/addnewadvertisement`,
