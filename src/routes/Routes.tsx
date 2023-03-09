@@ -43,6 +43,8 @@ import RolesPermission from "@/screens/RolePermission/RolesPermission";
 import AddRols from "@/screens/RolePermission/addRols"; 
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { routePaths } from "./routePaths";
+import BulkUploadList from "@/screens/BulkUploadList";
+import AddBazaarNew from "@/screens/AddBazaarNew";
 
 const AppRoutes = () => {
   return (
@@ -97,6 +99,8 @@ const AppRoutes = () => {
           <Route path={routePaths.addproduct} element={<AddProduct />} />
           <Route path={routePaths.bulkupload} element={<BulkUpload />} />
           <Route path={routePaths.subcategories} element={<SubCategories />} />
+          <Route path={routePaths.addbazaartest} element={<AddBazaarNew />} />
+          <Route path={routePaths.bulkuploadlist} element={<BulkUploadList />} />
           <Route
             path={routePaths.addwholeseller}
             element={<AddWholeseller />}
