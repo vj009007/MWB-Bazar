@@ -22,6 +22,7 @@ export const routePaths = {
   wholesellerkyc: `/wholesellerkyc`,
   electronicsbazaar: `/electronicsbazaar`,
   addproduct: `/addproduct`,
+  addbazaartest: `/addbazaartest`,
   plans: `/plans`,
   reviewplan: `/reviewplan`,
   addnewplan: `/addnewplan`,
