@@ -8,6 +8,7 @@ import Typography from "@mui/material/Typography";
 import BazaarDetails from "@/screens/BazaarDetails";
 import GroupCategories from "@/screens/GroupCategories";
 import Categories from "@/screens/Categories";
+import Categories2 from "@/screens/Categories2";
 import SubCategories from "@/screens/SubCategories";
 import { useBazaarStepperdStyles } from "@/static/stylesheets/molecules";
 import LogoPrev from "@/static/icons/ic_previous.png";
@@ -142,7 +143,7 @@ export default function NewBazaars() {
               {activeStep === 1 && <GroupCategories formData={formData} setFormData={setFormData} />}
 
               {activeStep === 2 && <Categories />}
-              {activeStep === 3 && <Categories />}
+              {activeStep === 3 && <Categories2 />}
               {activeStep === 4 && <SubCategories />}
 
               <div className="actionButton">

@@ -47,30 +47,70 @@
   transform: matrix(1, 0, 0, -1, 0, 0);
   @apply h-[1px] w-full my-4;
 }
-.breadCrumb{
+.breadCrumb {
   @apply flex items-center gap-6 py-10;
 }
-.breadCrumb span{
+.breadCrumb span {
   @apply text-2xl leading-5 text-[#2E2C34] font-semibold;
 }
-.planPopUP .css-1t1j96h-MuiPaper-root-MuiDialog-paper{
+.planPopUP .css-1t1j96h-MuiPaper-root-MuiDialog-paper {
   @apply max-w-[1243px] p-8 rounded-[20px];
 }
-.planPopUP .bazaarButtons{
+.planPopUP .bazaarButtons {
   @apply flex items-center gap-4;
 }
-.planPopUP .closeBtn{
+.planPopUP .closeBtn {
   width: 20px;
   height: 20px;
   background: url(../icons/close-icon.svg) no-repeat center center;
 }
 
-.pagination{
-display: none;
+.pagination {
+  display: none;
 }
-.planPopUP .css-1t1j96h-MuiPaper-root-MuiDialog-paper .pagination{
+.planPopUP .css-1t1j96h-MuiPaper-root-MuiDialog-paper .pagination {
   display: flex;
 }
 .w-\[50px\] {
   width: 50px !important;
+}
+.groupCeta tr td:not(:first-child) ,
+.groupCeta tr th:not(:first-child){
+  @apply pl-6;
+}
+.groupCeta tr {
+  padding-top: 1rem;
+  display: block;
+}
+.groupCeta .ActionLogo {
+  border: 1px solid #ebeaed;
+  border-radius: 4px;
+  @apply flex gap-3 items-center p-5;
+}
+.groupCeta .ActionLogo img{
+  @apply max-w-[16px]
+}
+.groupCeta .ActionLogo .dividor{
+  border-left: 2px solid #ebeaed;
+  width: 4px;
+  height: 22px;
+}
+.rightContainer .addButton{
+  border: 2px dashed #5542F6;
+border-radius: 4px;
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 11px 24px;
+gap: 8px;
+cursor: pointer;
+color: #5542F6;
+font-weight: 600;
+font-size: 14px;
+line-height: 20px;
+margin-top: 32px;
+}
+.rightContainer .addButton img{
+  max-width: 10px;
 }

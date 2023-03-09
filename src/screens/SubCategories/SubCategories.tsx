@@ -6,6 +6,8 @@ import { Grid, TextField } from "@mui/material";
 import UploaderFrame from "@/static/icons/uploader-frame.png";
 import { MenuItem, Select, SelectChangeEvent } from "@mui/material";
 import LogoAdd from "@/static/icons/ic_add.png";
+import { ChevronRightIcon } from "@heroicons/react/20/solid";
+import { TreeView, TreeItem } from "@mui/lab";
 
 const SubCategories = () => {
   const classes = useSubCategoriesStyles();
@@ -20,7 +22,32 @@ const SubCategories = () => {
       <div className="container">
         <Grid container spacing={2}>
           <Grid item xs={3}>
-            <MuiTreeView />
+          <TreeView
+        className="treefont"
+        aria-label="file system navigator"
+        defaultExpandIcon={<ChevronRightIcon />}
+        sx={{
+          height: 300,
+          flexGrow: 1,
+          maxWidth: 300,
+          overflowY: "auto",
+          border: 2,
+          padding: "30px",
+          borderColor: "#E1E1E1",
+          borderRadius: "6px",
+          mt:8,
+        }}
+      >
+        <TreeItem nodeId="1" label="Beverages">
+          <TreeItem nodeId="2" label="Calendar" />
+        </TreeItem>
+        <TreeItem nodeId="5" label="Chocolate Biscuits">
+          <TreeItem nodeId="10" label="Butter Biscuits" />
+          <TreeItem nodeId="6" label="Namkeens">
+            <TreeItem nodeId="8" label="Chips" />
+          </TreeItem>
+        </TreeItem>
+      </TreeView>
           </Grid>
           <Grid item xs={9}>
             <div className="rightContainer">

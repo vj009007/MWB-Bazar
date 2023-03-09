@@ -9,7 +9,7 @@ import LogoDelete from "@/static/icons/ic_delete.png";
 import LogoEdit from "@/static/icons/ic_edit.png";
 import LogoAdd from "@/static/icons/ic_add.png";
 
-const Categories = () => {
+const Categories2 = () => {
   const classes = useCategoriesStyles();
   const [expanded, setExpanded] = React.useState([])
   const [selected, setSelected] = React.useState([])
@@ -84,7 +84,7 @@ const handleSelect = (event: any) => {
             <div>
         <div className="addButton">
           <img src={LogoAdd} alt={"Logo"} />
-          <p>Add New Group Category</p>
+          <p>Add New Group Category 2</p>
         </div>
       </div>
         </div>
@@ -93,4 +93,4 @@ const handleSelect = (event: any) => {
   );
 };
 
-export default Categories;
+export default Categories2;
