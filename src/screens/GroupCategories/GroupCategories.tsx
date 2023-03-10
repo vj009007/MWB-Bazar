@@ -36,10 +36,28 @@ const list = [...inputFields];
 // list[index][name] = value
 console.log(list);
 setInputFields(list);
-props.setFormData({
-  ...props.formData,
-  bazaar_gorup_category: list,
-});
+// props.setFormData({
+//   ...props.formData,
+//   bazaar_gorup_category: list,
+// });
+}
+
+
+const [selectedImage, setSelectedImage] = useState();
+
+const imageChange = (e:any) => {
+  if (e.target.files && e.target.files.length > 0) {
+    console.log(e.target.files[0]);
+    setSelectedImage(e.target.files[0]);
+  }
+};
+
+const dataSave = (e:any) => {
+  // console.log(e.target.value);
+  // props.setFormData({
+  //   ...props.formData,
+  //   bazaar_gorup_category: [selectedImage, e.target.value],
+  // });
 }
 
   return (
@@ -48,10 +66,8 @@ props.setFormData({
 
     
     <div className={classes.root}>
-  {
-                      inputFields.map((data, index)=>{
-                          const {fullName, image}= data;
-                          return(
+
+                   
       <table>
         <tr>
           <th>Image</th>
@@ -61,26 +77,29 @@ props.setFormData({
         <tr>
           <td>
             <div className="brandLogo" style={{position:"relative"}}>
-              <img src={LogoEcBazaar} alt={"Logo"} />
+              {/* <img src={LogoEcBazaar} alt={"Logo"} /> */}
+              {selectedImage ===undefined ? <img src={LogoEcBazaar} alt={"Logo"} /> :selectedImage && (
+            <img src={URL.createObjectURL(selectedImage)}/>
+            ) } 
               <input  accept="image/*" style={{position: 'absolute',
     top: 0,     width: '40px',
     height: '37px',
-    cursor: 'pointer', opacity:'0'}} type="file" onChange={(evnt)=>handleChange(index, evnt)}  name="image"  />
+    cursor: 'pointer', opacity:'0'}} type="file" onChange={imageChange}  name="image"  />
             </div>
           </td>
           <td>
             <div>
-              <input onChange={(evnt)=>handleChange(index, evnt)} 
+              <input 
                 type="text" name="fullName"
                 id="first_name"
                 className="bg-gray-50 border border-gray-300 text-sm rounded-lg text-[#2E2C34] block w-full p-[15px] dark:border-[#EBEAED]"
-                placeholder="Snacks"
+                placeholder="Snacks" onChange={dataSave}
               />
             </div>
           </td>
           <td>
             <div className="ActionLogo">
-              <img src={LogoDelete} alt={"Logo"} onClick={()=>removeInputFields(index)}/>
+              <img src={LogoDelete} alt={"Logo"}/>
               <div className="dividor"></div>
               <img src={LogoEdit} alt={"Logo"} />
               
@@ -90,9 +109,7 @@ props.setFormData({
 
         
       </table>
-       )
-      })
-  }
+      
       <div>
         <div className="addButton" onClick={addInputField}>
           <img src={LogoAdd} alt={"Logo"} />

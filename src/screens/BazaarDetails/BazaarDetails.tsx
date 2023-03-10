@@ -46,10 +46,10 @@ const BazaarDetails = (props: {
     if (e.target.files && e.target.files.length > 0) {
       console.log(e.target.files[0]);
       setSelectedImage(e.target.files[0]);
-      props.setFormData({
-        ...props.formData,
-        bazaar_image: e.target.files[0].name,
-      });
+      // props.setFormData({
+      //   ...props.formData,
+      //   bazaar_image: e.target.files[0].name,
+      // });
     }
   };
 
@@ -75,7 +75,7 @@ const BazaarDetails = (props: {
     setAllCity(responseJson.data.results);
    
   };
- 
+
 
 
 
@@ -93,10 +93,16 @@ const BazaarDetails = (props: {
         <div className={classes.content}>
           <div className="py-5">
             <div className="uploadIcon">
-              <img src={UploaderFrame} alt={"Uploader"} />
+              {/* <img src={UploaderFrame} alt={"Uploader"} /> */}
+              {selectedImage ===undefined ? <img src={UploaderFrame} alt={"Uploader"} /> :selectedImage && (
+            <img style={{position: "absolute",
+              width: "100%",
+              zIndex: "1",
+              height: "145px"}} src={URL.createObjectURL(selectedImage)}/>
+            ) } 
               <input
                 accept="image/*"
-                onChange={imageChange}
+                onChange={imageChange} 
                 className={"kycForms"}
                 type="file"
               />

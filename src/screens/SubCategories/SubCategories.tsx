@@ -9,20 +9,79 @@ import LogoAdd from "@/static/icons/ic_add.png";
 import { ChevronRightIcon } from "@heroicons/react/20/solid";
 import { TreeView, TreeItem } from "@mui/lab";
 
-const SubCategories = () => {
+const SubCategories = (props: {
+  formData: { bazaar_name: any };
+  setFormData: (arg0: any) => void;
+}) => {
   const classes = useSubCategoriesStyles();
   const [masterType, setMasterType] = useState("Regional Wholeseller");
+  const [node, setNode] = React.useState("")
+  const [contactInfo, setContactInfo] = useState({
+    name: "",
+    brandname: "",
+    totalweight: "",
+    nounit: "",
+    perunit: "",
+    mrp: "",
+    gst: "",
+    tmrp:"",
+    hsn: ""
+  });
 
   const handleChangeMasterType = (event: SelectChangeEvent) => {
     setMasterType(event.target.value as string);
   };
+  const handleSelectedItems = (event:any, nodeId:any) => {
+    // console.log(event.target.value);
+    setNode(nodeId);
+  }
+
+  const [selectedImage, setSelectedImage] = useState();
+  const imageChange = (e:any) => {
+    if (e.target.files && e.target.files.length > 0) {
+      console.log(e.target.files[0]);
+      setSelectedImage(e.target.files[0]);
+    }
+  };
+  const [selectedImage2, setSelectedImage2] = useState();
+  const imageChange2 = (e:any) => {
+    if (e.target.files && e.target.files.length > 0) {
+      console.log(e.target.files[0]);
+      setSelectedImage2(e.target.files[0]);
+    }
+  };
+  const [selectedImage3, setSelectedImage3] = useState();
+  const imageChange3 = (e:any) => {
+    if (e.target.files && e.target.files.length > 0) {
+      console.log(e.target.files[0]);
+      setSelectedImage3(e.target.files[0]);
+    }
+  };
+
+  const handleChange = (event: {
+    preventDefault(): unknown; target: { name: any; value: any; }; 
+}) => {
+    event.preventDefault();
+    setContactInfo({ ...contactInfo, [event.target.name]: event.target.value });
+    // props.setFormData({
+    //   ...props.formData,
+    //   bazaar_product: [contactInfo],
+    // });
+  };
+
+
+  React.useEffect(() => {
+  
+    
+      
+      }, []);
 
   return (
     <div className={classes.root}>
       <div className="container">
         <Grid container spacing={2}>
           <Grid item xs={3}>
-          <TreeView
+          <TreeView  onNodeSelect={handleSelectedItems}
         className="treefont"
         aria-label="file system navigator"
         defaultExpandIcon={<ChevronRightIcon />}
@@ -60,8 +119,16 @@ const SubCategories = () => {
             <div className="border-2 p-5 mt-3 rounded-md ">
               <div className="flex gap-5">
                 <div className="uploadCard">
-                  <div className="uploadIcon px-3">
-                    <img src={UploaderFrame} alt={"Uploader"} />
+                  <div className="uploadIcon px-3" style={{position:"relative"}}>
+                    
+
+                    {selectedImage3 ===undefined ? <img src={UploaderFrame} alt={"Uploader"} /> :selectedImage && (
+            <img src={URL.createObjectURL(selectedImage3)}/>
+            ) } 
+              <input  accept="image/*" style={{position: 'absolute',
+    top: 0,     width: '130px',
+    height: '37px',
+    cursor: 'pointer', opacity:'0'}} type="file" onChange={imageChange3}  name="image"  />
                   </div>
 
                   <div className="content">
@@ -73,8 +140,16 @@ const SubCategories = () => {
                 </div>
 
                 <div className="uploadCard">
-                  <div className="uploadIcon px-3">
-                    <img src={UploaderFrame} alt={"Uploader"} />
+                  <div className="uploadIcon px-3" style={{position:"relative"}}>
+                    
+
+                    {selectedImage ===undefined ? <img src={UploaderFrame} alt={"Uploader"} /> :selectedImage && (
+            <img src={URL.createObjectURL(selectedImage)}/>
+            ) } 
+              <input  accept="image/*" style={{position: 'absolute',
+    top: 0,     width: '130px',
+    height: '37px',
+    cursor: 'pointer', opacity:'0'}} type="file" onChange={imageChange}  name="image"  />
                   </div>
 
                   <div className="content">
@@ -88,8 +163,16 @@ const SubCategories = () => {
 
               <div className="flex gap-5 py-5">
                 <div className="uploadCard">
-                  <div className="uploadIcon px-3">
-                    <img src={UploaderFrame} alt={"Uploader"} />
+                  <div className="uploadIcon px-3" style={{position:"relative"}}>
+                    
+
+                    {selectedImage2 ===undefined ? <img src={UploaderFrame} alt={"Uploader"} /> :selectedImage && (
+            <img src={URL.createObjectURL(selectedImage2)}/>
+            ) } 
+              <input  accept="image/*" style={{position: 'absolute',
+    top: 0,     width: '130px',
+    height: '37px',
+    cursor: 'pointer', opacity:'0'}} type="file" onChange={imageChange2}  name="image"  />
                   </div>
 
                   <div className="content">
@@ -105,12 +188,14 @@ const SubCategories = () => {
                 <div className="bazaarField">
                   <div>
                     <p className="commonSelectText">Product Name</p>
-                    <TextField variant="standard" fullWidth={true} />
+                    <TextField onChange={handleChange} name="name"
+           variant="standard" fullWidth={true} />
                   </div>
 
                   <div>
                     <p className="commonSelectText">Brand Name</p>
-                    <TextField variant="standard" fullWidth={true} />
+                    <TextField onChange={handleChange} name="brandname"
+            variant="standard" fullWidth={true} />
                   </div>
                 </div>
 
@@ -119,7 +204,8 @@ const SubCategories = () => {
                     <p className="commonSelectText">Total Weight</p>
                     <div className="flex gap-4">
                       <div>
-                        <TextField variant="standard" fullWidth={true} />
+                        <TextField onChange={handleChange} name="totalweight"
+            variant="standard" fullWidth={true} />
                       </div>
                       <div>
                         <Select
@@ -127,7 +213,7 @@ const SubCategories = () => {
                           variant={"standard"}
                           fullWidth={true}
                           value={masterType}
-                          onChange={handleChangeMasterType}
+                          onChange={handleChangeMasterType} 
                         >
                           <MenuItem value={"Regional Wholeseller"}>Kg</MenuItem>
                           <MenuItem value={"Regional Wholeseller 1"}>
@@ -141,7 +227,7 @@ const SubCategories = () => {
                     <p className="commonSelectText">No. of Units</p>
                     <div className="flex gap-4">
                       <div>
-                        <TextField variant="standard" fullWidth={true} />
+                        <TextField onChange={handleChange}  name="nounit" variant="standard" fullWidth={true} />
                       </div>
                       <div>
                         <Select
@@ -163,13 +249,13 @@ const SubCategories = () => {
                   </div>
                   <div>
                     <p className="commonSelectText">Total MRP</p>
-                    <TextField variant="standard" fullWidth={true} />
+                    <TextField onChange={handleChange} variant="standard" name="tmrp" fullWidth={true} />
                   </div>
                   <div>
                     <p className="commonSelectText">Per Unit Weight</p>
                     <div className="flex gap-4">
                       <div>
-                        <TextField variant="standard" fullWidth={true} />
+                        <TextField onChange={handleChange} variant="standard"  name="perunit" fullWidth={true} />
                       </div>
                       <div>
                         <Select
@@ -188,19 +274,21 @@ const SubCategories = () => {
                     </div>
                   </div>
                   <div>
-                    <p className="commonSelectText">MRP</p>
-                    <TextField variant="standard" fullWidth={true} />
+                    <p className="commonSelectText">HSN Code</p>
+                    <TextField onChange={handleChange} variant="standard"  name="hsn" fullWidth={true} />
                   </div>
                 </div>
 
                 <div className="cityField">
                   <div>
                     <p className="commonSelectText">GST</p>
-                    <TextField variant="standard" fullWidth={true} />
+                    <TextField onChange={handleChange} variant="standard" name="gst" fullWidth={true} />
                   </div>
+                 
                   <div>
-                    <p className="commonSelectText">HSN Code</p>
-                    <TextField variant="standard" fullWidth={true} />
+                    <p className="commonSelectText">MRP</p>
+                    <TextField variant="standard"  name="mrp" 
+                    onChange={handleChange} fullWidth={true} />
                   </div>
                 </div>
               </div>

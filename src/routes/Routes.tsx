@@ -96,7 +96,11 @@ const AppRoutes = () => {
           <Route path={routePaths.trackorder} element={<TrackOrder />} />
           <Route path={routePaths.addproduct} element={<AddProduct />} />
           <Route path={routePaths.bulkupload} element={<BulkUpload />} />
-          <Route path={routePaths.subcategories} element={<SubCategories />} />
+          <Route path={routePaths.subcategories} element={<SubCategories formData={{
+            bazaar_name: undefined
+          }} setFormData={function (arg0: any): void {
+            throw new Error("Function not implemented.");
+          } } />} />
           <Route
             path={routePaths.addwholeseller}
             element={<AddWholeseller />}
