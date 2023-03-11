@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useAddbazaarStyles } from "@/static/stylesheets/molecules";
 import UploaderFrame from "@/static/icons/uploader-frame.png";
-import { MenuItem, Select, SelectChangeEvent, TextField } from "@mui/material";
+import { Checkbox, ListItemText, MenuItem, Select, SelectChangeEvent, TextField } from "@mui/material";
 import { AppService } from "@/service/AllApiData.service";
 import { Alert } from "@/alert/Alert";
 
@@ -11,51 +11,79 @@ const BazaarDetails = (props: {
 }) => {
   const classes = useAddbazaarStyles();
 
-  const [masterType, setMasterType] = useState("");
+  const [masterType, setMasterType] = React.useState([]);
+  const [masterType2, setMasterType2] = React.useState([]);
+  const [masterType3, setMasterType3] = React.useState([]);
   const [AllState, setAllState] = React.useState([]);
   const [AllDis, setAllDis] = React.useState([]);
   const [AllCity, setAllCity] = React.useState([]);
  
 
 
-  const handleChangeMasterType = (event: SelectChangeEvent) => {
-    setMasterType(event.target.value as string);
+  const handleChangeMasterType = (event: any) => {
+    setMasterType(event.target.value);
+    console.log(event.target.value.join(","));
+    const int = event.target.value.map(Number);
     props.setFormData({
       ...props.formData,
-      bazaar_state: [event.target.value],
+      bazaar_state: int,
     });
+
     
   };
 
-  const handleChangeMasterType2 = (event: SelectChangeEvent) => {
+  const handleChangeMasterType2 = (event: any) => {
     // setMasterType(event.target.value as string);
+    setMasterType2(event.target.value);
+    console.log(event.target.value.join( ',' ));
+    const str = event.target.value.map(Number);
     props.setFormData({
       ...props.formData,
-      bazaar_district: [event.target.value],
+      bazaar_district: str,
     });
   
   };
-  const handleChangeMasterType3 = (event: SelectChangeEvent) => {
+  const handleChangeMasterType3 = (event: any) => {
+    setMasterType3(event.target.value);
+    console.log(event.target.value.join());
+    const str = event.target.value.map(Number);
     props.setFormData({
       ...props.formData,
-      bazaar_city: [event.target.value],
+      bazaar_city: str,
     });
    
   };
 
 
   const [selectedImage, setSelectedImage] = useState();
-  const imageChange = (e: any) => {
+  const imageChange = async (e: any) => {
     if (e.target.files && e.target.files.length > 0) {
       console.log(e.target.files[0]);
       setSelectedImage(e.target.files[0]);
       localStorage.setItem("img", e.target.files[0]);
+      let image64;
+      const file = e.target.files[0];
+      image64 = await convertimage(file);
+      console.log(image64);
 // localStorage.getItem("lastname");
       // props.setFormData({
       //   ...props.formData,
       //   bazaar_image: e.target.files[0].name,
       // });
     }
+  };
+
+
+
+ 
+
+  const convertimage = (file: Blob) => {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = () => resolve(reader.result);
+      reader.onerror = (error) => reject(error);
+    });
   };
 
   const images = async()=>{
@@ -94,6 +122,9 @@ const BazaarDetails = (props: {
     getAllDis();
     getAllCity();
     images();
+    setMasterType(props.formData.bazaar_state);
+    setMasterType2(props.formData.bazaar_district);
+    setMasterType3(props.formData.bazaar_city);
   }, []);
   
 
@@ -139,13 +170,17 @@ const BazaarDetails = (props: {
               label="Age" 
               variant={"standard"}
               fullWidth={true}
-              value={props.formData.bazaar_state}
+              multiple={true} 
+              value={masterType}
               onChange={handleChangeMasterType}
             >
               {AllState.map((items:any)=>(
-              <MenuItem value={items.id}>
+              <MenuItem key={items.id}  value={items.id}>
               {items.state}
+              
+             
               </MenuItem>
+            
               
               ))}
             </Select>
@@ -157,7 +192,8 @@ const BazaarDetails = (props: {
               label="Age"
               variant={"standard"}
               fullWidth={true}
-              value={props.formData.bazaar_district}
+              multiple={true} 
+              value={masterType2}
               onChange={handleChangeMasterType2}
             >
              {AllDis.map((items:any)=>(
@@ -175,7 +211,8 @@ const BazaarDetails = (props: {
             label="Age"
             variant={"standard"}
             fullWidth={true}
-            value={props.formData.bazaar_city}
+            multiple={true}
+            value={masterType3}
             onChange={handleChangeMasterType3}
           >
             {AllCity.map((items:any)=>(
