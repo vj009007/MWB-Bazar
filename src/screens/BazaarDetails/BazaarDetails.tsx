@@ -6,7 +6,7 @@ import { AppService } from "@/service/AllApiData.service";
 import { Alert } from "@/alert/Alert";
 
 const BazaarDetails = (props: {
-  formData: { bazaar_name: any };
+  formData: any;
   setFormData: (arg0: any) => void;
 }) => {
   const classes = useAddbazaarStyles();
@@ -49,6 +49,8 @@ const BazaarDetails = (props: {
     if (e.target.files && e.target.files.length > 0) {
       console.log(e.target.files[0]);
       setSelectedImage(e.target.files[0]);
+      localStorage.setItem("img", e.target.files[0]);
+// localStorage.getItem("lastname");
       // props.setFormData({
       //   ...props.formData,
       //   bazaar_image: e.target.files[0].name,
@@ -56,7 +58,10 @@ const BazaarDetails = (props: {
     }
   };
 
-
+  const images = async()=>{
+    const data = localStorage.getItem("img");
+   console.log(data);
+  }
 
   const getAllLists = async () => {
     const responseJson = await AppService.getAllStates();
@@ -88,7 +93,9 @@ const BazaarDetails = (props: {
     getAllLists();
     getAllDis();
     getAllCity();
+    images();
   }, []);
+  
 
   return (
     <div className={classes.root}>
@@ -121,7 +128,7 @@ const BazaarDetails = (props: {
       <div className="py-[30px]">
         <div>
           <p className="fieldTitle">Bazaar Name</p>
-          <TextField variant="standard" onChange={e => props.setFormData({
+          <TextField variant="standard" value={props.formData.bazaar_name} onChange={e => props.setFormData({
       ...props.formData, bazaar_name: e.target.value})} fullWidth={true} />
         </div>
 
@@ -132,6 +139,7 @@ const BazaarDetails = (props: {
               label="Age" 
               variant={"standard"}
               fullWidth={true}
+              value={props.formData.bazaar_state}
               onChange={handleChangeMasterType}
             >
               {AllState.map((items:any)=>(
@@ -149,6 +157,7 @@ const BazaarDetails = (props: {
               label="Age"
               variant={"standard"}
               fullWidth={true}
+              value={props.formData.bazaar_district}
               onChange={handleChangeMasterType2}
             >
              {AllDis.map((items:any)=>(
@@ -166,6 +175,7 @@ const BazaarDetails = (props: {
             label="Age"
             variant={"standard"}
             fullWidth={true}
+            value={props.formData.bazaar_city}
             onChange={handleChangeMasterType3}
           >
             {AllCity.map((items:any)=>(

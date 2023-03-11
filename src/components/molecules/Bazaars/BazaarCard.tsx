@@ -3,10 +3,20 @@ import { useBazaarCardStyles } from "@/static/stylesheets/molecules";
 import Logo from "@/static/icons/ic_laptop.png";
 import { useNavigate } from "react-router-dom";
 import { Grid } from "@mui/material";
+import { Pagination } from "@mui/lab";
 
 const BazaarCard = (props: any) => {
   const classes = useBazaarCardStyles();
   const navigate = useNavigate();
+  const [currentPage, setCurrentPage] = useState(1);
+  const ITEMS_PER_PAGE = 10;
+  const handlePageChange = (event:any, value:any) => {
+    setCurrentPage(value);
+  };
+
+  const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+  const endIndex = startIndex + ITEMS_PER_PAGE;
+  const currentItems = props.getAllBazars;
   const getViaID = async (ID:any) =>{
     // console.log(ID.id);
     localStorage.setItem("IDS", ID.id);
@@ -24,7 +34,7 @@ const BazaarCard = (props: any) => {
   return (
    <>
  
-   {props.getAllBazars===undefined ? <></>:props.getAllBazars.map((addr:any) =>(
+   {props.getAllBazars===undefined ? <></>:currentItems.map((addr:any) =>(
       <Grid item xs={4}>
     <div
       className={classes.root}
@@ -75,8 +85,15 @@ const BazaarCard = (props: any) => {
         </div>
       </div>
     </div>
+    
     </Grid>
+    
    ))}
+   <div className="flex items-center justify-between pagination" style={{display:"flex",width:'100%'}}>
+            <div className="text-[#84818A] text-sm font-medium">Show <span>{ITEMS_PER_PAGE}</span> from {props.getAllBazars.length} products</div>
+        
+           <Pagination count={10} page={currentPage} onChange={handlePageChange} />
+          </div>
  
     </>
   );

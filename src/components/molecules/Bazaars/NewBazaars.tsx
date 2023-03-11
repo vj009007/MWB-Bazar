@@ -76,6 +76,7 @@ export default function NewBazaars() {
     if (isStepSkipped(activeStep)) {
       newSkipped = new Set(newSkipped.values());
       console.log(activeStep);
+  
       newSkipped.delete(activeStep);
     }
 
@@ -86,6 +87,7 @@ export default function NewBazaars() {
 
   const handleBack = () => {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
+    console.log(formData);
   };
 
   const handleReset = () => {
