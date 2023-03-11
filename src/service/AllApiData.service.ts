@@ -121,8 +121,76 @@ static getAllDistric(){
 static getAllCity(){
 	return http.get("location/city/", { headers: AppService.authHeader() });
 }
+
 static addBazars(data: any){
 	return http.post("bazaar/data/", data, { headers: AppService.authHeader() });
+}
+static addGroupCate(data:any){
+	return http.post("parentcategory/", data, { headers: AppService.authHeader() });
+}
+static detailGroupCate(data:any){
+	return http.get("parentcategory/"+`${data}`+"/", { headers: AppService.authHeader() });
+}
+static deleteGroupCate(data:any){
+	return http.delete("parentcategory/"+`${data}`+"/", { headers: AppService.authHeader() });
+}
+static updateGroupCate(ID:any, data:any){
+	return http.put("parentcategory/"+`${ID}`+"/", data, { headers: AppService.authHeader() });
+}
+static listGroupCate(){
+	return http.get("parentcategory/", { headers: AppService.authHeader() });
+}
+
+static addMainCate(data:any){
+	return http.post("category/", data, { headers: AppService.authHeader() });
+}
+static detailMainCate(data:any){
+	return http.get("category/"+`${data}`+"/", { headers: AppService.authHeader() });
+}
+static deleteMainCate(data:any){
+	return http.delete("category/"+`${data}`+"/", { headers: AppService.authHeader() });
+}
+static updateMainCate(ID:any, data:any){
+	return http.put("category/"+`${ID}`+"/", data, { headers: AppService.authHeader() });
+}
+
+static listMaincategory(){
+	return http.get("category/", { headers: AppService.authHeader() });
+}
+
+
+static addSubCate(data:any){
+	return http.post("subcategory/", data, { headers: AppService.authHeader() });
+}
+static detailSubCate(data:any){
+	return http.get("subcategory/"+`${data}`+"/", { headers: AppService.authHeader() });
+}
+static deleteSubCate(data:any){
+	return http.delete("subcategory/"+`${data}`+"/", { headers: AppService.authHeader() });
+}
+static updateSubCate(ID:any, data:any){
+	return http.put("subcategory/"+`${ID}`+"/", data, { headers: AppService.authHeader() });
+}
+
+static listSubcategory(){
+	return http.get("subcategory/", { headers: AppService.authHeader() });
+}
+
+
+static addPrdCate(data:any){
+	return http.post("product/", data, { headers: AppService.authHeader() });
+}
+static detailPrdCate(data:any){
+	return http.get("product/"+`${data}`+"/", { headers: AppService.authHeader() });
+}
+static deletePrdCate(data:any){
+	return http.delete("product/"+`${data}`+"/", { headers: AppService.authHeader() });
+}
+static updatePrdCate(ID:any, data:any){
+	return http.put("product/"+`${ID}`+"/", data, { headers: AppService.authHeader() });
+}
+static listPrdproducts(){
+	return http.get("product/",  { headers: AppService.authHeader() });
 }
 
 }

@@ -13,7 +13,7 @@ import SubCategories from "@/screens/SubCategories";
 import { useBazaarStepperdStyles } from "@/static/stylesheets/molecules";
 import LogoPrev from "@/static/icons/ic_previous.png";
 import { AppService } from "@/service/AllApiData.service";
-import { Alert } from "../../../alert/Alert";
+import { Alert } from "@/alert/Alert";
 
 const steps = [
   "Bazaar Details",
@@ -55,14 +55,10 @@ export default function NewBazaars() {
     bazaar_state: [],
     bazaar_city: [],
     bazaar_district: [],
-    bazaar_gorup_category: [  1,
-      2],
-    bazaar_category: [  1,
-      2],
-    bazaar_subcategory: [  1,
-      2],
-    bazaar_product: [  1,
-      2]
+    bazaar_gorup_category: [],
+    bazaar_category: [],
+    bazaar_subcategory: [],
+    bazaar_product: []
   });
 
   const isStepSkipped = (step: number) => {

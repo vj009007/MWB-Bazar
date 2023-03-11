@@ -3,6 +3,7 @@ import { useAddbazaarStyles } from "@/static/stylesheets/molecules";
 import UploaderFrame from "@/static/icons/uploader-frame.png";
 import { MenuItem, Select, SelectChangeEvent, TextField } from "@mui/material";
 import { AppService } from "@/service/AllApiData.service";
+import { Alert } from "@/alert/Alert";
 
 const BazaarDetails = (props: {
   formData: { bazaar_name: any };
@@ -14,6 +15,8 @@ const BazaarDetails = (props: {
   const [AllState, setAllState] = React.useState([]);
   const [AllDis, setAllDis] = React.useState([]);
   const [AllCity, setAllCity] = React.useState([]);
+ 
+
 
   const handleChangeMasterType = (event: SelectChangeEvent) => {
     setMasterType(event.target.value as string);
@@ -126,7 +129,7 @@ const BazaarDetails = (props: {
           <div>
             <p className="fieldTitle">Select State</p>
             <Select
-              label="Age"
+              label="Age" 
               variant={"standard"}
               fullWidth={true}
               onChange={handleChangeMasterType}
