@@ -12,7 +12,7 @@ import { Alert } from "@/alert/Alert";
 import { AppService } from "@/service/AllApiData.service";
 
 const Categories = (props: {
-  formData: { bazaar_name: any };
+  formData: any;
   setFormData: (arg0: any) => void;
 }) => {
   const classes = useCategoriesStyles();
@@ -124,6 +124,7 @@ const getAllLists = async () => {
 React.useEffect(() => {
   // console.log(formData);
   getAllLists();
+  console.log(props.formData.bazaar_gorup_category);
   
     
     }, []);

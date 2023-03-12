@@ -53,18 +53,29 @@ const BazaarDetails = (props: {
     });
    
   };
-
-
+  const [file, setFiles] = useState("");
+  const [fileName, setFileName] = useState("");
   const [selectedImage, setSelectedImage] = useState();
   const imageChange = async (e: any) => {
     if (e.target.files && e.target.files.length > 0) {
       console.log(e.target.files[0]);
       setSelectedImage(e.target.files[0]);
-      localStorage.setItem("img", e.target.files[0]);
-      let image64;
-      const file = e.target.files[0];
-      image64 = await convertimage(file);
-      console.log(image64);
+      setFiles(e.target.files[0]);
+      setFileName(e.target.files[0].name);
+      console.log((e.target.files[0].name));
+      const formData = new FormData();
+      formData.append("file", file)
+      formData.append("fileName", fileName)
+      console.log(formData);
+      // props.setFormData({
+      //   ...props.formData,
+      //   bazaar_image: formData,
+      // });
+
+
+ 
+
+
 // localStorage.getItem("lastname");
       // props.setFormData({
       //   ...props.formData,
@@ -77,19 +88,16 @@ const BazaarDetails = (props: {
 
  
 
-  const convertimage = (file: Blob) => {
-    return new Promise((resolve, reject) => {
-      const reader = new FileReader();
-      reader.readAsDataURL(file);
-      reader.onload = () => resolve(reader.result);
-      reader.onerror = (error) => reject(error);
-    });
-  };
+  // const convertimage = (file: Blob) => {
+  //   return new Promise((resolve, reject) => {
+  //     const reader = new FileReader();
+  //     reader.readAsDataURL(file);
+  //     reader.onload = () => resolve(reader.result);
+  //     reader.onerror = (error) => reject(error);
+  //   });
+  // };
 
-  const images = async()=>{
-    const data = localStorage.getItem("img");
-   console.log(data);
-  }
+ 
 
   const getAllLists = async () => {
     const responseJson = await AppService.getAllStates();
@@ -121,7 +129,6 @@ const BazaarDetails = (props: {
     getAllLists();
     getAllDis();
     getAllCity();
-    images();
     setMasterType(props.formData.bazaar_state);
     setMasterType2(props.formData.bazaar_district);
     setMasterType3(props.formData.bazaar_city);
@@ -142,10 +149,11 @@ const BazaarDetails = (props: {
               height: "145px"}} src={URL.createObjectURL(selectedImage)}/>
             ) } 
               <input
-                accept="image/*"
                 onChange={imageChange} 
                 className={"kycForms"}
                 type="file"
+                name="file"
+                id="formFile"
               />
             </div>
             <div className={"title"}>Upload Media here</div>-

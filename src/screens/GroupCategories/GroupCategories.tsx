@@ -19,6 +19,8 @@ const GroupCategories = (props: {
 const [ListGroups, setListGroups] = useState([]);
 const [IDS, setIDS] = React.useState([]);
 const [HideTable, setHideTable] = React.useState(false);
+const [firstTableHide, setFirstTableHide] = React.useState(false);
+
 
 const [addData, setAddData] = React.useState({
   parent_category_name: "",
@@ -88,6 +90,8 @@ const dataSave = (e:any) => {
 
 const handleSelectedItems = (event:any, nodeId:any) => {
   console.log(nodeId);
+  setHideTable(false);
+  setFirstTableHide(true);
   setNode(nodeId);
   detailIB(nodeId);
   props.setFormData({
@@ -104,6 +108,7 @@ const getAllLists = async () => {
   };
 
   const deletes = async(id:any)=>{
+    setFirstTableHide(true);
     const responseJson = await AppService.deleteGroupCate(id);
     console.log(responseJson.data);
     Alert("delete successfully");
@@ -111,6 +116,7 @@ const getAllLists = async () => {
 
   }
   const edit = async(id:any)=>{
+    setFirstTableHide(true);
     const responseJson = await AppService.updateGroupCate(id, addData);
     console.log(responseJson.data);
     Alert("update successfully");
@@ -128,7 +134,9 @@ React.useEffect(() => {
     }, []);
 
     const hideTabs = async (e:any) =>{
+      setFirstTableHide(true);
       setHideTable(false);
+   
     }
 
     const handleChanges = (event:any) => {
@@ -194,13 +202,13 @@ React.useEffect(() => {
         </div>
         <div className="rightContainer">  
       <table>
-        <tr>
+        <tr hidden={!firstTableHide}>
           <th>Image</th>
           <th>Group Category Name</th>
           <th></th>
         </tr>
         {[IDS].map((items:any)=>(
-        <tr>
+        <tr hidden={!firstTableHide}>
           <td>
             <div className="brandLogo" style={{position:"relative"}}>
               {/* <img src={LogoEcBazaar} alt={"Logo"} /> */}
