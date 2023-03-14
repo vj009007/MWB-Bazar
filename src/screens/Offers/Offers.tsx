@@ -69,7 +69,7 @@ const Offers = () => {
                         className="py-4 px-6 font-medium text-gray-900 whitespace-nowrap "
                       >
                         <div className="flex gap-[20px] items-center ">
-                          <p className="mb-3 text-[14px] font-[600] text-gray-700 font-Manrope  cursor-pointer">
+                          <p className="mb-3 text-[14px] font-[600] text-gray-700 font-Mangrove  cursor-pointer">
                             001
                           </p>
                         </div>

@@ -12,7 +12,7 @@ const CreateOrder = () => {
   const classes = useCreateOrderStyles();
   const [addModalOpen, setAddModalOpen] = useState(false);
   const [addanotherModalOpen, setAnotherAddModalOpen] = useState(false);
-  const [masterType, setMasterType] = useState("Regional Wholeseller");
+  const [masterType, setMasterType] = useState("Regional Wholesaler");
   const handleChangeMasterType = (event: SelectChangeEvent) => {
     setMasterType(event.target.value as string);
   };
@@ -33,10 +33,10 @@ const CreateOrder = () => {
                   value={masterType}
                   onChange={handleChangeMasterType}
                 >
-                  <MenuItem value={"Regional Wholeseller"}>
+                  <MenuItem value={"Regional Wholesaler"}>
                     Laxmi Traders
                   </MenuItem>
-                  <MenuItem value={"Regional Wholeseller 1"}>
+                  <MenuItem value={"Regional Wholesaler 1"}>
                     Laxmi Traders
                   </MenuItem>
                 </Select>
@@ -51,8 +51,8 @@ const CreateOrder = () => {
                   value={masterType}
                   onChange={handleChangeMasterType}
                 >
-                  <MenuItem value={"Regional Wholeseller"}>Cash</MenuItem>
-                  <MenuItem value={"Regional Wholeseller 1"}>Cash</MenuItem>
+                  <MenuItem value={"Regional Wholesaler"}>Cash</MenuItem>
+                  <MenuItem value={"Regional Wholesaler 1"}>Cash</MenuItem>
                 </Select>
               </div>
 

@@ -7,7 +7,7 @@ import { PerfomancTab } from "@/components/molecules/Wholeseller/PerfomanceTab";
 import { Grid } from "@mui/material";
 import { RetailersTable } from "@/components/molecules/Wholeseller/RetailersTable";
 
-const WholesellerDashboard = () => {
+const WholesalerDashboard = () => {
   const classes = usewholesellerDashboardStyle();
   const data = [1, 2, 3];
 
@@ -52,4 +52,4 @@ const WholesellerDashboard = () => {
   );
 };
 
-export default WholesellerDashboard;
+export default WholesalerDashboard;

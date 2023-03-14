@@ -25,3 +25,8 @@ export * from "./photosorderStyle";
 export * from "./trackorderStyle";
 export * from "./addnewProductStyle";
 export * from "./bulkuploadStyle";
+export * from "./addNewPlanStyle";
+export * from "./agencyKYCStyle";
+export * from "./bazaardetailsStyles";
+export * from "./plansStyle";
+export * from "./wholeSellerKYC";

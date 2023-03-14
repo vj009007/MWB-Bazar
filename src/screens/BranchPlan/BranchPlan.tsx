@@ -19,7 +19,7 @@ const BranchPlan = () => {
           <div className="flex gap-5 py-5">
             <ActionButton title="Retailer" variant="primary" />
             <ActionButton title="Hotellier" variant="default" />
-            <ActionButton title="Semi-Wholeseller" variant="default" />
+            <ActionButton title="Semi-Wholesaler" variant="default" />
           </div>
           <div className="flex gap-5 py-5">
             <TwMultiSelect />

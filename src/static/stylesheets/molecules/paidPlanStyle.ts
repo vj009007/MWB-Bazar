@@ -1,21 +1,9 @@
 import { css } from "@emotion/css";
 
-export const usAddRetailerStyles = () => {
-  return {
-    root: css`
+export const usepaidPlanStyle = () => {
+    return {
+        root: css`
       width: 600px;
-      padding-top: 20px;
-      padding-bottom: 20px;
-
-      .commonTitle {
-        font-family: "Manrope", serif;
-        font-style: normal;
-        font-weight: 600;
-        font-size: 24px;
-        line-height: 20px;
-        color: #2e2c34;
-      }
-
       .headContainer {
         display: flex;
         gap: 24px;
@@ -47,7 +35,7 @@ export const usAddRetailerStyles = () => {
         .dividor {
           border-left: 2px solid #ebeaed;
         }
-
+        
         img {
           width: 20px;
           height: 20px;
@@ -93,7 +81,31 @@ export const usAddRetailerStyles = () => {
           padding-top: 20px;
           padding-bottom: 20px;
         }
+.buttonKycForms{
+  position:relative;
+}
+.kycFormsTwo{
+  position: absolute;
+  top: 22px;
+  width: 100px;
+  height: 100px;
+  opacity: 0;
+  cursor: pointer;
+}
+        
+      }
+      .buttonKycForms{
+        position:relative;
+      }
+      .kycForms{
+        position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 160px;
+    height: 36px;
+    opacity: 0;
+    cursor: pointer;
       }
     `,
-  };
+    };
 };

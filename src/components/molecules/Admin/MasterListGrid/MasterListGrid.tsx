@@ -15,7 +15,7 @@ const MasterListGrid: React.FC<MasterListGridProps> = (props) => {
   const { type } = props;
   const [addModalOpen, setAddModalOpen] = useState(false);
 
-  const [masterType, setMasterType] = useState("Regional Wholeseller");
+  const [masterType, setMasterType] = useState("Regional Wholesaler");
 
   const handleChangeMasterType = (event: SelectChangeEvent) => {
     setMasterType(event.target.value as string);
@@ -105,13 +105,13 @@ const MasterListGrid: React.FC<MasterListGridProps> = (props) => {
               value={masterType}
               onChange={handleChangeMasterType}
             >
-              <MenuItem value={"Regional Wholeseller"}>
+              <MenuItem value={"Regional Wholesaler"}>
                 Regional Wholeseller
               </MenuItem>
-              <MenuItem value={"Regional Wholeseller 1"}>
+              <MenuItem value={"Regional Wholesaler 1"}>
                 Regional Wholeseller 1
               </MenuItem>
-              <MenuItem value={"Regional Wholeseller 2"}>
+              <MenuItem value={"Regional Wholesaler 2"}>
                 Regional Wholeseller 2
               </MenuItem>
             </Select>

@@ -3,12 +3,12 @@ import { DashboardLayout } from "@/components/layouts";
 import { AddButton, GridOptionButton } from "@/components/atoms/Button";
 import { useNavigate } from "react-router-dom";
 import TwMultiSelect from "@/components/atoms/TwMultiSelect/TwMultiSelect";
-import { useRetailerStyles } from "@/static/stylesheets/screens/retailersStyle";
+import { usePlanStyles } from "@/static/stylesheets/screens/plansStyle";
 import { SearchField } from "@/components/atoms/SearchField";
 import { Switch } from "@/components/atoms/Switch";
 
 const Retailers = () => {
-  const classes = useRetailerStyles();
+  const classes = usePlanStyles();
   const data = [1, 2, 3, 4, 5];
   const navigate = useNavigate();
 

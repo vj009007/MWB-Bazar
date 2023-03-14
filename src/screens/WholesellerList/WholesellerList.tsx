@@ -16,54 +16,54 @@ const Wholeseller = () => {
   const navigate = useNavigate();
 
   return (
-    <>
-      <DashboardLayout>
-        <div className={classes.root}>
-          <SectionHeader />
-          <Grid container spacing={2}>
-            <Grid item xs={6}>
-              <div className="headTitle">Wholesellers</div>
-            </Grid>
+      <>
+        <DashboardLayout>
+          <div className={classes.root}>
+            <SectionHeader />
+            <Grid container spacing={2}>
+              <Grid item xs={6}>
+                <div className="headTitle">Wholesellers</div>
+              </Grid>
 
-            <Grid item xs={6}>
-              <div className="actionArea">
-                <div>
-                  <SearchField />
+              <Grid item xs={6}>
+                <div className="actionArea">
+                  <div>
+                    <SearchField />
+                  </div>
+                  <div className="actionButton">
+                    <AddButton
+                        label="Add Bazaar"
+                        onClick={() => navigate("/addwholeseller")}
+                    />
+                  </div>
                 </div>
-                <div className="actionButton">
-                  <AddButton
-                    label="Add Bazaar"
-                    onClick={() => navigate("/addwholeseller")}
-                  />
-                </div>
-              </div>
+              </Grid>
             </Grid>
-          </Grid>
-          <div className="wholesellerFilter">
-            {data.map((item: any) => (
-              <MultiSelect
-                options={[
-                  {
-                    label: "All Bazaars",
-                    value: 1,
-                  },
-                  {
-                    label: "All States",
-                    value: 2,
-                  },
-                ]}
-                value={items}
-                onChange={(items) => setItems(() => items)}
-                fullWidth={true}
-              />
-            ))}
+            <div className="wholesellerFilter">
+              {data.map((item: any) => (
+                  <MultiSelect
+                      options={[
+                        {
+                          label: "All Bazaars",
+                          value: 1,
+                        },
+                        {
+                          label: "All States",
+                          value: 2,
+                        },
+                      ]}
+                      value={items}
+                      onChange={(items) => setItems(() => items)}
+                      fullWidth={true}
+                  />
+              ))}
+            </div>
+            <div>
+              <WholesellerList />
+            </div>
           </div>
-          <div>
-            <WholesellerList />
-          </div>
-        </div>
-      </DashboardLayout>
-    </>
+        </DashboardLayout>
+      </>
   );
 };
 

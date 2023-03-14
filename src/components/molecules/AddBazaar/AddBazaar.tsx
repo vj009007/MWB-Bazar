@@ -6,7 +6,7 @@ import { MenuItem, Select, SelectChangeEvent } from "@mui/material";
 export default function AddBazaar() {
   const classes = useAddbazaarStyles();
 
-  const [masterType, setMasterType] = useState("Regional Wholeseller");
+  const [masterType, setMasterType] = useState("Regional Wholesaler");
 
   const handleChangeMasterType = (event: SelectChangeEvent) => {
     setMasterType(event.target.value as string);
@@ -33,8 +33,8 @@ export default function AddBazaar() {
             value={masterType}
             onChange={handleChangeMasterType}
           >
-            <MenuItem value={"Regional Wholeseller"}>Grocery</MenuItem>
-            <MenuItem value={"Regional Wholeseller 1"}>Grocery 1</MenuItem>
+            <MenuItem value={"Regional Wholesaler"}>Grocery</MenuItem>
+            <MenuItem value={"Regional Wholesaler 1"}>Grocery 1</MenuItem>
           </Select>
         </div>
 
@@ -47,10 +47,10 @@ export default function AddBazaar() {
               value={masterType}
               onChange={handleChangeMasterType}
             >
-              <MenuItem value={"Regional Wholeseller"}>
+              <MenuItem value={"Regional Wholesaler"}>
                 Uttar Pradesh, Delhi + 2more
               </MenuItem>
-              <MenuItem value={"Regional Wholeseller 1"}>
+              <MenuItem value={"Regional Wholesaler 1"}>
                 Uttar Pradesh, Delhi + 2more 1
               </MenuItem>
             </Select>
@@ -63,8 +63,8 @@ export default function AddBazaar() {
               value={masterType}
               onChange={handleChangeMasterType}
             >
-              <MenuItem value={"Regional Wholeseller"}>All Cities</MenuItem>
-              <MenuItem value={"Regional Wholeseller 1"}>All Cities 1</MenuItem>
+              <MenuItem value={"Regional Wholesaler"}>All Cities</MenuItem>
+              <MenuItem value={"Regional Wholesaler 1"}>All Cities 1</MenuItem>
             </Select>
           </div>
         </div>
@@ -77,13 +77,13 @@ export default function AddBazaar() {
             value={masterType}
             onChange={handleChangeMasterType}
           >
-            <MenuItem value={"Regional Wholeseller"}>
+            <MenuItem value={"Regional Wholesaler"}>
               Regional Wholeseller
             </MenuItem>
-            <MenuItem value={"Regional Wholeseller 1"}>
+            <MenuItem value={"Regional Wholesaler 1"}>
               Regional Wholeseller 1
             </MenuItem>
-            <MenuItem value={"Regional Wholeseller 2"}>
+            <MenuItem value={"Regional Wholesaler 2"}>
               Regional Wholeseller 2
             </MenuItem>
           </Select>

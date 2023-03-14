@@ -5,7 +5,6 @@ import Step from "@mui/material/Step";
 import StepLabel from "@mui/material/StepLabel";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import { useBazaarStepperdStyles } from "@/static/stylesheets/molecules";
 import LogoPrev from "@/static/icons/ic_previous.png";
 import { DashboardLayout } from "@/components/layouts";
 import { SectionHeader } from "@/components/molecules/Bazaars";
@@ -13,10 +12,11 @@ import PaymentDetails from "@/components/molecules/PaymentDetails/PaymentDetails
 import PlanTab from "@/components/molecules/PlanTab/PlanTab";
 import CheckIcon from "@/static/icons/ic_check.png";
 import { WholsellerKycForm } from "@/components/molecules/WholsellerKycForm";
+import {usewholeSellerKYCStyle} from "@/static/stylesheets/screens/wholeSellerKYC";
 
-const steps = ["Wholeseller Details", "Choose Plan", "Payment Details"];
+const steps = ["Wholesaler Details", "Choose Plan", "Payment Details"];
 
-export default function WholesellerKYC() {
+export default function WholesalerKYC() {
   const [activeStep, setActiveStep] = React.useState(0);
   const [skipped, setSkipped] = React.useState(new Set<number>());
 
@@ -44,7 +44,7 @@ export default function WholesellerKYC() {
     setActiveStep(0);
   };
 
-  const classes = useBazaarStepperdStyles();
+  const classes = usewholeSellerKYCStyle();
 
   return (
     <DashboardLayout>

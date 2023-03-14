@@ -1,30 +1,22 @@
 import React from "react";
 import { useCategoriesStyles } from "@/static/stylesheets/screens/categoriesStyles";
 import GroupCategories from "../GroupCategories";
-import MuiTreeView from "@/components/atoms/MuiTreeView/MuiTreeView";
 import { ChevronRightIcon } from "@heroicons/react/20/solid";
 import { TreeView, TreeItem } from "@mui/lab";
 
 const Categories = () => {
   const classes = useCategoriesStyles();
-  const [expanded, setExpanded] = React.useState([])
   const [selected, setSelected] = React.useState([])
-
-  const handleToggle = (event: any, nodeIds: React.SetStateAction<never[]>) => {
-    setExpanded(nodeIds)
-}
-
-const handleSelect = (event: any) => {
+  const handleSelect = (event: any) => {
     setSelected(event)
 }
-
 
   return (
     <div className={classes.root}>
       <div className="container">
         <div className="leftContainer">
         <TreeView
-        className="treefont"
+        className="tree font"
         aria-label="file system navigator"
         selected={selected}
         // onNodeToggle={handleToggle}

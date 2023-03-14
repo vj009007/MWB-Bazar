@@ -1,18 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { GridOptionButton } from "@/components/atoms/Button";
 import { Switch } from "@/components/atoms/Switch";
-import { useAgentStyles } from "@/static/stylesheets/molecules";
-import LogoContract from "@/static/icons/uploader-frame.png";
-import { AppService } from "../../../service/AllApiData.service";
-import { useLocation } from "react-router-dom";
+import { useAgentListStyles } from "@/static/stylesheets/molecules/agentlistStyle";
+import { AppService } from "@/service/AllApiData.service";
 
-// interface MasterListGridProps {
-//   type?: "WholeSeller" | "Retailer";
-// }
 
 const AgentList = (props:any) => {
-  const classes = useAgentStyles();
-  // const data = [1, 2, 3, 4, 5, 6];
+  const classes = useAgentListStyles();
   const [getAllAgentList, setGetAllAgentList] = useState([]);
   const [iDS, setIDS] = useState(localStorage.getItem("IDS"));
 

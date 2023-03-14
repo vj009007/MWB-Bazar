@@ -6,7 +6,7 @@ import { useaddBranchStyles } from "@/static/stylesheets/screens";
 
 const AddBranch = () => {
   const classes = useaddBranchStyles();
-  const [masterType, setMasterType] = useState("Regional Wholeseller");
+  const [masterType, setMasterType] = useState("Regional Wholesaler");
 
   const handleChangeMasterType = (event: SelectChangeEvent) => {
     setMasterType(event.target.value as string);
@@ -31,10 +31,10 @@ const AddBranch = () => {
                   value={masterType}
                   onChange={handleChangeMasterType}
                 >
-                  <MenuItem value={"Regional Wholeseller"}>
+                  <MenuItem value={"Regional Wholesaler"}>
                     Branch - ABC
                   </MenuItem>
-                  <MenuItem value={"Regional Wholeseller 1"}>
+                  <MenuItem value={"Regional Wholesaler 1"}>
                     Branch - ABC
                   </MenuItem>
                 </Select>
@@ -46,8 +46,8 @@ const AddBranch = () => {
                   value={masterType}
                   onChange={handleChangeMasterType}
                 >
-                  <MenuItem value={"Regional Wholeseller"}>Grocery</MenuItem>
-                  <MenuItem value={"Regional Wholeseller 1"}>
+                  <MenuItem value={"Regional Wholesaler"}>Grocery</MenuItem>
+                  <MenuItem value={"Regional Wholesaler 1"}>
                     Grocery 1
                   </MenuItem>
                 </Select>
@@ -64,10 +64,10 @@ const AddBranch = () => {
                   value={masterType}
                   onChange={handleChangeMasterType}
                 >
-                  <MenuItem value={"Regional Wholeseller"}>
+                  <MenuItem value={"Regional Wholesaler"}>
                     Ashish Patel
                   </MenuItem>
-                  <MenuItem value={"Regional Wholeseller 1"}>
+                  <MenuItem value={"Regional Wholesaler 1"}>
                     Ashish Patel
                   </MenuItem>
                 </Select>
@@ -79,8 +79,8 @@ const AddBranch = () => {
                   value={masterType}
                   onChange={handleChangeMasterType}
                 >
-                  <MenuItem value={"Regional Wholeseller"}>Grocery</MenuItem>
-                  <MenuItem value={"Regional Wholeseller 1"}>
+                  <MenuItem value={"Regional Wholesaler"}>Grocery</MenuItem>
+                  <MenuItem value={"Regional Wholesaler 1"}>
                     Grocery 1
                   </MenuItem>
                 </Select>
@@ -97,8 +97,8 @@ const AddBranch = () => {
                   value={masterType}
                   onChange={handleChangeMasterType}
                 >
-                  <MenuItem value={"Regional Wholeseller"}>1234567890</MenuItem>
-                  <MenuItem value={"Regional Wholeseller 1"}>
+                  <MenuItem value={"Regional Wholesaler"}>1234567890</MenuItem>
+                  <MenuItem value={"Regional Wholesaler 1"}>
                     1234567890
                   </MenuItem>
                 </Select>
@@ -110,8 +110,8 @@ const AddBranch = () => {
                   value={masterType}
                   onChange={handleChangeMasterType}
                 >
-                  <MenuItem value={"Regional Wholeseller"}>Grocery</MenuItem>
-                  <MenuItem value={"Regional Wholeseller 1"}>
+                  <MenuItem value={"Regional Wholesaler"}>Grocery</MenuItem>
+                  <MenuItem value={"Regional Wholesaler 1"}>
                     Grocery 1
                   </MenuItem>
                 </Select>
@@ -128,8 +128,8 @@ const AddBranch = () => {
                   value={masterType}
                   onChange={handleChangeMasterType}
                 >
-                  <MenuItem value={"Regional Wholeseller"}>Rice</MenuItem>
-                  <MenuItem value={"Regional Wholeseller 1"}>Rice</MenuItem>
+                  <MenuItem value={"Regional Wholesaler"}>Rice</MenuItem>
+                  <MenuItem value={"Regional Wholesaler 1"}>Rice</MenuItem>
                 </Select>
               </div>
             </div>
@@ -144,8 +144,8 @@ const AddBranch = () => {
                   value={masterType}
                   onChange={handleChangeMasterType}
                 >
-                  <MenuItem value={"Regional Wholeseller"}>Basmati</MenuItem>
-                  <MenuItem value={"Regional Wholeseller 1"}>Basmati</MenuItem>
+                  <MenuItem value={"Regional Wholesaler"}>Basmati</MenuItem>
+                  <MenuItem value={"Regional Wholesaler 1"}>Basmati</MenuItem>
                 </Select>
               </div>
             </div>
@@ -160,8 +160,8 @@ const AddBranch = () => {
                   value={masterType}
                   onChange={handleChangeMasterType}
                 >
-                  <MenuItem value={"Regional Wholeseller"}>MWB Rice</MenuItem>
-                  <MenuItem value={"Regional Wholeseller 1"}>MWB Rice</MenuItem>
+                  <MenuItem value={"Regional Wholesaler"}>MWB Rice</MenuItem>
+                  <MenuItem value={"Regional Wholesaler 1"}>MWB Rice</MenuItem>
                 </Select>
 
                 <Select
@@ -171,8 +171,8 @@ const AddBranch = () => {
                   value={masterType}
                   onChange={handleChangeMasterType}
                 >
-                  <MenuItem value={"Regional Wholeseller"}>Grocery</MenuItem>
-                  <MenuItem value={"Regional Wholeseller 1"}>
+                  <MenuItem value={"Regional Wholesaler"}>Grocery</MenuItem>
+                  <MenuItem value={"Regional Wholesaler 1"}>
                     Grocery 1
                   </MenuItem>
                 </Select>
@@ -189,10 +189,10 @@ const AddBranch = () => {
                   value={masterType}
                   onChange={handleChangeMasterType}
                 >
-                  <MenuItem value={"Regional Wholeseller"}>
+                  <MenuItem value={"Regional Wholesaler"}>
                     Address Line 1
                   </MenuItem>
-                  <MenuItem value={"Regional Wholeseller 1"}>
+                  <MenuItem value={"Regional Wholesaler 1"}>
                     Address Line 1
                   </MenuItem>
                 </Select>
@@ -204,8 +204,8 @@ const AddBranch = () => {
                   value={masterType}
                   onChange={handleChangeMasterType}
                 >
-                  <MenuItem value={"Regional Wholeseller"}>Grocery</MenuItem>
-                  <MenuItem value={"Regional Wholeseller 1"}>
+                  <MenuItem value={"Regional Wholesaler"}>Grocery</MenuItem>
+                  <MenuItem value={"Regional Wholesaler 1"}>
                     Grocery 1
                   </MenuItem>
                 </Select>
@@ -222,8 +222,8 @@ const AddBranch = () => {
                   value={masterType}
                   onChange={handleChangeMasterType}
                 >
-                  <MenuItem value={"Regional Wholeseller"}>Pincode</MenuItem>
-                  <MenuItem value={"Regional Wholeseller 1"}>Pincode</MenuItem>
+                  <MenuItem value={"Regional Wholesaler"}>Pincode</MenuItem>
+                  <MenuItem value={"Regional Wholesaler 1"}>Pincode</MenuItem>
                 </Select>
 
                 <Select
@@ -233,8 +233,8 @@ const AddBranch = () => {
                   value={masterType}
                   onChange={handleChangeMasterType}
                 >
-                  <MenuItem value={"Regional Wholeseller"}>Grocery</MenuItem>
-                  <MenuItem value={"Regional Wholeseller 1"}>
+                  <MenuItem value={"Regional Wholesaler"}>Grocery</MenuItem>
+                  <MenuItem value={"Regional Wholesaler 1"}>
                     Grocery 1
                   </MenuItem>
                 </Select>
@@ -251,8 +251,8 @@ const AddBranch = () => {
                   value={masterType}
                   onChange={handleChangeMasterType}
                 >
-                  <MenuItem value={"Regional Wholeseller"}>Select</MenuItem>
-                  <MenuItem value={"Regional Wholeseller 1"}>Select</MenuItem>
+                  <MenuItem value={"Regional Wholesaler"}>Select</MenuItem>
+                  <MenuItem value={"Regional Wholesaler 1"}>Select</MenuItem>
                 </Select>
               </div>
             </div>

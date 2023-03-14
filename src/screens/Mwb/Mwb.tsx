@@ -64,13 +64,13 @@ const Mwb = () => {
             />
 
             <ActionButton
-              title="Wholeseller"
+              title="Wholesaler"
               variant="primary"
               onClick={() => navigate("/wholeseller")}
             />
 
             <ActionButton
-              title="Wholeseller Dashboard"
+              title="Wholesaler Dashboard"
               variant="primary"
               onClick={() => navigate("/wholesellerdashboard")}
             />
@@ -82,7 +82,7 @@ const Mwb = () => {
             />
 
             <ActionButton
-              title="Wholeseller Mart"
+              title="Wholesaler Mart"
               variant="primary"
               onClick={() => navigate("/wholesellermart")}
             />
@@ -93,7 +93,7 @@ const Mwb = () => {
               onClick={() => navigate("/renewplan")}
             />
             <ActionButton
-              title="Wholeseller Products"
+              title="Wholesaler Products"
               variant="primary"
               onClick={() => navigate("/wholesellerproducts")}
             />
@@ -103,7 +103,7 @@ const Mwb = () => {
               onClick={() => navigate("/addproduct")}
             />
             <ActionButton
-              title="Wholeseller Products"
+              title="Wholesaler Products"
               variant="primary"
               onClick={() => navigate("/itemwiseplan")}
             />
@@ -206,17 +206,17 @@ const Mwb = () => {
           </div>
 
           <div className="flex flex-wrap gap-5">
-            {/* Wholeseller */}
+            {/* Wholesaler */}
             <div>
-              <p className="mwbTitle"> Wholeseller (2) </p>
+              <p className="mwbTitle"> Wholesaler (2) </p>
               <div className="mwbContainer">
                 <ActionButton
-                  title="Wholeseller Dashboard"
+                  title="Wholesaler Dashboard"
                   variant="primary"
                   onClick={() => navigate("/wholesellerdashboard")}
                 />
                 <ActionButton
-                  title="Wholeseller Mart"
+                  title="Wholesaler Mart"
                   variant="primary"
                   onClick={() => navigate("/wholesellermart")}
                 />
@@ -245,7 +245,7 @@ const Mwb = () => {
               <p className="mwbTitle"> Products (4)</p>
               <div className="mwbContainer">
                 <ActionButton
-                  title="Wholeseller Products"
+                  title="Wholesaler Products"
                   variant="primary"
                   onClick={() => navigate("/wholesellerproducts")}
                 />

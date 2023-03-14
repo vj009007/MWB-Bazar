@@ -1,2 +1,2 @@
-import WholesellerDashboard from "./WholesellerDashboard";
-export default WholesellerDashboard;
+import WholesalerDashboard from "./WholesalerDashboard";
+export default WholesalerDashboard;

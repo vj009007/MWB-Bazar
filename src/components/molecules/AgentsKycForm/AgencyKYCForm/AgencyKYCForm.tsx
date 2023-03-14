@@ -17,7 +17,7 @@ import LogoEdit from "@/static/icons/ic_edit.png";
 
 const AgencyKYCForm = () => {
   const classes = useKycFormStyles();
-  const [masterType, setMasterType] = useState("Regional Wholeseller");
+  const [masterType, setMasterType] = useState("Regional Wholesaler");
 
   const handleChangeMasterType = (event: SelectChangeEvent) => {
     setMasterType(event.target.value as string);
@@ -205,10 +205,10 @@ const AgencyKYCForm = () => {
                 onChange={handleChangeMasterType}
                 className="w-1/2"
               >
-                <MenuItem value={"Regional Wholeseller"}>
+                <MenuItem value={"Regional Wholesaler"}>
                   Electronic, Computer + 1
                 </MenuItem>
-                <MenuItem value={"Regional Wholeseller 1"}>
+                <MenuItem value={"Regional Wholesaler 1"}>
                   Electronic, Computer + 2
                 </MenuItem>
               </Select>
@@ -226,8 +226,8 @@ const AgencyKYCForm = () => {
                 onChange={handleChangeMasterType}
                 className="w-1/2"
               >
-                <MenuItem value={"Regional Wholeseller"}>Male</MenuItem>
-                <MenuItem value={"Regional Wholeseller 1"}>Female</MenuItem>
+                <MenuItem value={"Regional Wholesaler"}>Male</MenuItem>
+                <MenuItem value={"Regional Wholesaler 1"}>Female</MenuItem>
               </Select>
             </div>
           </div>

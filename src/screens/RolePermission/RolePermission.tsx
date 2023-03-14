@@ -1,13 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import { DashboardLayout } from "@/components/layouts";
 import { HeaderSection } from "@/components/molecules/rulespermission/section";
 import { useNavigate } from "react-router-dom";
-import { Box, Grid, Pagination, Paper, Stack, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from "@mui/material";
+import { Box, Pagination, Paper, Stack, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from "@mui/material";
 import UserProfile from '@/static/images/User-profile.png';
 
 const RolePermission = () => {
-  const navigate = useNavigate();
-
+  useNavigate();
   return (
     <DashboardLayout>
       <Box className="w-full">

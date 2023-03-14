@@ -7,7 +7,7 @@ import LogoEdit from "@/static/icons/ic_edit.png";
 
 const KycForm = () => {
   const classes = useKycFormStyles();
-  const [masterType, setMasterType] = useState("Regional Wholeseller");
+  const [masterType, setMasterType] = useState("Regional Wholesaler");
 
   const handleChangeMasterType = (event: SelectChangeEvent) => {
     setMasterType(event.target.value as string);
@@ -38,8 +38,8 @@ const KycForm = () => {
           value={masterType}
           onChange={handleChangeMasterType}
         >
-          <MenuItem value={"Regional Wholeseller"}>Grocery</MenuItem>
-          <MenuItem value={"Regional Wholeseller 1"}>Grocery 1</MenuItem>
+          <MenuItem value={"Regional Wholesaler"}>Grocery</MenuItem>
+          <MenuItem value={"Regional Wholesaler 1"}>Grocery 1</MenuItem>
         </Select>
 
         <Select
@@ -49,32 +49,8 @@ const KycForm = () => {
           value={masterType}
           onChange={handleChangeMasterType}
         >
-          <MenuItem value={"Regional Wholeseller"}>Grocery</MenuItem>
-          <MenuItem value={"Regional Wholeseller 1"}>Grocery 1</MenuItem>
-        </Select>
-      </div>
-
-      <div className="formContainer">
-        <Select
-          label="Age"
-          variant={"standard"}
-          fullWidth={true}
-          value={masterType}
-          onChange={handleChangeMasterType}
-        >
-          <MenuItem value={"Regional Wholeseller"}>Grocery</MenuItem>
-          <MenuItem value={"Regional Wholeseller 1"}>Grocery 1</MenuItem>
-        </Select>
-
-        <Select
-          label="Age"
-          variant={"standard"}
-          fullWidth={true}
-          value={masterType}
-          onChange={handleChangeMasterType}
-        >
-          <MenuItem value={"Regional Wholeseller"}>Grocery</MenuItem>
-          <MenuItem value={"Regional Wholeseller 1"}>Grocery 1</MenuItem>
+          <MenuItem value={"Regional Wholesaler"}>Grocery</MenuItem>
+          <MenuItem value={"Regional Wholesaler 1"}>Grocery 1</MenuItem>
         </Select>
       </div>
 
@@ -86,8 +62,8 @@ const KycForm = () => {
           value={masterType}
           onChange={handleChangeMasterType}
         >
-          <MenuItem value={"Regional Wholeseller"}>Grocery</MenuItem>
-          <MenuItem value={"Regional Wholeseller 1"}>Grocery 1</MenuItem>
+          <MenuItem value={"Regional Wholesaler"}>Grocery</MenuItem>
+          <MenuItem value={"Regional Wholesaler 1"}>Grocery 1</MenuItem>
         </Select>
 
         <Select
@@ -97,8 +73,32 @@ const KycForm = () => {
           value={masterType}
           onChange={handleChangeMasterType}
         >
-          <MenuItem value={"Regional Wholeseller"}>Grocery</MenuItem>
-          <MenuItem value={"Regional Wholeseller 1"}>Grocery 1</MenuItem>
+          <MenuItem value={"Regional Wholesaler"}>Grocery</MenuItem>
+          <MenuItem value={"Regional Wholesaler 1"}>Grocery 1</MenuItem>
+        </Select>
+      </div>
+
+      <div className="formContainer">
+        <Select
+          label="Age"
+          variant={"standard"}
+          fullWidth={true}
+          value={masterType}
+          onChange={handleChangeMasterType}
+        >
+          <MenuItem value={"Regional Wholesaler"}>Grocery</MenuItem>
+          <MenuItem value={"Regional Wholesaler 1"}>Grocery 1</MenuItem>
+        </Select>
+
+        <Select
+          label="Age"
+          variant={"standard"}
+          fullWidth={true}
+          value={masterType}
+          onChange={handleChangeMasterType}
+        >
+          <MenuItem value={"Regional Wholesaler"}>Grocery</MenuItem>
+          <MenuItem value={"Regional Wholesaler 1"}>Grocery 1</MenuItem>
         </Select>
       </div>
       <div className="singleForm">
@@ -109,91 +109,8 @@ const KycForm = () => {
           value={masterType}
           onChange={handleChangeMasterType}
         >
-          <MenuItem value={"Regional Wholeseller"}>Grocery</MenuItem>
-          <MenuItem value={"Regional Wholeseller 1"}>Grocery 1</MenuItem>
-        </Select>
-      </div>
-
-      <div className="singleForm">
-        <Select
-          label="Age"
-          variant={"standard"}
-          fullWidth={true}
-          value={masterType}
-          onChange={handleChangeMasterType}
-        >
-          <MenuItem value={"Regional Wholeseller"}>Grocery</MenuItem>
-          <MenuItem value={"Regional Wholeseller 1"}>Grocery 1</MenuItem>
-        </Select>
-      </div>
-
-      <div className="formContainer">
-        <Select
-          label="Age"
-          variant={"standard"}
-          fullWidth={true}
-          value={masterType}
-          onChange={handleChangeMasterType}
-        >
-          <MenuItem value={"Regional Wholeseller"}>Grocery</MenuItem>
-          <MenuItem value={"Regional Wholeseller 1"}>Grocery 1</MenuItem>
-        </Select>
-
-        <Select
-          label="Age"
-          variant={"standard"}
-          fullWidth={true}
-          value={masterType}
-          onChange={handleChangeMasterType}
-        >
-          <MenuItem value={"Regional Wholeseller"}>Grocery</MenuItem>
-          <MenuItem value={"Regional Wholeseller 1"}>Grocery 1</MenuItem>
-        </Select>
-      </div>
-      <div className="formContainer">
-        <Select
-          label="Age"
-          variant={"standard"}
-          fullWidth={true}
-          value={masterType}
-          onChange={handleChangeMasterType}
-        >
-          <MenuItem value={"Regional Wholeseller"}>Grocery</MenuItem>
-          <MenuItem value={"Regional Wholeseller 1"}>Grocery 1</MenuItem>
-        </Select>
-
-        <Select
-          label="Age"
-          variant={"standard"}
-          fullWidth={true}
-          value={masterType}
-          onChange={handleChangeMasterType}
-        >
-          <MenuItem value={"Regional Wholeseller"}>Grocery</MenuItem>
-          <MenuItem value={"Regional Wholeseller 1"}>Grocery 1</MenuItem>
-        </Select>
-      </div>
-      <div className="formContainer">
-        <Select
-          label="Age"
-          variant={"standard"}
-          fullWidth={true}
-          value={masterType}
-          onChange={handleChangeMasterType}
-        >
-          <MenuItem value={"Regional Wholeseller"}>Grocery</MenuItem>
-          <MenuItem value={"Regional Wholeseller 1"}>Grocery 1</MenuItem>
-        </Select>
-
-        <Select
-          label="Age"
-          variant={"standard"}
-          fullWidth={true}
-          value={masterType}
-          onChange={handleChangeMasterType}
-        >
-          <MenuItem value={"Regional Wholeseller"}>Grocery</MenuItem>
-          <MenuItem value={"Regional Wholeseller 1"}>Grocery 1</MenuItem>
+          <MenuItem value={"Regional Wholesaler"}>Grocery</MenuItem>
+          <MenuItem value={"Regional Wholesaler 1"}>Grocery 1</MenuItem>
         </Select>
       </div>
 
@@ -205,8 +122,91 @@ const KycForm = () => {
           value={masterType}
           onChange={handleChangeMasterType}
         >
-          <MenuItem value={"Regional Wholeseller"}>Grocery</MenuItem>
-          <MenuItem value={"Regional Wholeseller 1"}>Grocery 1</MenuItem>
+          <MenuItem value={"Regional Wholesaler"}>Grocery</MenuItem>
+          <MenuItem value={"Regional Wholesaler 1"}>Grocery 1</MenuItem>
+        </Select>
+      </div>
+
+      <div className="formContainer">
+        <Select
+          label="Age"
+          variant={"standard"}
+          fullWidth={true}
+          value={masterType}
+          onChange={handleChangeMasterType}
+        >
+          <MenuItem value={"Regional Wholesaler"}>Grocery</MenuItem>
+          <MenuItem value={"Regional Wholesaler 1"}>Grocery 1</MenuItem>
+        </Select>
+
+        <Select
+          label="Age"
+          variant={"standard"}
+          fullWidth={true}
+          value={masterType}
+          onChange={handleChangeMasterType}
+        >
+          <MenuItem value={"Regional Wholesaler"}>Grocery</MenuItem>
+          <MenuItem value={"Regional Wholesaler 1"}>Grocery 1</MenuItem>
+        </Select>
+      </div>
+      <div className="formContainer">
+        <Select
+          label="Age"
+          variant={"standard"}
+          fullWidth={true}
+          value={masterType}
+          onChange={handleChangeMasterType}
+        >
+          <MenuItem value={"Regional Wholesaler"}>Grocery</MenuItem>
+          <MenuItem value={"Regional Wholesaler 1"}>Grocery 1</MenuItem>
+        </Select>
+
+        <Select
+          label="Age"
+          variant={"standard"}
+          fullWidth={true}
+          value={masterType}
+          onChange={handleChangeMasterType}
+        >
+          <MenuItem value={"Regional Wholesaler"}>Grocery</MenuItem>
+          <MenuItem value={"Regional Wholesaler 1"}>Grocery 1</MenuItem>
+        </Select>
+      </div>
+      <div className="formContainer">
+        <Select
+          label="Age"
+          variant={"standard"}
+          fullWidth={true}
+          value={masterType}
+          onChange={handleChangeMasterType}
+        >
+          <MenuItem value={"Regional Wholesaler"}>Grocery</MenuItem>
+          <MenuItem value={"Regional Wholesaler 1"}>Grocery 1</MenuItem>
+        </Select>
+
+        <Select
+          label="Age"
+          variant={"standard"}
+          fullWidth={true}
+          value={masterType}
+          onChange={handleChangeMasterType}
+        >
+          <MenuItem value={"Regional Wholesaler"}>Grocery</MenuItem>
+          <MenuItem value={"Regional Wholesaler 1"}>Grocery 1</MenuItem>
+        </Select>
+      </div>
+
+      <div className="singleForm">
+        <Select
+          label="Age"
+          variant={"standard"}
+          fullWidth={true}
+          value={masterType}
+          onChange={handleChangeMasterType}
+        >
+          <MenuItem value={"Regional Wholesaler"}>Grocery</MenuItem>
+          <MenuItem value={"Regional Wholesaler 1"}>Grocery 1</MenuItem>
         </Select>
       </div>
 

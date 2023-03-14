@@ -25,19 +25,19 @@ function TabPanel(props: TabPanelProps) {
   const { children, value, index, ...other } = props;
 
   return (
-    <div
-      role="tabpanel"
-      hidden={value !== index}
-      id={`mwb-tabpanel-${index}`}
-      aria-labelledby={`simple-tab-${index}`}
-      {...other}
-    >
-      {value === index && (
-        <Box sx={{ padding: "24px 5px" }}>
-          <Typography>{children}</Typography>
-        </Box>
-      )}
-    </div>
+      <div
+          role="tabpanel"
+          hidden={value !== index}
+          id={`mwb-tabpanel-${index}`}
+          aria-labelledby={`simple-tab-${index}`}
+          {...other}
+      >
+        {value === index && (
+            <Box sx={{ padding: "24px 5px" }}>
+              <Typography>{children}</Typography>
+            </Box>
+        )}
+      </div>
   );
 }
 
@@ -65,57 +65,57 @@ const FeaturesTab: React.FC<FeaturesTabProps> = (props) => {
   }, [props?.value]);
 
   return (
-    <>
-      <Box sx={{ width: "100%" }}>
-        <Box>
-          <Tabs
-            value={value}
-            onChange={handleChange}
-            aria-label="basic tabs example"
-            classes={{
-              indicator: css`
-                background: #5542f6 !important;
-              `,
-            }}
-            sx={{
-              ".MuiTabs-flexContainer": {
-                border: 0,
-              },
-              ".MuiButtonBase-root": {
-                textTransform: "capitalize",
-                fontFamily: "Manrope",
-                fontStyle: "normal",
-                fontWeight: 400,
-                fontSize: "14px",
-                lineHeight: "20px",
-                textAlign: "center",
-                color: "#84818A !important",
-              },
+      <>
+        <Box sx={{ width: "100%" }}>
+          <Box>
+            <Tabs
+                value={value}
+                onChange={handleChange}
+                aria-label="basic tabs example"
+                classes={{
+                  indicator: css`
+                    background: #5542f6 !important;
+                  `,
+                }}
+                sx={{
+                  ".MuiTabs-flexContainer": {
+                    border: 0,
+                  },
+                  ".MuiButtonBase-root": {
+                    textTransform: "capitalize",
+                    fontFamily: "Manrope",
+                    fontStyle: "normal",
+                    fontWeight: 400,
+                    fontSize: "14px",
+                    lineHeight: "20px",
+                    textAlign: "center",
+                    color: "#84818A !important",
+                  },
 
-              ".Mui-selected": {
-                color: "#2E2C34 !important",
-                textTransform: "capitalize",
-                fontStyle: "normal",
-                fontWeight: 600,
-                fontSize: "14px",
-                lineHeight: "20px",
-                textAlign: "center",
-              },
-            }}
-          >
-            {props?.items?.map((item, index) => (
-              <Tab key={index} label={item?.label} {...a11yProps(index)} />
-            ))}
-          </Tabs>
+                  ".Mui-selected": {
+                    color: "#2E2C34 !important",
+                    textTransform: "capitalize",
+                    fontStyle: "normal",
+                    fontWeight: 600,
+                    fontSize: "14px",
+                    lineHeight: "20px",
+                    textAlign: "center",
+                  },
+                }}
+            >
+              {props?.items?.map((item, index) => (
+                  <Tab key={index} label={item?.label} {...a11yProps(index)} />
+              ))}
+            </Tabs>
+          </Box>
+
+          {props?.items?.map((item, index) => (
+              <TabPanel key={index} value={value} index={index}>
+                {item?.content}
+              </TabPanel>
+          ))}
         </Box>
-
-        {props?.items?.map((item, index) => (
-          <TabPanel key={index} value={value} index={index}>
-            {item?.content}
-          </TabPanel>
-        ))}
-      </Box>
-    </>
+      </>
   );
 };
 

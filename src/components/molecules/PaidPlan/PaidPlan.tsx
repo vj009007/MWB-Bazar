@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useKycFormStyles } from "@/static/stylesheets/molecules";
+import { usepaidPlanStyle} from "@/static/stylesheets/molecules";
 import {
   FormControl,
   Input,
@@ -17,8 +17,8 @@ import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 
 const PaidPlan = () => {
-  const classes = useKycFormStyles();
-  const [masterType, setMasterType] = useState("Regional Wholeseller");
+  const classes = usepaidPlanStyle();
+  const [masterType, setMasterType] = useState("Regional Wholesaler");
   const [value, setValue] = useState<Dayjs | null>(null);
 
   const handleChangeMasterType = (event: SelectChangeEvent) => {
@@ -66,8 +66,8 @@ const PaidPlan = () => {
                 onChange={handleChangeMasterType}
                 className="w-1/2"
               >
-                <MenuItem value={"Regional Wholeseller"}>4 PM</MenuItem>
-                <MenuItem value={"Regional Wholeseller 1"}>4 PM</MenuItem>
+                <MenuItem value={"Regional Wholesaler"}>4 PM</MenuItem>
+                <MenuItem value={"Regional Wholesaler 1"}>4 PM</MenuItem>
               </Select>
             </div>
           </div>
@@ -98,8 +98,8 @@ const PaidPlan = () => {
                 onChange={handleChangeMasterType}
                 className="w-1/2"
               >
-                <MenuItem value={"Regional Wholeseller"}>4 PM</MenuItem>
-                <MenuItem value={"Regional Wholeseller 1"}>4 PM</MenuItem>
+                <MenuItem value={"Regional Wholesaler"}>4 PM</MenuItem>
+                <MenuItem value={"Regional Wholesaler 1"}>4 PM</MenuItem>
               </Select>
             </div>
           </div>

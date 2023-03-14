@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { ActionButton } from "@/components/atoms/Button/ActionButton";
 import { DashboardLayout } from "@/components/layouts";
-import { useaddAgentStyle } from "@/static/stylesheets/molecules/addagent";
+import { useaddNewPlanStyle } from "@/static/stylesheets/screens/addNewPlanStyle";
 import {
   FormControl,
   FormControlLabel,
@@ -16,7 +16,7 @@ import { PaidPlan } from "@/components/molecules/PaidPlan";
 import { useNavigate } from "react-router-dom";
 
 const AddNewPlan = () => {
-  const classes = useaddAgentStyle();
+  const classes = useaddNewPlanStyle();
   const [ChangeType, setChangeType] = useState("free");
   const navigate = useNavigate();
 

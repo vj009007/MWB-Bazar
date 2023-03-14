@@ -1,18 +1,17 @@
 import React from "react";
 import { DashboardLayout } from "@/components/layouts";
 import { SectionHeader } from "@/components/molecules/Bazaars";
-import { AddNewWholeseller } from "@/components/molecules/Wholesellers";
+import { NoWholeseller } from "@/components/molecules/NoWholeseller";
 
-const AddWholeseller = () => {
-
+const Wholesaler = () => {
   return (
     <>
       <DashboardLayout>
         <SectionHeader />
-        <AddNewWholeseller />
+        <NoWholeseller />
       </DashboardLayout>
     </>
   );
 };
 
-export default AddWholeseller;
+export default Wholesaler;

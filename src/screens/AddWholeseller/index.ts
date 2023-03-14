@@ -1,2 +1,2 @@
-import AddWholeseller from "./AddWholeseller";
-export default AddWholeseller;
+import AddWholesaler from "./AddWholesaler";
+export default AddWholesaler;

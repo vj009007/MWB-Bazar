@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { usewholesellerListStyles } from "@/static/stylesheets/molecules";
+import {useWholesellarProductStyle} from "@/static/stylesheets/molecules";
 import { GridOptionButton } from "@/components/atoms/Button";
 import { Switch } from "@/components/atoms/Switch";
 
@@ -8,10 +8,8 @@ interface WholesellerProductsProps {
 }
 
 const WholesellerProducts: React.FC<WholesellerProductsProps> = (props) => {
-  const classes = usewholesellerListStyles();
+  const classes = useWholesellarProductStyle();
   const data = [1, 2, 3, 4, 5, 6];
-  const { type } = props;
-
   return (
     <div className={classes.root}>
       <table>

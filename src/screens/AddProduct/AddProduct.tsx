@@ -10,7 +10,7 @@ import UploadAreaImage from "@/static/svg/ic_uploadarea.svg";
 const AddProduct = () => {
   const classes = useAddnewProductStyles();
   const navigate = useNavigate();
-  const [masterType, setMasterType] = useState("Regional Wholeseller");
+  const [masterType, setMasterType] = useState("Regional Wholesaler");
 
   const handleChangeMasterType = (event: SelectChangeEvent) => {
     setMasterType(event.target.value as string);
@@ -182,10 +182,10 @@ const AddProduct = () => {
                       value={masterType}
                       onChange={handleChangeMasterType}
                     >
-                      <MenuItem value={"Regional Wholeseller"}>
+                      <MenuItem value={"Regional Wholesaler"}>
                         Alienware 13 Inch Gaming Laptop
                       </MenuItem>
-                      <MenuItem value={"Regional Wholeseller 1"}>
+                      <MenuItem value={"Regional Wholesaler 1"}>
                         Alienware 13 Inch Gaming Laptop
                       </MenuItem>
                     </Select>
@@ -200,10 +200,10 @@ const AddProduct = () => {
                       value={masterType}
                       onChange={handleChangeMasterType}
                     >
-                      <MenuItem value={"Regional Wholeseller"}>
+                      <MenuItem value={"Regional Wholesaler"}>
                         Grocery
                       </MenuItem>
-                      <MenuItem value={"Regional Wholeseller 1"}>
+                      <MenuItem value={"Regional Wholesaler 1"}>
                         Grocery 1
                       </MenuItem>
                     </Select>
@@ -222,10 +222,10 @@ const AddProduct = () => {
                           value={masterType}
                           onChange={handleChangeMasterType}
                         >
-                          <MenuItem value={"Regional Wholeseller"}>
+                          <MenuItem value={"Regional Wholesaler"}>
                             20 Kg
                           </MenuItem>
-                          <MenuItem value={"Regional Wholeseller 1"}>
+                          <MenuItem value={"Regional Wholesaler 1"}>
                             20 Kg
                           </MenuItem>
                         </Select>
@@ -239,10 +239,10 @@ const AddProduct = () => {
                           value={masterType}
                           onChange={handleChangeMasterType}
                         >
-                          <MenuItem value={"Regional Wholeseller"}>
+                          <MenuItem value={"Regional Wholesaler"}>
                             ₹ 500.00
                           </MenuItem>
-                          <MenuItem value={"Regional Wholeseller 1"}>
+                          <MenuItem value={"Regional Wholesaler 1"}>
                             ₹ 500.00
                           </MenuItem>
                         </Select>
@@ -264,10 +264,10 @@ const AddProduct = () => {
                           value={masterType}
                           onChange={handleChangeMasterType}
                         >
-                          <MenuItem value={"Regional Wholeseller"}>
+                          <MenuItem value={"Regional Wholesaler"}>
                             20 Kg
                           </MenuItem>
-                          <MenuItem value={"Regional Wholeseller 1"}>
+                          <MenuItem value={"Regional Wholesaler 1"}>
                             20 Kg
                           </MenuItem>
                         </Select>
@@ -282,10 +282,10 @@ const AddProduct = () => {
                           value={masterType}
                           onChange={handleChangeMasterType}
                         >
-                          <MenuItem value={"Regional Wholeseller"}>
+                          <MenuItem value={"Regional Wholesaler"}>
                             52 Packs
                           </MenuItem>
-                          <MenuItem value={"Regional Wholeseller 1"}>
+                          <MenuItem value={"Regional Wholesaler 1"}>
                             52 Packs
                           </MenuItem>
                         </Select>
@@ -300,10 +300,10 @@ const AddProduct = () => {
                           value={masterType}
                           onChange={handleChangeMasterType}
                         >
-                          <MenuItem value={"Regional Wholeseller"}>
+                          <MenuItem value={"Regional Wholesaler"}>
                             ₹ 90,500.00
                           </MenuItem>
-                          <MenuItem value={"Regional Wholeseller 1"}>
+                          <MenuItem value={"Regional Wholesaler 1"}>
                             ₹ 90,500.00
                           </MenuItem>
                         </Select>

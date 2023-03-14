@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useSummarycardStyle } from "@/static/stylesheets/molecules/summarycardStyle";
-import { AppService } from "../../../../service/AllApiData.service";
+import { AppService } from "@/service/AllApiData.service";
 
 const SummaryCard = () => {
   const [getTotalBazaar, setTotalBazaar] = useState("");

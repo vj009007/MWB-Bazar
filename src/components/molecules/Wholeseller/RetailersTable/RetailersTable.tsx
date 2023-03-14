@@ -1,10 +1,10 @@
 import React from "react";
 import TwMultiSelect from "@/components/atoms/TwMultiSelect/TwMultiSelect";
 import MwbImage from "@/static/images/basket_image.png";
-import { useWholesellerCardStyle } from "@/static/stylesheets/molecules";
+import {useRetailersTable} from "@/static/stylesheets/molecules/retailerstableStyle";
 
 const RetailersTable = () => {
-  const classes = useWholesellerCardStyle();
+  const classes = useRetailersTable();
 
   return (
     <div className={classes.root}>

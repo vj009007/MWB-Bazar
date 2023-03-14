@@ -1,2 +1,2 @@
-import WholesellerKYC from "./WholesellerKYC";
-export default WholesellerKYC;
+import WholesalerKYC from "./WholesalerKYC";
+export default WholesalerKYC;

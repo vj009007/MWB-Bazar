@@ -1,11 +1,11 @@
 import React from "react";
-import { useElectronicsBazaarStyles } from "@/static/stylesheets/screens";
 import { Grid } from "@mui/material";
 import { FeaturesTab } from "@/components/organisms/FeaturesTab";
 import { Planview } from "../PlanCard";
+import {usePlanTabStyle} from "@/static/stylesheets/molecules";
 
 const PlanTab = () => {
-  const classes = useElectronicsBazaarStyles();
+  const classes = usePlanTabStyle();
 
   return (
     <div className={classes.root}>

@@ -6,7 +6,7 @@ import { ActionButton } from "@/components/atoms/Button/ActionButton";
 
 const AddNewWholeseller = () => {
   const classes = useNewWholesellerStyles();
-  const [masterType, setMasterType] = useState("Regional Wholeseller");
+  const [masterType, setMasterType] = useState("Regional Wholesaler");
 
   const handleChangeMasterType = (event: SelectChangeEvent) => {
     setMasterType(event.target.value as string);
@@ -37,8 +37,8 @@ const AddNewWholeseller = () => {
           <div className="bazaarField w-1/2">
             <InputLabel id="Customer-Type">Customer Type</InputLabel>
             <Select labelId="Customer-Type" label="Customer Type" variant={"standard"} fullWidth={true}  value={masterType} onChange={handleChangeMasterType} >
-              <MenuItem value={"Regional Wholeseller"}>Wholeseller</MenuItem>
-              <MenuItem value={"Regional Wholeseller 1"}>Wholeseller 1</MenuItem>
+              <MenuItem value={"Regional Wholesaler"}>Wholeseller</MenuItem>
+              <MenuItem value={"Regional Wholesaler 1"}>Wholeseller 1</MenuItem>
             </Select>
           </div>
           <a href="#" className="text-purple text-[15px] leading-5 font-semibold">Create New Type</a>
@@ -55,8 +55,8 @@ const AddNewWholeseller = () => {
          <div className="w-1/2">
             <InputLabel id="Bazaar">Bazaar</InputLabel>
             <Select label="Bazaar" labelId="Bazaar" variant={"standard"} fullWidth={true} value={masterType} onChange={handleChangeMasterType} className="w-1/2">
-              <MenuItem value={"Regional Wholeseller"}>Electronic, Computer + 1</MenuItem>
-              <MenuItem value={"Regional Wholeseller 1"}>Electronic, Computer + 2</MenuItem>
+              <MenuItem value={"Regional Wholesaler"}>Electronic, Computer + 1</MenuItem>
+              <MenuItem value={"Regional Wholesaler 1"}>Electronic, Computer + 2</MenuItem>
             </Select>
          </div>
         </div>

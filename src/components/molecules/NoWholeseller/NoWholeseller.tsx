@@ -22,7 +22,7 @@ const NoWholeseller = () => {
         </div>
         <div className="actonButton">
           <AddButton
-            label="Add Wholeseller"
+            label="Add Wholesaler"
             onClick={() => navigate("/wholesellerlist")}
           />
         </div>

@@ -12,7 +12,7 @@ const Bazaars = (props:any) => {
   
   const [itemView, setItemView] = useState("Grid");
   useEffect(() => {
-    // console.log("bazara", props.keys);
+    // console.log("bazaar", props.keys);
     // console.log(count);
   }, []);
   return (

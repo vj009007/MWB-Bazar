@@ -16,7 +16,7 @@ const MasterList = () => {
           <FeaturesTab
             items={[
               {
-                label: "Wholeseller (3)",
+                label: "Wholesaler (3)",
                 content: <MasterListGrid type={"WholeSeller"} />,
               },
               {

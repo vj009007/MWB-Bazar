@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from "react";
-import { useAddbazaarStyles } from "@/static/stylesheets/molecules";
 import UploaderFrame from "@/static/icons/uploader-frame.png";
 import { MenuItem, Select, SelectChangeEvent, TextField } from "@mui/material";
 import { AppService } from "@/service/AllApiData.service";
+import {useBazaarDetailsStyles} from "@/static/stylesheets/screens";
 
 const BazaarDetails = (props: {
   formData: { bazaar_name: any };
   setFormData: (arg0: any) => void;
 }) => {
-  const classes = useAddbazaarStyles();
+  const classes = useBazaarDetailsStyles();
 
-  const [masterType, setMasterType] = useState("");
+  const [, setMasterType] = useState("");
   const [AllState, setAllState] = React.useState([]);
   const [AllDis, setAllDis] = React.useState([]);
   const [AllCity, setAllCity] = React.useState([]);
@@ -41,7 +41,7 @@ const BazaarDetails = (props: {
   };
 
 
-  const [selectedImage, setSelectedImage] = useState();
+  const [, setSelectedImage] = useState();
   const imageChange = (e: any) => {
     if (e.target.files && e.target.files.length > 0) {
       console.log(e.target.files[0]);

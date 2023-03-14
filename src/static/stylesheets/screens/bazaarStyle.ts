@@ -1,7 +1,7 @@
 import { css } from "@emotion/css";
 
 export const useBazaarDetailsStyles = () => ({
-  root: css`
+    root: css`
     padding-top: 20px;
     padding-bottom: 20px;
     width: 500px;
@@ -44,7 +44,7 @@ export const useBazaarDetailsStyles = () => ({
     }
   `,
 
-  content: css`
+    content: css`
     height: 170px;
     width: 500px;
     background: #ffffff;

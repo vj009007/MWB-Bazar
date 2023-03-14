@@ -7,7 +7,7 @@ import LogoEdit from "@/static/icons/ic_edit.png";
 
 const WholsellerKycForm = () => {
   const classes = useKycFormStyles();
-  const [masterType, setMasterType] = useState("Regional Wholeseller");
+  const [masterType, setMasterType] = useState("Regional Wholesaler");
 
   const handleChangeMasterType = (event: SelectChangeEvent) => {
     setMasterType(event.target.value as string);
@@ -89,8 +89,8 @@ const WholsellerKycForm = () => {
               <div className="w-1/2">
                 <InputLabel id="Bazaar">Bazaar</InputLabel>
                 <Select label="Bazaar" labelId="Bazaar" variant={"standard"} fullWidth={true} value={masterType} onChange={handleChangeMasterType} className="w-1/2">
-                  <MenuItem value={"Regional Wholeseller"}>Electronic, Computer + 1</MenuItem>
-                  <MenuItem value={"Regional Wholeseller 1"}>Electronic, Computer + 2</MenuItem>
+                  <MenuItem value={"Regional Wholesaler"}>Electronic, Computer + 1</MenuItem>
+                  <MenuItem value={"Regional Wholesaler 1"}>Electronic, Computer + 2</MenuItem>
                 </Select>
               </div>
           </div>
@@ -104,8 +104,8 @@ const WholsellerKycForm = () => {
             <div className="w-1/2">
                 <InputLabel id="Bazaar">Bazaar</InputLabel>
                 <Select label="Bazaar" labelId="Bazaar" variant={"standard"} fullWidth={true} value={masterType} onChange={handleChangeMasterType} className="w-1/2">
-                  <MenuItem value={"Regional Wholeseller"}>Electronic, Computer + 1</MenuItem>
-                  <MenuItem value={"Regional Wholeseller 1"}>Electronic, Computer + 2</MenuItem>
+                  <MenuItem value={"Regional Wholesaler"}>Electronic, Computer + 1</MenuItem>
+                  <MenuItem value={"Regional Wholesaler 1"}>Electronic, Computer + 2</MenuItem>
                 </Select>
             </div>
           </div>

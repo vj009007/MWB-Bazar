@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { DashboardLayout } from "@/components/layouts";
-import { AddButton, GridOptionButton } from "@/components/atoms/Button";
+import { AddButton } from "@/components/atoms/Button";
 import { Switch } from "@/components/atoms/Switch";
 import { useNavigate } from "react-router-dom";
 import { usAgentStyles } from "@/static/stylesheets/screens/agentStyle";
@@ -14,24 +14,15 @@ import dots from "@/static/icons/dots-1.svg";
 import complete from "@/static/icons/complete.svg";
 import fill from "@/static/icons/fill.svg";
 import calendar from "@/static/icons/calendar.svg";
-import deleteagent from "@/static/icons/delete-agent.svg";
-import ShareIcon from "@/static/svg/ic_share.svg";
-import { AppService } from "../../service/AllApiData.service";
+import deleteAgentIcon from "@/static/icons/delete-agent.svg";
 
 const Agent = () => {
   const classes = usAgentStyles();
   const navigate = useNavigate();
   const [addModalOpen, setAddModalOpen] = useState(false);
-  const [getAllAgent, setGetAllAgent] = useState([]);
-  const getAllLists = async () => {
-    const responseJson = await AppService.getAllAgentList();
-    setGetAllAgent(responseJson.data.results);
-  };
-
+  const [getAllAgent] = useState([]);
   useEffect(() => {
-    getAllLists();
   }, []);
-
   return (
     <>
       <DashboardLayout>
@@ -96,7 +87,7 @@ const Agent = () => {
                         className="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white"
                       >
                         <div className="flex gap-[20px] items-center ">
-                          <p className="mb-3 text-[14px] font-[600] text-gray-700 font-Manrope dark:text-gray-400 cursor-pointer">
+                          <p className="mb-3 text-[14px] font-[600] text-gray-700 font-Mangrove dark:text-gray-400 cursor-pointer">
                             <div className="flex gap-5 align-middle">
                               <div>
                                 <img src={UserIcon} alt={"Logo"} />
@@ -108,8 +99,8 @@ const Agent = () => {
                           </p>
                         </div>
                       </th>
-                      <td className="py-4 px-6 ftableData">{item.agent_number}</td>
-                      <td className="py-4 px-6 ftableData">{item.agent_city}</td>
+                      <td className="py-4 px-6 tableData">{item.agent_number}</td>
+                      <td className="py-4 px-6 tableData">{item.agent_city}</td>
                       <td className="py-4 px-6 tableData">{item.agent_bazaar.length}</td>
                       <td className="py-4 px-6 tableData">{item.agent_type}</td>
                       <td className="py-4 px-6 tableData">
@@ -133,7 +124,7 @@ const Agent = () => {
                               <span className="icon"><img src={fill} alt="fill" /> </span> Edit Agent
                             </a>
                             <a href="#">
-                              <span className="icon"><img src={deleteagent} alt="deleteagent" /> </span> Delete Agent
+                              <span className="icon"><img src={deleteAgentIcon} alt="deleteAgentIcon" /> </span> Delete Agent
                             </a>
                             <a href="#">
                               <span className="icon"><img src={calendar} alt="calendar" /> </span> Manage Commission
