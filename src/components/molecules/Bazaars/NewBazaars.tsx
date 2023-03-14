@@ -8,10 +8,12 @@ import Typography from "@mui/material/Typography";
 import BazaarDetails from "@/screens/BazaarDetails";
 import GroupCategories from "@/screens/GroupCategories";
 import Categories from "@/screens/Categories";
+import Categories2 from "@/screens/Categories2";
 import SubCategories from "@/screens/SubCategories";
 import { useBazaarStepperdStyles } from "@/static/stylesheets/molecules";
 import LogoPrev from "@/static/icons/ic_previous.png";
 import { AppService } from "@/service/AllApiData.service";
+import { Alert } from "@/alert/Alert";
 
 const steps = [
   "Bazaar Details",
@@ -40,15 +42,15 @@ export default function NewBazaars() {
 
   const [formData, setFormData] = React.useState({
   wholesellers: "",
-    agents: "",
-    states: "",
-    earnings: "",
-    bills: "",
-    bazaar_description: "",
+    agents: "2",
+    states: "2",
+    earnings: "154000",
+    bills: "52",
+    bazaar_description: "test",
     bazaar_name: "",
-    bazaar_image: "",
-    bazaar_added_date: "",
-    bazaar_updated_date: "",
+    bazaar_image: null,
+    bazaar_added_date: "2023-03-06T19:56:00+05:30",
+    bazaar_updated_date: "2023-03-06T19:56:00+05:30",
     bazaar_updated_by: 1,
     bazaar_state: [],
     bazaar_city: [],
@@ -68,12 +70,13 @@ export default function NewBazaars() {
     console.log(formData);
     if(activeStep===4){
       const responseJson = await AppService.addBazars(formData);
-      console.log(responseJson);
+      Alert("save successfully");
     }
     let newSkipped = skipped;
     if (isStepSkipped(activeStep)) {
       newSkipped = new Set(newSkipped.values());
       console.log(activeStep);
+  
       newSkipped.delete(activeStep);
     }
 
@@ -84,6 +87,7 @@ export default function NewBazaars() {
 
   const handleBack = () => {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
+    console.log(formData);
   };
 
   const handleReset = () => {
@@ -141,9 +145,9 @@ export default function NewBazaars() {
 
               {activeStep === 1 && <GroupCategories formData={formData} setFormData={setFormData} />}
 
-              {activeStep === 2 && <Categories />}
-              {activeStep === 3 && <Categories />}
-              {activeStep === 4 && <SubCategories />}
+              {activeStep === 2 && <Categories formData={formData} setFormData={setFormData}  />}
+              {activeStep === 3 && <Categories2  formData={formData} setFormData={setFormData}/>}
+              {activeStep === 4 && <SubCategories formData={formData} setFormData={setFormData} />}
 
               <div className="actionButton">
                 <div>

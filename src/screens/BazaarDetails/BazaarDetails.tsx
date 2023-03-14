@@ -1,41 +1,56 @@
 import React, { useEffect, useState } from "react";
 import UploaderFrame from "@/static/icons/uploader-frame.png";
-import { MenuItem, Select, SelectChangeEvent, TextField } from "@mui/material";
+import { Checkbox, ListItemText, MenuItem, Select, SelectChangeEvent, TextField } from "@mui/material";
 import { AppService } from "@/service/AllApiData.service";
 import {useBazaarDetailsStyles} from "@/static/stylesheets/screens";
+import { Alert } from "@/alert/Alert";
 
 const BazaarDetails = (props: {
-  formData: { bazaar_name: any };
+  formData: any;
   setFormData: (arg0: any) => void;
 }) => {
   const classes = useBazaarDetailsStyles();
 
   const [, setMasterType] = useState("");
+  const [masterType, setMasterType] = React.useState([]);
+  const [masterType2, setMasterType2] = React.useState([]);
+  const [masterType3, setMasterType3] = React.useState([]);
   const [AllState, setAllState] = React.useState([]);
   const [AllDis, setAllDis] = React.useState([]);
   const [AllCity, setAllCity] = React.useState([]);
+ 
 
-  const handleChangeMasterType = (event: SelectChangeEvent) => {
-    setMasterType(event.target.value as string);
+
+  const handleChangeMasterType = (event: any) => {
+    setMasterType(event.target.value);
+    console.log(event.target.value.join(","));
+    const int = event.target.value.map(Number);
     props.setFormData({
       ...props.formData,
-      bazaar_state: [event.target.value],
+      bazaar_state: int,
     });
+
     
   };
 
-  const handleChangeMasterType2 = (event: SelectChangeEvent) => {
+  const handleChangeMasterType2 = (event: any) => {
     // setMasterType(event.target.value as string);
+    setMasterType2(event.target.value);
+    console.log(event.target.value.join( ',' ));
+    const str = event.target.value.map(Number);
     props.setFormData({
       ...props.formData,
-      bazaar_district: [event.target.value],
+      bazaar_district: str,
     });
   
   };
-  const handleChangeMasterType3 = (event: SelectChangeEvent) => {
+  const handleChangeMasterType3 = (event: any) => {
+    setMasterType3(event.target.value);
+    console.log(event.target.value.join());
+    const str = event.target.value.map(Number);
     props.setFormData({
       ...props.formData,
-      bazaar_city: [event.target.value],
+      bazaar_city: str,
     });
    
   };
@@ -43,17 +58,51 @@ const BazaarDetails = (props: {
 
   const [, setSelectedImage] = useState();
   const imageChange = (e: any) => {
+  const [file, setFiles] = useState("");
+  const [fileName, setFileName] = useState("");
+  const [selectedImage, setSelectedImage] = useState();
+  const imageChange = async (e: any) => {
     if (e.target.files && e.target.files.length > 0) {
       console.log(e.target.files[0]);
       setSelectedImage(e.target.files[0]);
-      props.setFormData({
-        ...props.formData,
-        bazaar_image: e.target.files[0].name,
-      });
+      setFiles(e.target.files[0]);
+      setFileName(e.target.files[0].name);
+      console.log((e.target.files[0].name));
+      const formData = new FormData();
+      formData.append("file", file)
+      formData.append("fileName", fileName)
+      console.log(formData);
+      // props.setFormData({
+      //   ...props.formData,
+      //   bazaar_image: formData,
+      // });
+
+
+ 
+
+
+// localStorage.getItem("lastname");
+      // props.setFormData({
+      //   ...props.formData,
+      //   bazaar_image: e.target.files[0].name,
+      // });
     }
   };
 
 
+
+ 
+
+  // const convertimage = (file: Blob) => {
+  //   return new Promise((resolve, reject) => {
+  //     const reader = new FileReader();
+  //     reader.readAsDataURL(file);
+  //     reader.onload = () => resolve(reader.result);
+  //     reader.onerror = (error) => reject(error);
+  //   });
+  // };
+
+ 
 
   const getAllLists = async () => {
     const responseJson = await AppService.getAllStates();
@@ -75,7 +124,7 @@ const BazaarDetails = (props: {
     setAllCity(responseJson.data.results);
    
   };
- 
+
 
 
 
@@ -85,7 +134,11 @@ const BazaarDetails = (props: {
     getAllLists();
     getAllDis();
     getAllCity();
+    setMasterType(props.formData.bazaar_state);
+    setMasterType2(props.formData.bazaar_district);
+    setMasterType3(props.formData.bazaar_city);
   }, []);
+  
 
   return (
     <div className={classes.root}>
@@ -93,12 +146,19 @@ const BazaarDetails = (props: {
         <div className={classes.content}>
           <div className="py-5">
             <div className="uploadIcon">
-              <img src={UploaderFrame} alt={"Uploader"} />
+              {/* <img src={UploaderFrame} alt={"Uploader"} /> */}
+              {selectedImage ===undefined ? <img src={UploaderFrame} alt={"Uploader"} /> :selectedImage && (
+            <img style={{position: "absolute",
+              width: "100%",
+              zIndex: "1",
+              height: "145px"}} src={URL.createObjectURL(selectedImage)}/>
+            ) } 
               <input
-                accept="image/*"
-                onChange={imageChange}
+                onChange={imageChange} 
                 className={"kycForms"}
                 type="file"
+                name="file"
+                id="formFile"
               />
             </div>
             <div className={"title"}>Upload Media here</div>-
@@ -112,7 +172,7 @@ const BazaarDetails = (props: {
       <div className="py-[30px]">
         <div>
           <p className="fieldTitle">Bazaar Name</p>
-          <TextField variant="standard" onChange={e => props.setFormData({
+          <TextField variant="standard" value={props.formData.bazaar_name} onChange={e => props.setFormData({
       ...props.formData, bazaar_name: e.target.value})} fullWidth={true} />
         </div>
 
@@ -120,15 +180,20 @@ const BazaarDetails = (props: {
           <div>
             <p className="fieldTitle">Select State</p>
             <Select
-              label="Age"
+              label="Age" 
               variant={"standard"}
               fullWidth={true}
+              multiple={true} 
+              value={masterType}
               onChange={handleChangeMasterType}
             >
               {AllState.map((items:any)=>(
-              <MenuItem value={items.id}>
+              <MenuItem key={items.id}  value={items.id}>
               {items.state}
+              
+             
               </MenuItem>
+            
               
               ))}
             </Select>
@@ -140,6 +205,8 @@ const BazaarDetails = (props: {
               label="Age"
               variant={"standard"}
               fullWidth={true}
+              multiple={true} 
+              value={masterType2}
               onChange={handleChangeMasterType2}
             >
              {AllDis.map((items:any)=>(
@@ -157,6 +224,8 @@ const BazaarDetails = (props: {
             label="Age"
             variant={"standard"}
             fullWidth={true}
+            multiple={true}
+            value={masterType3}
             onChange={handleChangeMasterType3}
           >
             {AllCity.map((items:any)=>(

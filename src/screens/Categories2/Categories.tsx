@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useCategoriesStyles } from "@/static/stylesheets/screens/categoriesStyles";
 import GroupCategories from "../GroupCategories";
+import MuiTreeView from "@/components/atoms/MuiTreeView/MuiTreeView";
 import { ChevronRightIcon } from "@heroicons/react/20/solid";
 import { TreeView, TreeItem } from "@mui/lab";
 import LogoEcBazaar from "@/static/images/placeholder.jpg";
@@ -10,30 +11,27 @@ import LogoAdd from "@/static/icons/ic_add.png";
 import { Alert } from "@/alert/Alert";
 import { AppService } from "@/service/AllApiData.service";
 
-const Categories = (props: {
-  formData: any;
+const Categories2 = (props: {
+  formData: { bazaar_name: any };
   setFormData: (arg0: any) => void;
 }) => {
   const classes = useCategoriesStyles();
-  const [selected, setSelected] = React.useState([])
-  const handleSelect = (event: any) => {
-    setSelected(event)
-}
-
   const [ListGroups, setListGroups] = useState([]);
 const [IDS, setIDS] = React.useState([]);
 const [HideTable, setHideTable] = React.useState(false);
 
 const [addData, setAddData] = React.useState({
-  category_name: "",
-  category_description: "",
-  category_active: "true",
-  category_updated_by: 2,
-  category_group: 1
+  subcategory_name: "",
+  subcategory_description: "",
+  subcategory_active: "true",
+  subcategory_updated_by: 2,
+  category: "",
+  subcategory_group: 1
   });
 
 const detailIB = async (ID:any) =>{
-const responseJson = await AppService.detailMainCate(ID);
+  setAddData({ ...addData, category: ID });
+const responseJson = await AppService.detailSubCate(ID);
 setIDS(responseJson.data);
 console.log(responseJson.data);
 // Alert("save successfully");
@@ -66,7 +64,7 @@ console.log(list);
 setInputFields(list);
 // props.setFormData({
 //   ...props.formData,
-//   bazaar_gorup_category: list,
+//   bazaar_gorup_subcategory: list,
 // });
 }
 
@@ -86,7 +84,7 @@ const dataSave = (e:any) => {
   // console.log(e.target.value);
   // props.setFormData({
   //   ...props.formData,
-  //   bazaar_gorup_category: [selectedImage, e.target.value],
+  //   bazaar_gorup_subcategory: [selectedImage, e.target.value],
   // });
 }
 
@@ -97,26 +95,26 @@ const handleSelectedItems = (event:any, nodeId:any) => {
   detailIB(nodeId);
   props.setFormData({
     ...props.formData,
-    bazaar_category: [nodeId],
+    bazaar_subcategory: [nodeId],
   });
 }
 
 const getAllLists = async () => {
-    const responseJson = await AppService.listMaincategory();
+    const responseJson = await AppService.listSubcategory();
     // console.log(responseJson.data.bazaar);
     setListGroups(responseJson.data.results);
    
   };
 
   const deletes = async(id:any)=>{
-    const responseJson = await AppService.deleteMainCate(id);
+    const responseJson = await AppService.deleteSubCate(id);
     console.log(responseJson.data);
     Alert("delete successfully");
     getAllLists();
 
   }
   const edit = async(id:any)=>{
-    const responseJson = await AppService.updateMainCate(id, addData);
+    const responseJson = await AppService.updateSubCate(id, addData);
     console.log(responseJson.data);
     Alert("update successfully");
     getAllLists();
@@ -128,7 +126,6 @@ const getAllLists = async () => {
 React.useEffect(() => {
   // console.log(formData);
   getAllLists();
-  console.log(props.formData.bazaar_gorup_category);
   
     
     }, []);
@@ -153,7 +150,8 @@ React.useEffect(() => {
 
 
     const save = async () =>{
-      const responseJson = await AppService.addMainCate(addData);
+      console.log(addData);
+      const responseJson = await AppService.addSubCate(addData);
       // setIDS(responseJson.data);
       // console.log(responseJson.data);
       Alert("AddNew successfully");
@@ -166,7 +164,7 @@ React.useEffect(() => {
       <div className="container">
         <div className="leftContainer">
         <TreeView
-        className="tree font"
+        className="treefont"
         aria-label="file system navigator"
         selected={selected}
         // onNodeToggle={handleToggle}
@@ -184,8 +182,8 @@ React.useEffect(() => {
         }}
       >
         {ListGroups.map((items:any, index)=>(
-        <TreeItem nodeId={items.id} label={items.category_name}>
-          {/* <TreeItem nodeId={items.id} label={items.parent_category_name} /> */}
+        <TreeItem nodeId={items.id} label={items.subcategory_name}>
+          {/* <TreeItem nodeId={items.id} label={items.parent_subcategory_name} /> */}
         </TreeItem>
         ))}
        
@@ -195,7 +193,7 @@ React.useEffect(() => {
         <table className="groupCeta">
         <tr>
           <th>Image</th>
-          <th> Category Name</th>
+          <th>Sub subcategory Name</th>
           <th></th>
         </tr>
         {[IDS].map((items:any)=>(
@@ -215,11 +213,11 @@ React.useEffect(() => {
           <td>
             <div>
               <input 
-                type="text" name="parent_category_name"
-                value={items.category_name}
+                type="text" name="parent_subcategory_name"
+                value={items.subcategory_name}
                 className="bg-gray-50 border border-gray-300 text-sm rounded-lg text-[#2E2C34] block w-full p-[15px] dark:border-[#EBEAED]"
                 placeholder="Snacks" onChange={e => setAddData({
-                  ...addData, category_name: e.target.value})}
+                  ...addData, subcategory_name: e.target.value})}
               />
             </div>
           </td>
@@ -250,7 +248,7 @@ React.useEffect(() => {
           <td>
             <div>
               <input 
-                type="text" name="category_name"
+                type="text" name="subcategory_name"
               
                 className="bg-gray-50 border border-gray-300 text-sm rounded-lg text-[#2E2C34] block w-full p-[15px] dark:border-[#EBEAED]"
                 placeholder="Snacks" onChange={handleChanges}
@@ -273,7 +271,7 @@ React.useEffect(() => {
             <div>
         <div className="addButton" onClick={addInputField}>
           <img src={LogoAdd} alt={"Logo"} />
-          <p>Add New Category</p>
+          <p>Add New subcategory</p>
         </div>
       </div>
         </div>
@@ -282,4 +280,4 @@ React.useEffect(() => {
   );
 };
 
-export default Categories;
+export default Categories2;

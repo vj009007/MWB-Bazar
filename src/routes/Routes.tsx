@@ -76,6 +76,7 @@ const AppRoutes = () => {
             <Route path={routePaths.addnewplan} element={<AddNewPlan />} />
             <Route path={routePaths.reviewplan} element={<ReviewPlan />} />
 
+<<<<<<< HEAD
             <Route path={routePaths.retailers} element={<Retailers />} />
             <Route path={routePaths.addretailers} element={<AddRetailers />} />
             <Route path={routePaths.renewplan} element={<RevenewPlan />} />
@@ -119,6 +120,57 @@ const AppRoutes = () => {
           </Routes>
         </Router>
       </>
+=======
+          <Route path={routePaths.retailers} element={<Retailers />} />
+          <Route path={routePaths.addretailers} element={<AddRetailers />} />
+          <Route path={routePaths.renewplan} element={<RevenewPlan />} />
+          <Route path={routePaths.offers} element={<Offers />} />
+          <Route path={routePaths.createoffer} element={<CreateOffer />} />
+          <Route
+            path={routePaths.addnewadvertisement}
+            element={<AddAdvertisement />}
+          />
+          <Route path={routePaths.addbranch} element={<AddBranch />} />
+          <Route path={routePaths.advertisement} element={<Advertisement />} />
+          <Route path={routePaths.branch} element={<Branch />} />
+          <Route path={routePaths.branchplan} element={<BranchPlan />} />
+          <Route path={routePaths.createorder} element={<CreateOrder />} />
+          <Route path={routePaths.editorder} element={<EditOrder />} />
+          <Route path={routePaths.order} element={<Order />} />
+          <Route path={routePaths.photoorder} element={<PhotoOrder />} />
+          <Route path={routePaths.trackorder} element={<TrackOrder />} />
+          <Route path={routePaths.addproduct} element={<AddProduct />} />
+          <Route path={routePaths.bulkupload} element={<BulkUpload />} />
+          <Route path={routePaths.subcategories} element={<SubCategories formData={{
+            bazaar_name: undefined
+          }} setFormData={function (arg0: any): void {
+            throw new Error("Function not implemented.");
+          } } />} />
+          <Route
+            path={routePaths.addwholeseller}
+            element={<AddWholeseller />}
+          />
+          <Route
+            path={routePaths.wholesellerkyc}
+            element={<WholesellerKYC />}
+          />
+          <Route
+            path={routePaths.electronicsbazaar}
+            element={<ElectronicsBazaar />}
+          />
+          <Route path={routePaths.bazaarreport} element={<BazaarReport />} />
+          <Route path={routePaths.itemwiseplan} element={<ItemWisePlan />} />
+          <Route path={routePaths.admin.bazaars} element={<Bazaars />} />
+          <Route path={routePaths.admin.masterList} element={<MasterList />} />
+          <Route path={routePaths.rolePermission} element={<RolePermission />} />
+          <Route path={routePaths.rolesPermissions} element={<RolesPermission />} />
+          <Route path={routePaths.AddRols} element={<AddRols />} />
+          
+          
+        </Routes>
+      </Router>
+    </>
+>>>>>>> d1c1371528a8ceeece3ef32aee257d9123a5e130
   );
 };
 
