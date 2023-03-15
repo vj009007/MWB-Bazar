@@ -2,7 +2,7 @@ import React from "react";
 import { DashboardLayout } from "@/components/layouts";
 import { AddButton, GridOptionButton } from "@/components/atoms/Button";
 import { useNavigate } from "react-router-dom";
-import TwMultiSelect from "@/components/atoms/TwMultiSelect/TwMultiSelect";
+import CommonSelect from "@/components/atoms/CommonSelect/CommonSelect";
 import { useRetailerStyles } from "@/static/stylesheets/screens/retailersStyle";
 import { SearchField } from "@/components/atoms/SearchField";
 import { Switch } from "@/components/atoms/Switch";
@@ -32,12 +32,12 @@ const Retailers = () => {
 
           <div className="flex gap-5 pt-6 flex-col">
             <div className="flex gap-4">
-              <TwMultiSelect />
-              <TwMultiSelect />
-              <TwMultiSelect />
-              <TwMultiSelect />
-              <TwMultiSelect />
-              <TwMultiSelect />
+              <CommonSelect />
+              <CommonSelect />
+              <CommonSelect />
+              <CommonSelect />
+              <CommonSelect />
+              <CommonSelect />
             </div>
             <div className="text-[#FF0000] self-end font-semibold">
               Subscriber total, active, expired, deactivated

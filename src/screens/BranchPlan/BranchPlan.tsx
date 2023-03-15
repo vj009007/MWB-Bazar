@@ -1,6 +1,6 @@
 import React from "react";
 import { DashboardLayout } from "@/components/layouts";
-import TwMultiSelect from "@/components/atoms/TwMultiSelect/TwMultiSelect";
+import CommonSelect from "@/components/atoms/CommonSelect/CommonSelect";
 import { ActionButton } from "@/components/atoms/Button/ActionButton";
 import { useBranchPlanStyles } from "@/static/stylesheets/screens";
 import { PlanLogDataTable } from "@/components/molecules/PlanLogDataTable";
@@ -22,8 +22,8 @@ const BranchPlan = () => {
             <ActionButton title="Semi-Wholeseller" variant="default" />
           </div>
           <div className="flex gap-5 py-5">
-            <TwMultiSelect />
-            <TwMultiSelect />
+            <CommonSelect />
+            <CommonSelect />
           </div>
           <div>
             <PlanLogDataTable />

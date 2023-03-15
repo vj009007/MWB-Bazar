@@ -1,5 +1,5 @@
 import React from "react";
-import TwMultiSelect from "@/components/atoms/TwMultiSelect/TwMultiSelect";
+import CommonSelect from "@/components/atoms/CommonSelect/CommonSelect";
 import MwbImage from "@/static/images/basket_image.png";
 import { usetopProductStyle } from "@/static/stylesheets/molecules";
 
@@ -15,7 +15,7 @@ const TopProduct = () => {
               Top Product
             </p>
             <p>
-              <TwMultiSelect />
+              <CommonSelect />
             </p>
           </div>
           <p className="mb-3 text-[14px] font-[700] items-center text-[#5542F6] cursor-pointer text-end  font-Manrope">
