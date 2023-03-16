@@ -4,6 +4,8 @@ export const useBazaarplanListStyles = () => {
   return {
     root: css`
       overflow-x: auto;
+      width: 1550px;
+      
       .activeTitle {
         color: #2e2c34;
       }

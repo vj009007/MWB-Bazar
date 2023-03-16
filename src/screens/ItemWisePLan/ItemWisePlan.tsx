@@ -1,6 +1,6 @@
 import { ActionButton } from "@/components/atoms/Button/ActionButton";
 import { SearchField } from "@/components/atoms/SearchField";
-import TwMultiSelect from "@/components/atoms/TwMultiSelect/TwMultiSelect";
+import CommonSelect from "@/components/atoms/CommonSelect/CommonSelect";
 import { DashboardLayout } from "@/components/layouts";
 import { SectionHeader } from "@/components/molecules/Bazaars";
 import { useItemwisePlanStyles } from "@/static/stylesheets/molecules/itemwiseplanStyle";
@@ -24,8 +24,8 @@ const ItemWisePlan = () => {
 
             <div className="flex justify-between">
               <div className="flex gap-5">
-                <TwMultiSelect />
-                <TwMultiSelect />
+                <CommonSelect />
+                <CommonSelect />
               </div>
               <div>
                 <SearchField />

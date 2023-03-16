@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { DashboardLayout } from "@/components/layouts";
 import { useProductsStyles } from "@/static/stylesheets/screens/productsStyles";
 import { AddButton } from "@/components/atoms/Button";
-import TwMultiSelect from "@/components/atoms/TwMultiSelect/TwMultiSelect";
+import CommonSelect from "@/components/atoms/CommonSelect/CommonSelect";
 import { SearchField } from "@/components/atoms/SearchField";
 import MwbImage from "@/static/images/basket_image.png";
 import { Switch } from "@/components/atoms/Switch";
@@ -44,15 +44,15 @@ const Products = () => {
             </div>
 
             <div className="productFilters flex gap-5 py-[50px] justify-between">
-              <TwMultiSelect />
-              <TwMultiSelect />
-              <TwMultiSelect />
-              <TwMultiSelect />
-              <TwMultiSelect />
-              <TwMultiSelect />
-              <TwMultiSelect />
-              <TwMultiSelect />
-              <TwMultiSelect />
+              <CommonSelect />
+              <CommonSelect />
+              <CommonSelect />
+              <CommonSelect />
+              <CommonSelect />
+              <CommonSelect />
+              <CommonSelect />
+              <CommonSelect />
+              <CommonSelect />
               <SearchField />
             </div>
 

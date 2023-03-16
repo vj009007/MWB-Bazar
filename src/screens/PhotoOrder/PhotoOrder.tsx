@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { DashboardLayout } from "@/components/layouts";
-import TwMultiSelect from "@/components/atoms/TwMultiSelect/TwMultiSelect";
+import CommonSelect from "@/components/atoms/CommonSelect/CommonSelect";
 import { ActionButton } from "@/components/atoms/Button/ActionButton";
 import { Dialog } from "@mui/material";
 import { usePhotosOrderStyles } from "@/static/stylesheets/screens";
@@ -23,9 +23,9 @@ const PhotoOrder = () => {
             </div>
 
             <div className="flex gap-5 py-5">
-              <TwMultiSelect />
-              <TwMultiSelect />
-              <TwMultiSelect />
+              <CommonSelect />
+              <CommonSelect />
+              <CommonSelect />
             </div>
 
             <div>

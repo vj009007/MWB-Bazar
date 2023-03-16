@@ -4,7 +4,7 @@ import { AddButton, GridOptionButton } from "@/components/atoms/Button";
 import { Switch } from "@/components/atoms/Switch";
 import { useNavigate } from "react-router-dom";
 import { usAgentStyles } from "@/static/stylesheets/screens/agentStyle";
-import TwMultiSelect from "@/components/atoms/TwMultiSelect/TwMultiSelect";
+import CommonSelect from "@/components/atoms/CommonSelect/CommonSelect";
 import { ActionButton } from "@/components/atoms/Button/ActionButton";
 import { Dialog } from "@mui/material";
 import NidFront from "@/static/images/mwb_nid_frnt.png";
@@ -47,12 +47,12 @@ const Agent = () => {
           </div>
 
           <div className="flex gap-5">
-            <TwMultiSelect />
-            <TwMultiSelect />
-            <TwMultiSelect />
-            <TwMultiSelect />
-            <TwMultiSelect />
-            <TwMultiSelect />
+            <CommonSelect />
+            <CommonSelect />
+            <CommonSelect />
+            <CommonSelect />
+            <CommonSelect />
+            <CommonSelect />
           </div>
 
           <div>

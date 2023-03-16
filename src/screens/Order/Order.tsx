@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { DashboardLayout } from "@/components/layouts";
 import { AddButton } from "@/components/atoms/Button";
 import { useNavigate } from "react-router-dom";
-import TwMultiSelect from "@/components/atoms/TwMultiSelect/TwMultiSelect";
+import CommonSelect from "@/components/atoms/CommonSelect/CommonSelect";
 import { Dialog } from "@mui/material";
 import { SearchField } from "@/components/atoms/SearchField";
 import { useOrderStyles } from "@/static/stylesheets/screens";
@@ -54,12 +54,12 @@ const Order = () => {
 
             <div className="flex justify-between gap-5 py-5">
               <div className="flex gap-5">
-                <TwMultiSelect />
-                <TwMultiSelect />
-                <TwMultiSelect />
-                <TwMultiSelect />
-                <TwMultiSelect />
-                <TwMultiSelect />
+                <CommonSelect />
+                <CommonSelect />
+                <CommonSelect />
+                <CommonSelect />
+                <CommonSelect />
+                <CommonSelect />
               </div>
               <div>
                 <SearchField />
